@@ -6,13 +6,14 @@ import { signup } from './controllers/signupController';
 dotenv.config();
 
 const app = express();
+app.use(express.json());
 
 // declare a route with a response
 app.get('/', (req, res) => {
   res.send("Server running");
 });
 
-app.get('/signup', signup);
+app.post('/signup', signup);
 
 // start the server
 app.listen(8081, () => {
