@@ -1,14 +1,33 @@
 import React from 'react'
 import logo from '/src/assets/logo.svg'
-import styles from './Navbar.module.css'
+import './Navbar.css'
+
+import {Link} from 'react-router-dom';
 
 const Navbar : React.FC = () => {
   return (
     <>
-    <div className={styles.navbar} >
-        <a >
+    <div className='navbar' >
+        <a href = '/'>
             <img src={logo} className="logo" alt="logo" />
+            
         </a>
+        <div className='links-container'>
+        <ul className = 'link links-container' >
+          <a>
+          <li><Link to ="/about">About</Link></li>
+          </a>
+          <a>
+          <li><Link to ="/help">Help</Link></li>
+          </a>
+          <a>
+          <li><Link to ="/signUp">Sign Up</Link></li>
+          </a>
+          <a>
+          <li><Link to ="/Login">Login</Link></li>
+          </a>
+        </ul>
+        </div>
     </div>
     </>
   )

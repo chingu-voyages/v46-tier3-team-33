@@ -8,16 +8,16 @@ function App() {
   
   return (
     <>
-    <Router>
-      <div className='App'>
-        <Navbar/>
-        <div className='content'>
-
-          <HomePage />
-           
-        </div>
-      </div>
-    </Router>
+      <Router>
+          <div className='App'>
+              <Navbar />
+              <div className='content'>
+                  <Routes>
+                      <Route path='/' element={<HomePage />} />
+                  </Routes>
+              </div>
+          </div>
+      </Router>
     </>
   )
 }
