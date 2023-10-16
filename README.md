@@ -1,6 +1,6 @@
 # Vegilicious
 An app for farmers to post pictures and descriptions of their produce and for users to notifiy farmers of their intention to buy these.
-Users can then arrange to buy and collect produce and leave reviews on the produce they have bought.
+Users can then arrange to buy and collect produce and leave reviews on the produce they have bought.  Reviews and produce can be seen by all users.
 
 
 ## Goal
