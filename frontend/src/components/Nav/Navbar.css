@@ -13,10 +13,10 @@
 	display: flex;
 	width: 400px;
 	justify-content: space-evenly;
+	list-style: none;
 }
 
 .link {
 	text-decoration: none;
-	list-style: none;
 	color: rgb(14, 34, 14);
 }

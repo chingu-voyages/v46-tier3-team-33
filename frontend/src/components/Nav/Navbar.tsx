@@ -11,7 +11,7 @@ function Navbar() {
 					<img src={logo} className='logo' alt='logo' />
 				</a>
 				<div className='links-container'>
-					<ul className='link links-container'>
+					<ul className='links-container'>
 						<li className='link'>
 							<Link to='/About' className='link'>
 								About
