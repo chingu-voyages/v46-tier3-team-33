@@ -11,10 +11,10 @@ function Contact() {
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_cfwul6l",
+        "template_6f9qbbv",
         form.current,
-        "YOUR_PUBLIC_KEY"
+        "dNCiOIBTGl8vZ-Plb"
       )
       .then(
         (result) => {
@@ -30,16 +30,20 @@ function Contact() {
     <div className="contact-page">
       <form ref={form} className="contact-form" onSubmit={sendEmail}>
         <label> Name </label>
-        <input type="text" name="Name" placeholder="David Attenborough" />
+        <input type="text" name="user_name" placeholder="David Attenborough" />
 
         <label> Email address </label>
-        <input type="email" placeholder="blueplanet@gmail.com" />
+        <input
+          type="email"
+          name="user_email"
+          placeholder="blueplanet@gmail.com"
+        />
 
         <label> Subject: </label>
         <input placeholder="Saving the planet" />
 
         <label> Message: </label>
-        <textarea placeholder="Let's connect"></textarea>
+        <textarea placeholder="Let's connect" value="Send"></textarea>
       </form>
     </div>
   );
