@@ -12,31 +12,31 @@ function Navbar() {
 				</a>
 				<div className='links-container'>
 					<ul className='link links-container'>
-						<a>
-							<li>
-								<Link to='/About'>About</Link>
-							</li>
-						</a>
-						<a>
-							<li>
-								<Link to='/help'>Help</Link>
-							</li>
-						</a>
-						<a>
-							<li>
-								<Link to='/signUp'>Sign Up</Link>
-							</li>
-						</a>
-						<a>
-							<li>
-								<Link to='/Login'>Login</Link>
-							</li>
-						</a>
-						<a>
-							<li>
-								<Link to='/Contact'>Contact</Link>
-							</li>
-						</a>
+						<li className='link'>
+							<Link to='/About' className='link'>
+								About
+							</Link>
+						</li>
+						<li>
+							<Link to='/help' className='link'>
+								Help
+							</Link>
+						</li>
+						<li>
+							<Link to='/signUp' className='link'>
+								Sign Up
+							</Link>
+						</li>
+						<li>
+							<Link to='/Login' className='link'>
+								Login
+							</Link>
+						</li>
+						<li>
+							<Link to='/Contact' className='link'>
+								Contact
+							</Link>
+						</li>
 					</ul>
 				</div>
 			</div>
