@@ -6,7 +6,7 @@ const signup = (req: Request, res: Response) => {
   farmer.email = req.body.email
   farmer.password = req.body.password
   farmer.save()
-  res.send(farmer.toJSON());
+  res.status(200).send(farmer.toJSON());
 }
 
 export { signup };
