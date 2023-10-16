@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import db from './mongoconfig';
-import { signup, emailCheck } from './controllers/signupController';
+import { signup, emailCheck, passwordCheck } from './controllers/signupController';
 
 dotenv.config();
 
@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
   res.send("Server running");
 });
 
-app.post('/signup', emailCheck, signup);
+app.post('/signup', emailCheck, passwordCheck, signup);
 
 // start the server
 app.listen(8081, () => {

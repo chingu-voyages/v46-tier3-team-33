@@ -10,6 +10,13 @@ const emailCheck = (req: Request, res: Response, next: NextFunction) => {
   next();
 }
 
+const passwordCheck = (req: Request, res: Response, next: NextFunction) => {
+  if (!req.body.password) {
+    return res.status(400).send('Invalid password')
+  }
+  next();
+}
+
 const signup = (req: Request, res: Response) => {
   const farmer = new Farmer()
   farmer.email = req.body.email
@@ -18,4 +25,4 @@ const signup = (req: Request, res: Response) => {
   res.status(200).send(farmer.toJSON());
 }
 
-export { signup, emailCheck };
+export { signup, emailCheck, passwordCheck };
