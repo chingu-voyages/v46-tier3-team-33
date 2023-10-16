@@ -19,6 +19,7 @@ function Contact() {
       .then(
         (result) => {
           console.log(result.text);
+          e.target.reset();
         },
         (error) => {
           console.log(error.text);
@@ -43,7 +44,11 @@ function Contact() {
         <input placeholder="Saving the planet" />
 
         <label> Message: </label>
-        <textarea placeholder="Let's connect" value="Send"></textarea>
+        <textarea
+          name="message"
+          placeholder="Let's connect"
+          value="Send"
+        ></textarea>
       </form>
     </div>
   );
