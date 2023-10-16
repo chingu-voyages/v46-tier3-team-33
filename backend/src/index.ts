@@ -1,19 +1,20 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import db from './mongoconfig';
-import { signup } from './controllers/signupController';
+import { signup, emailCheck } from './controllers/signupController';
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
+console.log(db);
 
 // declare a route with a response
 app.get('/', (req, res) => {
   res.send("Server running");
 });
 
-app.post('/signup', signup);
+app.post('/signup', emailCheck, signup);
 
 // start the server
 app.listen(8081, () => {

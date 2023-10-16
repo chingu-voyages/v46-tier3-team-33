@@ -13,6 +13,6 @@ const farmerSchema = new Schema<IFarmer>({
 })
 
 // 3. Create a Model.
-const Farmer = model<IFarmer>('Farmers', farmerSchema);
+const Farmer = model<IFarmer>('farmers', farmerSchema);
 
 export { Farmer };
