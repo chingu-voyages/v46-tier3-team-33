@@ -3,11 +3,13 @@ function Contact() {
     <div className="contact-page">
       <form className="contact-form">
         <label> Name </label>
-        <input placeholder="David Attenborough" />
+        <input type="text" name="Name" placeholder="David Attenborough" />
         <label> Email address </label>
-        <input placeholder="blueplanet@gmail.com" />
+        <input type="email" placeholder="blueplanet@gmail.com" />
         <label> Subject: </label>
         <input placeholder="Saving the planet" />
+        <label> Message: </label>
+        <textarea placeholder="Let's connect"></textarea>
       </form>
     </div>
   );
