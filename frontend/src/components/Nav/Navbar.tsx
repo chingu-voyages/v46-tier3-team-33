@@ -1,6 +1,5 @@
 import logo from '/src/assets/logo.svg';
 import './Navbar.css';
-import '../Pages/about/About.tsx';
 
 import { Link } from 'react-router-dom';
 
