@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from "express"
 import { Farmer } from "../models/farmer";
+import bcrypt from 'bcrypt';
 
 const emailRegexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 
@@ -17,12 +18,21 @@ const passwordCheck = (req: Request, res: Response, next: NextFunction) => {
   next();
 }
 
+const encryptPassword = async (password: string): Promise<string> => {
+  return await bcrypt.hash(password, 10);
+}
+
 const signup = (req: Request, res: Response) => {
-  const farmer = new Farmer()
-  farmer.email = req.body.email
-  farmer.password = req.body.password
-  farmer.save()
-  res.status(200).send(farmer.toJSON());
+  encryptPassword(req.body.password).then(
+    (password: string) => {
+      const farmer = new Farmer()
+      farmer.email = req.body.email
+      farmer.password = password
+      farmer.save()
+      res.status(200).send(farmer.toJSON());
+    }
+  );
+  
 }
 
 export { signup, emailCheck, passwordCheck };
