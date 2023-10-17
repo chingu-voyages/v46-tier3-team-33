@@ -1,7 +1,4 @@
 {
-	"scripts": {
-		"dev": "vite"
-	},
 	"devDependencies": {
 		"@types/jest": "^29.5.5"
 	}
