@@ -1,8 +1,4 @@
 {
-	"scripts": {
-    "dev": "vite",
-    "preview": "vite preview"
-  },
 	"devDependencies": {
 		"@types/jest": "^29.5.5"
 	}
