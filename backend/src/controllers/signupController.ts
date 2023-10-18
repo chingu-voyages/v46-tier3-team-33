@@ -22,17 +22,16 @@ const encryptPassword = async (password: string): Promise<string> => {
   return await bcrypt.hash(password, 10);
 }
 
-const signup = (req: Request, res: Response) => {
-  encryptPassword(req.body.password).then(
-    (password: string) => {
-      const farmer = new Farmer()
-      farmer.email = req.body.email
-      farmer.password = password
-      farmer.save()
-      res.status(200).send(farmer.toJSON());
-    }
-  );
-  
-}
+const signup = async (req: Request, res: Response) => {
+  try {
+    const password = await encryptPassword(req.body.password);
+    const farmer = new Farmer({ email: req.body.email, password });
+    await farmer.save();
+    res.status(200).send(farmer.toJSON());
+  } catch (error) {
+    res.status(500).send({ error: 'Server error' });
+  }
+};
+
 
 export { signup, emailCheck, passwordCheck };
