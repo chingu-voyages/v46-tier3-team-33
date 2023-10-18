@@ -17,7 +17,8 @@ app.get('/', (req, res) => {
 app.post('/signup', emailCheck, passwordCheck, signup);
 
 // start the server
-app.listen(8081, () => {
-  console.log(`server running : http://localhost:8081`);
+const PORT = process.env.BACK_PORT || 8081;
+app.listen(PORT, () => {
+  console.log(`server running : http://localhost:${PORT}`);
 });
 
