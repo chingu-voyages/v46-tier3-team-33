@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './login.css'
 
 const LoginForm: React.FC = () => {
   const [username, setUsername] = React.useState('');
@@ -14,7 +15,7 @@ const LoginForm: React.FC = () => {
 	// Implement your login logic here
 
     // Assuming the login is successful, relocate the user to the home page
-    navigate('/'); // Replace '/' with the URL of your home page
+    navigate('/'); // navigates to home page after login
   };
 
   return (
@@ -22,13 +23,13 @@ const LoginForm: React.FC = () => {
       <div className = 'form_row'>
 	  <label>
         Username:
-        	<input type="text" value={username} onChange={(event) => setUsername(event.target.value)} />
+        	<input type="text" value={username} onChange={(event) => setUsername(event.target.value)} required/>
       </label>
 	  </div>
 	  <div className = 'form_row'>
       <label>
         Password:
-        	<input type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
+        	<input type="password" value={password} onChange={(event) => setPassword(event.target.value)} required />
       </label>
 	  </div>
 	  <div className = 'form_row'>

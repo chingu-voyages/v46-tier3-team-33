@@ -1,25 +1,19 @@
-form {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 50px;
-  }
-  
-  label {
+ 
+label {
     font-size: 18px;
     margin-bottom: 10px;
   }
   
-  input {
+input {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
     margin-bottom: 20px;
 
-  }
+  } 
   
-  button {
-    background-color: #0095ff;
+button {
+    background-color: #0e722f;
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -27,10 +21,10 @@ form {
     cursor: pointer;
   }
 
-  /* styling for forms */
+/* styling for forms */
 .input_form {
     width: 50%;
-    margin:20px;
+    margin:120px;
 
 }
 
