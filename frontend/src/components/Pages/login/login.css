@@ -1,0 +1,41 @@
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  label {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+
+  }
+  
+  button {
+    background-color: #0095ff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* styling for forms */
+.input_form {
+    width: 50%;
+    margin:20px;
+
+}
+
+.form_row {
+    display: flex;
+    justify-content: space-between;
+    
+}
