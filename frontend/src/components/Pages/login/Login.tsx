@@ -14,6 +14,8 @@ const LoginForm: React.FC = () => {
 
 	// Implement your login logic here
 
+	//need to check emails are valid and passwords are long enough.
+
     // Assuming the login is successful, relocate the user to the home page
     navigate('/'); // navigates to home page after login
   };
@@ -22,7 +24,7 @@ const LoginForm: React.FC = () => {
     <form className='input_form' onSubmit={handleSubmit}>
       <div className = 'form_row'>
 	  <label>
-        Username:
+        Email:
         	<input type="text" value={username} onChange={(event) => setUsername(event.target.value)} required/>
       </label>
 	  </div>
