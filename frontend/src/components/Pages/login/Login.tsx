@@ -23,20 +23,23 @@ const LoginForm: React.FC = () => {
   return (
     <form className='input_form' onSubmit={handleSubmit}>
       <div className = 'form_row'>
-	  <label>
-        Email:
-        	<input type="text" value={username} onChange={(event) => setUsername(event.target.value)} required/>
-      </label>
-	  </div>
-	  <div className = 'form_row'>
-      <label>
-        Password:
+	  	<label>
+        	Email:
+        		<input type="text" value={username} onChange={(event) => setUsername(event.target.value)} required/>
+      	</label>
+	</div>
+	  
+	<div className = 'form_row'>
+      	<label>
+        	Password:
         	<input type="password" value={password} onChange={(event) => setPassword(event.target.value)} required />
-      </label>
-	  </div>
-	  <div className = 'form_row'>
-      	<button type="submit">Login</button>
-	  </div>
+      	</label>
+	</div>
+	
+	<div className = 'form_row'>
+		<button type="submit">Login</button>
+	</div>
+
 	</form>
   );
 };
