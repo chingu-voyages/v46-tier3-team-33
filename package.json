@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "@types/jest": "^29.5.5"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^3.11.0"
   }
 }
