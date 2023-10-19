@@ -2,13 +2,19 @@ import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import { Farmer } from "../models/farmer";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 interface LoginRequestBody {
   email?: string;
   password?: string;
 }
 
-const login = async (req: Request<{}, {}, LoginRequestBody>, res: Response) => {
+const loginController = async (
+  req: Request<{}, {}, LoginRequestBody>,
+  res: Response
+) => {
   const { email, password } = req.body;
 
   // Validate credentials
@@ -54,4 +60,4 @@ const login = async (req: Request<{}, {}, LoginRequestBody>, res: Response) => {
   }
 };
 
-export default login;
+export default loginController;

@@ -7,6 +7,8 @@ import {
   emailCheck,
   passwordCheck,
 } from "./controllers/signupController";
+import loginController from "./controllers/loginController";
+import logoutController from "./controllers/logoutController";
 
 dotenv.config();
 
@@ -20,6 +22,10 @@ app.get("/", (req, res) => {
 });
 
 app.post("/signup", emailCheck, passwordCheck, signup);
+
+app.post("/login", loginController);
+
+app.post("/logout", logoutController);
 
 connect().then(() => {
   // start the server
