@@ -8,10 +8,18 @@ import Contact from './components/Pages/contact/Contact';
 import Help from './components/Pages/help/Help';
 import Login from './components/Pages/login/Login';
 import SignUp from './components/Pages/signUp/SignUp';
+import UserContext from './utils/UserContext';
+import { useState } from 'react';
+
 
 function App() {
+	const [currentUser, setCurrentUser] = useState({})
 	return (
 		<>
+		<UserContext.Provider  value={{
+        currentUser,
+        setCurrentUser
+      }}>
 			<Router>
 				<div className='App'>
 					<Navbar />
@@ -27,6 +35,7 @@ function App() {
 					</div>
 				</div>
 			</Router>
+		</UserContext.Provider>
 		</>
 	);
 }

@@ -1,18 +1,30 @@
-import React from 'react';
+// import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css'
+import { useState, useContext } from 'react';
+import UserContext from '../../../utils/UserContext';
+
+interface UserContextBody {
+	currentUser?: string;
+	password?: string;
+  }
 
 const LoginForm: React.FC = () => {
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const {currentUser, setCurrentUser} = useContext(UserContext);
+
   const navigate = useNavigate(); // Initialize the navigate object
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log('email:', email); //need to work out where these details go next
-    console.log('password:', password); //how do we secure the password?
 
 	// Implement your login logic here
+	  if (currentUser !== null) {
+		return <p>You logged in as {currentUser.name}.</p>;
+	  }
+	console.log(currentUser)
+
 
 	//need to check emails are valid and passwords are long enough.
 
