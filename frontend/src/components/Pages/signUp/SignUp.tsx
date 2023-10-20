@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react'
-import './signUp.css'
+// import './signUp.css'
 const SignUp: React.FC = () => {
 
     const [email, setEmail] = useState<string>('');

@@ -4,10 +4,12 @@
 }
 
 .container-product-list {
-  display: "flex";
-  flex-direction: row;
+  display: flex;
+  flex-direction: column;
 }
 .container-product-card {
+  display: flex;
+  flex-direction: row;
   border: "1px solid #ccc";
   padding: "15px";
   margin: "10px";
