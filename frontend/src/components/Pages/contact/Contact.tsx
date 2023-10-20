@@ -1,5 +1,5 @@
 import React, { useRef, FormEvent, useState } from "react";
-import emailjs from "@emailjs/browser";
+import emailjs from "@emailjs/browser"; //node module is missing
 
 interface FormData {
   user_name: string;
