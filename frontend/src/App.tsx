@@ -13,7 +13,8 @@ import { useState } from 'react';
 
 
 function App() {
-	const [currentUser, setCurrentUser] = useState({})
+	const [currentUser, setCurrentUser] = useState({}) //B - attempting to hold login status of currentUser with useContext
+
 	return (
 		<>
 		<UserContext.Provider  value={{

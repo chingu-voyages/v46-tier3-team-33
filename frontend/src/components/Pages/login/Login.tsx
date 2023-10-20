@@ -4,6 +4,7 @@ import './login.css'
 import { useState, useContext } from 'react';
 //import UserContext from '../../../utils/UserContext';
 
+//Typescript needs this set up for useContext?
 // interface UserContextBody {
 // 	currentUser?: string;
 // 	password?: string;
@@ -26,6 +27,7 @@ const LoginForm: React.FC = () => {
 			'Content-Type': 'application/json',
 		  },
 		  body: JSON.stringify({ email, password }),
+
 		});
   
 		if (response.ok) {
@@ -34,12 +36,13 @@ const LoginForm: React.FC = () => {
 		} else {
 		  // Handle login failure, such as displaying an error message to the user
 		  console.log('Login failed');
+		  console.log(email)
+		  console.log(password)
 		}
 	  } catch (error) {
 		console.error('An error occurred:', error);
 	  }
-	console.log(email)
-	console.log(password)
+	
 
   };
 

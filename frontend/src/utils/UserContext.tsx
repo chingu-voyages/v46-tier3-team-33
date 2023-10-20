@@ -1,5 +1,5 @@
 import { createContext } from "react";
-
-const UserContext = createContext({});
+    //attempting to utilise useContext to hold state for other components
+    const UserContext = createContext({});
 
 export default UserContext;
