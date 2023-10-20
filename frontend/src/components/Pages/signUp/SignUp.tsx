@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react'
+import './signUp.css'
 const SignUp: React.FC = () => {
 
     const [email, setEmail] = useState<string>('');
@@ -45,8 +46,12 @@ const SignUp: React.FC = () => {
         </div>
        
         <div className="signup-container">
+            <div>
             <h2>Sign Up</h2>
+            </div>
+            <div>
             <form onSubmit={handleSubmit}>
+                <div>
                 <input
                     type="email"
                     placeholder="Email"
@@ -54,12 +59,17 @@ const SignUp: React.FC = () => {
                     onChange={onHandleEmailChange}
                 />
                 {!isEmailValid && <p>Please enter a valid email.</p>}
+                </div>
+                <div>
                 <input
                     type="password"
                     placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
+
+                </div>
+                <div>
                 <input
                     type="password"
                     placeholder="Repeat Password"
@@ -67,8 +77,13 @@ const SignUp: React.FC = () => {
                     onChange={onHandleRepeatPassword}
                 />
                 {!isRepeat && <p>Please repeat correct password.</p>}
+                </div>
+                
+                <div>
                 <button type="submit">Sign Up</button>
+                </div>
             </form>
+            </div>
             
             
             <span>Have an account? <a href="/login">Login here</a></span>

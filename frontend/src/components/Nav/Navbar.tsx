@@ -37,6 +37,11 @@ function Navbar() {
 								Contact
 							</Link>
 						</li>
+						<li>
+							<Link to='/Product' className='link'>
+								Product
+							</Link>
+						</li>
 					</ul>
 				</div>
 			</div>

@@ -8,6 +8,7 @@ import Contact from './components/Pages/contact/Contact';
 import Help from './components/Pages/help/Help';
 import Login from './components/Pages/login/Login';
 import SignUp from './components/Pages/signUp/SignUp';
+import Product from './components/Pages/product/Product';
 
 function App() {
 	return (
@@ -23,6 +24,7 @@ function App() {
 							<Route path='/Help' element={<Help />} />
 							<Route path='/Login' element={<Login />} />
 							<Route path='/SignUp' element={<SignUp />} />
+							<Route path='/Product' element={<Product />} />
 						</Routes>
 					</div>
 				</div>

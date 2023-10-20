@@ -1,20 +1,15 @@
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
+h1 {
+  text-align: center;
 }
-
 .signup-container {
   max-width: 400px;
   margin: 2em auto;
   padding: 1em;
   border: 1px solid #ccc;
   border-radius: 5px;
-}
-
-.signup-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 1em;
+  align-items: center;
+  justify-content: center;
 }

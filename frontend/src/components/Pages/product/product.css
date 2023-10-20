@@ -1,0 +1,14 @@
+.product-image {
+  height: 100px;
+  width: 100px;
+}
+
+.container-product-list {
+  display: "flex";
+  flex-direction: row;
+}
+.container-product-card {
+  border: "1px solid #ccc";
+  padding: "15px";
+  margin: "10px";
+}
