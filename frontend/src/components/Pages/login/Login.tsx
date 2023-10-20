@@ -1,35 +1,46 @@
-// import React from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css'
 import { useState, useContext } from 'react';
-import UserContext from '../../../utils/UserContext';
+//import UserContext from '../../../utils/UserContext';
 
-interface UserContextBody {
-	currentUser?: string;
-	password?: string;
-  }
+// interface UserContextBody {
+// 	currentUser?: string;
+// 	password?: string;
+//   }
 
 const LoginForm: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const {currentUser, setCurrentUser} = useContext(UserContext);
+  	const [email, setEmail] = useState('');
+  	const [password, setPassword] = useState('');
+	//const {currentUser, setCurrentUser} = useContext(UserContext);
 
   const navigate = useNavigate(); // Initialize the navigate object
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-	// Implement your login logic here
-	  if (currentUser !== null) {
-		return <p>You logged in as {currentUser.name}.</p>;
+	try {
+		const response = await fetch('/your-backend-login-endpoint', {
+		  method: 'POST',
+		  headers: {
+			'Content-Type': 'application/json',
+		  },
+		  body: JSON.stringify({ email, password }),
+		});
+  
+		if (response.ok) {
+		  // Assuming the login is successful, relocate the user to the home page
+		  navigate('/');
+		} else {
+		  // Handle login failure, such as displaying an error message to the user
+		  console.log('Login failed');
+		}
+	  } catch (error) {
+		console.error('An error occurred:', error);
 	  }
-	console.log(currentUser)
+	console.log(email)
+	console.log(password)
 
-
-	//need to check emails are valid and passwords are long enough.
-
-    // Assuming the login is successful, relocate the user to the home page
-    navigate('/'); // navigates to home page after login
   };
 
   return (
