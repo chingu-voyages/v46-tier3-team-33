@@ -1,7 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css'
-import { useState, useContext } from 'react';
+import { useState} from 'react';
+//import { useState, useContext } from 'react'; for use later
 //import UserContext from '../../../utils/UserContext';
 
 //Typescript needs this set up for useContext?
