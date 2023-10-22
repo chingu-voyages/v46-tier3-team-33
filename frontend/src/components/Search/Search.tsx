@@ -7,8 +7,8 @@ const searchBar = () => {
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        console.log('search term:', value);
 
+        console.log('search term:', value);
     }
 
     return (
@@ -16,7 +16,7 @@ const searchBar = () => {
         <>
         <form onSubmit={handleSubmit}>
             <div className="search_bar">
-                <input 
+                <input required
                     type="text"
                     className="search_text"
                     placeholder="Search for veggies..."
@@ -27,7 +27,7 @@ const searchBar = () => {
                     
                 />
                 <div className = 'search_submit' >
-                    <button type="submit" >Search</button>
+                    <button className="button" type="submit" >Search</button>
                 </div>
             </div>
         </form>

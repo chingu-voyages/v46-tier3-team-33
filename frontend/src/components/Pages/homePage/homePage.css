@@ -17,10 +17,12 @@
 h1 {
     color:green;
     font-size: 78px;
+    text-shadow: 2px 2px 0px black; 
 
 }
 h3 {
     font-size: 28px;
+    text-shadow: 1px 1px 0px white; 
   
 }
 
@@ -29,3 +31,4 @@ img {
     height: 100%;
     opacity: 0.5;
 }
+
