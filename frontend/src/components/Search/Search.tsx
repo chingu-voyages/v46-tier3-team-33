@@ -15,22 +15,22 @@ const searchBar = () => {
 
         <>
         <form onSubmit={handleSubmit}>
-        <div className="search_bar">
-      <input 
-        type="text"
-        className="search_text"
-        placeholder="Search for veggies..."
-        value={value}
-        onChange={(e) => {
-          setValue(e.target.value);
-        }}
-        
-      />
-      <div className = 'search_submit' >
-			<button type="submit" >Search</button>
-		</div>
-    </div>
-    </form>
+            <div className="search_bar">
+                <input 
+                    type="text"
+                    className="search_text"
+                    placeholder="Search for veggies..."
+                    value={value}
+                    onChange={(e) => {
+                    setValue(e.target.value);
+                    }}
+                    
+                />
+                <div className = 'search_submit' >
+                    <button type="submit" >Search</button>
+                </div>
+            </div>
+        </form>
         </>
     )
 }

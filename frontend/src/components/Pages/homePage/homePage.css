@@ -10,10 +10,11 @@
 .text_container{
     text-align: center;
     position: absolute; 
+    font-family: Verdana, sans-serif;
+    
 }
 
 h1 {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color:green;
     font-size: 78px;
 
@@ -23,7 +24,7 @@ h3 {
   
 }
 
-.background {
+img {
     width:100%;
     height: 100%;
     opacity: 0.5;
