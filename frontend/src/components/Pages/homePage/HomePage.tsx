@@ -1,8 +1,20 @@
+import "./homePage.css"
+import Search from "../../Search/Search";
+
+
 function HomePage() {
+
+
 	return (
 	<>
-		<h1>Test home page</h1>
-		<p>Search function here?</p>
+		<div className="container">
+			<div className="text_container">
+				<h1>Welcome to Vegilicious</h1>
+				<h3>The place to find fresh local and homegrown produce!</h3>	
+			</div>
+			<img className="background" src="src/assets/inigo-de-la-maza-marketstall-unsplash.jpg" alt = "fresh vegetables and fruit" ></img>
+			<Search></Search>
+		</div>
 	</>
 )}
 
