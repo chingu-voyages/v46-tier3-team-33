@@ -1,2 +1,23 @@
+# Dependencies
 node_modules
+
+# Production/build directories
 dist
+build
+
+# Logs
+logs
+*.log
+
+# Runtime data
+*.pid
+
+# Environment variables
+# .env
+
+# OS generated
+.DS_Store
+
+# Error logs
+npm-debug.log*
+yarn-error.log*
