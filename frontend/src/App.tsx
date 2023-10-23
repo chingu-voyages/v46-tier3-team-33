@@ -9,6 +9,8 @@ import Help from "./components/Pages/help/Help";
 import Login from "./components/Pages/login/Login";
 import SignUp from "./components/Pages/signUp/SignUp";
 import ProductUploadForm from "./components/Pages/productUploadForm/ProductUploadForm";
+
+
 function App() {
   return (
     <>
@@ -30,6 +32,7 @@ function App() {
       </Router>
     </>
   );
+
 }
 
 export default App;

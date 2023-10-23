@@ -1,23 +1,50 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css'
+import { useState} from 'react';
+//import { useState, useContext } from 'react'; for use later
+//import UserContext from '../../../utils/UserContext';
+
+//Typescript needs this set up for useContext?
+// interface UserContextBody {
+// 	currentUser?: string;
+// 	password?: string;
+//   }
 
 const LoginForm: React.FC = () => {
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
+  	const [email, setEmail] = useState('');
+  	const [password, setPassword] = useState('');
+	//const {currentUser, setCurrentUser} = useContext(UserContext);
+
   const navigate = useNavigate(); // Initialize the navigate object
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log('email:', email); //need to work out where these details go next
-    console.log('password:', password); //how do we secure the password?
 
-	// Implement your login logic here
+	try {
+		const response = await fetch('/your-backend-login-endpoint', {
+		  method: 'POST',
+		  headers: {
+			'Content-Type': 'application/json',
+		  },
+		  body: JSON.stringify({ email, password }),
 
-	//need to check emails are valid and passwords are long enough.
+		});
+  
+		if (response.ok) {
+		  // Assuming the login is successful, relocate the user to the home page
+		  navigate('/');
+		} else {
+		  // Handle login failure, such as displaying an error message to the user
+		  console.log('Login failed');
+		  console.log(email)
+		  console.log(password)
+		}
+	  } catch (error) {
+		console.error('An error occurred:', error);
+	  }
+	
 
-    // Assuming the login is successful, relocate the user to the home page
-    navigate('/'); // navigates to home page after login
   };
 
   return (
