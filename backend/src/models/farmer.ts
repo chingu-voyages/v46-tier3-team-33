@@ -1,4 +1,4 @@
-import { Schema, model, Model, Document } from 'mongoose';
+import { Schema, model, Model, Document } from "mongoose";
 
 // 1. Create an interface representing a document in MongoDB.
 interface IFarmer extends Document {
@@ -8,11 +8,11 @@ interface IFarmer extends Document {
 
 // 2. Create a Schema corresponding to the document interface.
 const farmerSchema = new Schema<IFarmer>({
-  email: { type: String, required: true, unique: true  },
-  password: { type: String, required: true }
-})
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true, select: false },
+});
 
 // 3. Create a Model.
-const Farmer: Model<IFarmer> = model<IFarmer>('farmers', farmerSchema);
+const Farmer: Model<IFarmer> = model<IFarmer>("farmers", farmerSchema);
 
 export { Farmer };
