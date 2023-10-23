@@ -14,6 +14,10 @@ interface FormValues {
 }
 
 export default function ProductUploadForm() {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log(formValues);
+  };
   return (
     <form>
       <input type="text" name="name" placeholder="Your Name" />
@@ -22,11 +26,29 @@ export default function ProductUploadForm() {
       <input type="text" name="postcode" placeholder="Postcode" />
       <input type="number" name="price" placeholder="Price in £" />
       <input type="number" name="quantity" placeholder="Quantity of item" />
+      <label htmlFor="unitOfMeasure"> Unit of Measure </label>
+      <select id="unitOfMeasure" name="unitOfMeasure">
+        <option value="g"> Gram (g)</option>
+        <option value="kg"> Kilogram (kg)</option>
+        <option value="oz"> Ounce (oz)</option>
+        <option value="lb"> Pound (lb)</option>
+        <option value="ml"> Millilitre (ml)</option>
+        <option value="l"> Litre (l)</option>
+        <option value="items"> Individual Items</option>
+      </select>
+
+      <input type="string" name="expiryDate" placeholder="DD/MM/YYYY" />
       <input
         type="number"
-        name="unit of measure"
-        placeholder="kg? lb? items?"
+        name="quantityAvailable"
+        placeholder="Quantity Available"
       />
+      <input
+        type="string"
+        name="availabilityTime"
+        placeholder="When to pick it up?"
+      />
+      <button type="submit"> Submit</button>
     </form>
   );
 }
