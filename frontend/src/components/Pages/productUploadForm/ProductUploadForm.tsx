@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./productUploadForm.css";
 
 interface FormValues {
   name: string;
@@ -146,7 +147,10 @@ export default function ProductUploadForm() {
         value={formValues.availabilityTime}
         className="upload-form-input"
       />
-      <button type="submit"> Submit</button>
+      <button className="upload-form-button" type="submit">
+        {" "}
+        Submit
+      </button>
     </form>
   );
 }
