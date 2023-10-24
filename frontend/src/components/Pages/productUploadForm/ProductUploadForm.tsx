@@ -59,22 +59,30 @@ export default function ProductUploadForm() {
     console.log(formValues);
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="upload-form" onSubmit={handleSubmit}>
       <input
+        className="upload-form-input"
         type="text"
         name="name"
         placeholder="Your Name"
         onChange={handleInputChange}
         value={formValues.name}
       />
-      <input type="file" name="picture" onChange={handleImageChange} />
+      <input
+        className="upload-form-input"
+        type="file"
+        name="picture"
+        onChange={handleImageChange}
+      />
       <textarea
         name="description"
         placeholder="Describe your produce"
         onChange={handleInputChange}
         value={formValues.description}
+        className="upload-form-textarea"
       />
       <input
+        className="upload-form-input"
         type="text"
         name="postcode"
         placeholder="Postcode"
@@ -82,6 +90,7 @@ export default function ProductUploadForm() {
         value={formValues.postcode}
       />
       <input
+        className="upload-form-input"
         type="number"
         name="price"
         placeholder="Price in £"
@@ -89,6 +98,7 @@ export default function ProductUploadForm() {
         value={formValues.price}
       />
       <input
+        className="upload-form-input"
         type="number"
         name="quantityAvailable"
         placeholder="Quantity of item"
@@ -97,6 +107,7 @@ export default function ProductUploadForm() {
       />
       <label htmlFor="unitOfMeasure"> Unit of Measure </label>
       <select
+        className="upload-form-select"
         id="unitOfMeasure"
         name="unitOfMeasure"
         onChange={handleSelectChange}
@@ -117,6 +128,7 @@ export default function ProductUploadForm() {
         onChange={handleInputChange}
         value={formValues.expiryDate}
         maxLength={10}
+        className="upload-form-input"
       />
       <input
         type="number"
@@ -124,6 +136,7 @@ export default function ProductUploadForm() {
         placeholder="Quantity Available"
         onChange={handleInputChange}
         value={formValues.quantityAvailable}
+        className="upload-form-input"
       />
       <input
         type="string"
@@ -131,6 +144,7 @@ export default function ProductUploadForm() {
         placeholder="When to pick it up?"
         onChange={handleInputChange}
         value={formValues.availabilityTime}
+        className="upload-form-input"
       />
       <button type="submit"> Submit</button>
     </form>
