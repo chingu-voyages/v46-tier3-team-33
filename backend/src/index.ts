@@ -9,6 +9,8 @@ import {
 } from "./controllers/signupController";
 import loginController from "./controllers/loginController";
 import logoutController from "./controllers/logoutController";
+import jwtVerification from "./controllers/jwtVerification";
+import productCreateController from "./controllers/productCreateController";
 
 dotenv.config();
 
@@ -26,6 +28,8 @@ app.post("/signup", emailCheck, passwordCheck, signup);
 app.post("/login", loginController);
 
 app.post("/logout", logoutController);
+
+app.post("/product", jwtVerification, productCreateController);
 
 connect().then(() => {
   // start the server
