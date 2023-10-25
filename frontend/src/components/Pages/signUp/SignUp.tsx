@@ -1,5 +1,6 @@
-
+import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react'
+
 const SignUp: React.FC = () => {
 
     const [email, setEmail] = useState<string>('');
@@ -8,6 +9,8 @@ const SignUp: React.FC = () => {
     const [password, setPassword] = useState<string>('');
     const [repeatPassword, setRepeatPassword] = useState<string>('');
     const [isRepeat, setIsRepeat] = useState(true);
+
+    const navigate = useNavigate(); // Initialize the navigate object
 
     const onHandleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value)
@@ -30,13 +33,30 @@ const SignUp: React.FC = () => {
         }
     }
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
             e.preventDefault();
             try {
                 //API call 
-              } catch (err) {
-                //API fail message 
-              }
+                const response = await fetch('http://localhost:8081/signup', {
+		        method: 'POST',
+		        headers: {
+			        'Content-Type': 'application/json',
+		        },
+		        body: JSON.stringify({ email, password }),
+
+		        });
+                if (response.ok) {
+                    // Assuming the signup is successful, relocate the user to the home page
+                    navigate('/');
+                } else {
+                    // Handle singup failure, such as displaying an error message to the user
+                    console.log('Sign up failed');
+                    console.log(email)
+                    console.log(password)
+                }
+                } catch (error) {
+                  console.error('An error occurred:', error);
+                }
         }
     return (<>
     <div className='front-page'>
