@@ -1,8 +1,13 @@
 .upload-form {
-  max-width: 600px;
+  max-width: 1000px;
   margin: 40px auto;
-  padding: 20px;
+  padding: 110px;
   border: 1px solid #e1e1e1;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 1.1);
   border-radius: 10px;
+}
+
+.upload-form-input {
+  position: relative;
+  width: 500px;
 }
