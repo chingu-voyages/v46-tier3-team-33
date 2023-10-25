@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { Product } from "../models/product";
 
-const listProductsController = async (req: Request, res: Response) => {
+const listProductController = async (req: Request, res: Response) => {
   try {
     const products = await Product.find().populate({
       path: "farmerId",
@@ -15,4 +15,4 @@ const listProductsController = async (req: Request, res: Response) => {
   }
 };
 
-export default listProductsController;
+export default listProductController;
