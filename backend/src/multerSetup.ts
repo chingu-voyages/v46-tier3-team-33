@@ -1,4 +1,5 @@
-import multer from "multer";
+import multer, {FileFilterCallback} from "multer";
+import { Request } from "express";
 import path from "path";
 import { v4 } from "uuid";
 import fs from "fs";
@@ -17,7 +18,7 @@ const storage = multer.diskStorage({
   }
 });
 
-const fileFilter = (req, file, cb) => {
+const fileFilter = (req: Request, file: Express.Multer.File, cb: FileFilterCallback) => {
   const allowedFileTypes = ['image/jpeg', 'image/jpg', 'image/png'];
   
   if (allowedFileTypes.includes(file.mimetype)) { cb(null, true); }
@@ -26,4 +27,4 @@ const fileFilter = (req, file, cb) => {
 
 const upload = multer({ storage, fileFilter });
 
-module.exports = upload;
+export default upload;
