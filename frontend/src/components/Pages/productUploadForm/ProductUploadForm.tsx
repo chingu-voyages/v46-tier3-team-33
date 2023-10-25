@@ -110,7 +110,7 @@ export default function ProductUploadForm() {
         className="upload-form-input"
         type="number"
         name="price"
-        placeholder="9"
+        placeholder="Price"
         onChange={handleInputChange}
         value={formValues.price}
       />
