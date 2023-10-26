@@ -51,10 +51,12 @@ export default function ProductUploadForm() {
   };
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setFormValues((prev) => ({ ...prev, picture: e.target.files[0] }));
+    const files = e.target.files as FileList; // using type assertion here
+    if (files.length > 0) {
+      setFormValues((prev) => ({ ...prev, picture: files[0] }));
     }
   };
+  kdjka;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
