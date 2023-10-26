@@ -9,15 +9,20 @@ import {
 } from "./controllers/signupController";
 import loginController from "./controllers/loginController";
 import logoutController from "./controllers/logoutController";
+
 import jwtVerification from "./controllers/jwtVerification";
 import productCreateController from "./controllers/productCreateController";
 import productListController from "./controllers/productListController";
+
+import cors from "cors"; // Import the cors middleware
+
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors()); // Use the cors middleware
 
 // declare a route with a response
 app.get("/", (req, res) => {

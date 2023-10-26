@@ -22,7 +22,7 @@ const LoginForm: React.FC = () => {
     event.preventDefault();
 
 	try {
-		const response = await fetch('/your-backend-login-endpoint', {
+		const response = await fetch('http://localhost:8081/login', {
 		  method: 'POST',
 		  headers: {
 			'Content-Type': 'application/json',
@@ -47,6 +47,7 @@ const LoginForm: React.FC = () => {
 
   };
 
+
   return (
 	<>
     <form className='input_form' onSubmit={handleSubmit}>
@@ -63,9 +64,11 @@ const LoginForm: React.FC = () => {
 		<div className = 'form_row'>
 			<button type="submit">Login</button>
 		</div>
+		
+		<span>Don't have an account? <a href="/signUp">Sign up here</a></span>
+		
 	</form>
-
-	<button >Don't have an account? Sign up here.</button>
+	
 	</>
   );
 };
