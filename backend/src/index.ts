@@ -9,7 +9,13 @@ import {
 } from "./controllers/signupController";
 import loginController from "./controllers/loginController";
 import logoutController from "./controllers/logoutController";
+
+import jwtVerification from "./controllers/jwtVerification";
+import productCreateController from "./controllers/productCreateController";
+import productListController from "./controllers/productListController";
+
 import cors from "cors"; // Import the cors middleware
+
 
 dotenv.config();
 
@@ -28,6 +34,10 @@ app.post("/signup", emailCheck, passwordCheck, signup);
 app.post("/login", loginController);
 
 app.post("/logout", logoutController);
+
+app.post("/product", jwtVerification, productCreateController);
+
+app.get("/product", jwtVerification, productListController);
 
 connect().then(() => {
   // start the server
