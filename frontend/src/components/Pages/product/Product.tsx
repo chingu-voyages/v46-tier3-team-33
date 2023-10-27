@@ -1,62 +1,71 @@
 import React, { useState,useEffect } from 'react';
-// import './product.css'
+import './product.css'
+import productimage from './productImageExample.jpg'
 const Product:React.FC = () => {
 
 // hardcoded data 
 //  interface Farmer {
-//     firstName: string;
-//     lastName: string;
-//     district: string;
+//     username: string;
+//     city: string;
 //     address: string;
 //   }
   
   interface Product {
-    farmerFirstName: string;
-    farmerLastName:string;
     productName: string;
+    productUnitPrice: number; 
+    productImage: string;
     productWeight: number;
     productWeightUnit: string;
-    productImage: string;
-    productUnitPrice: number; 
-    productUnitPriceUnit: string;
+    productExpiryDate: string;
     productDescription: string;
-    expiryDate: string;
+    productStock:number;
+    farmer:{
+      username: string;
+      city: string;
+      address: string;
+    }
   }
   
   // const farmerFakeApi: Farmer[] = [{
-  //   firstName: 'Tom',
-  //   lastName: 'Cruise',
-  //   district: 'London',
+  //   username: 'Tom Cruise',
+  //   city: 'London',
   //   address: 'Great Russell St, London WC1B 3DG, United Kingdom'
   // },{
-  //   firstName: 'Harry',
-  //   lastName: 'Potter',
-  //   district: 'London',
+  //   username: 'Harry Potter',
+  //   city: 'London',
   //   address: '4 Privet Drive, Warner Bros. Studio Tour, Studio Tour Dr, Leavesden, Watford WD25 7LR, United Kingdom '
   // }];
   
   const productFakeApi: Product[] = [{
-    farmerFirstName: 'Tom',
-    farmerLastName:'Cruise',
     productName: 'Flaming Heart Hot & Spicy Cheddar',
-    productWeight: 40,
-    productWeightUnit: 'g',
-    productImage: './productImageExample.jpg',
     productUnitPrice: 8, 
-    productUnitPriceUnit: 'Pound',
+    productImage: productimage,
+    productWeight: 40,
+    productWeightUnit: 'gram',
+    productExpiryDate: '2025-10-20',
     productDescription: 'Too hot to forget',
-    expiryDate: '2025-10-20'
-  },{
-    farmerFirstName: 'Harry',
-    farmerLastName:'Potter',
+    productStock:10,
+    farmer:{
+      username: 'Tom Cruise',
+      city: 'London',
+      address: 'Great Russell St, London WC1B 3DG, United Kingdom'
+    }
+  },
+  {
     productName: 'Bitter Cheddar',
-    productWeight: 100,
-    productWeightUnit: 'g',
-    productImage:'./productImageExample.jpg',
     productUnitPrice: 18, 
-    productUnitPriceUnit: 'Pound',
+    productImage:productimage,
+    productWeight: 100,
+    productWeightUnit: 'gram',
+    productExpiryDate: '2025-10-29',
     productDescription: 'You cannot miss it ',
-    expiryDate: '2025-10-29'
+    productStock:5,
+    farmer:{
+      username: 'Harry Potter',
+      city: 'London',
+      address: '4 Privet Drive, Warner Bros. Studio Tour, Studio Tour Dr, Leavesden, Watford WD25 7LR, United Kingdom',
+    }
+
   }];
 
   // const [farmer, setFarmer] =  useState<Farmer[] | null>(null);
@@ -65,36 +74,47 @@ const Product:React.FC = () => {
   useEffect(()=>{
     // setFarmer(farmerFakeApi)
     setProduct(productFakeApi)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
-  
-
-
   return (<>
-
-     <div className='container-prooduct-list'>
+    <h1>Product Listing</h1>
+     <div className='container-prooduct-list' data-testid='container-product-list'>
       {product?.map((product, index) => {
-          const {productName,productImage,productUnitPrice,productUnitPriceUnit}=product;
+          const {productName,productImage,productUnitPrice,productDescription,productExpiryDate}=product;
+          const {username,city} = product.farmer
           return (
-            <div key={index} className='container-product-card'  data-testid='container-product-card'>
+            <div key={index} className='container-product-card'>
+              
               <div>
               <img className="product-image" src={productImage} alt={productName}/>
               </div>
-              <div>
-              <h2>{productName}</h2>
-              <p>Price: {productUnitPrice} {productUnitPriceUnit}</p>
-              <p>To be discussed: how to link farmer - product location</p>
+
+              <div className='container-product-info'>
+                <p> Farmer: {username}</p>
+                <h2>{productName}</h2>
+                
+                <div>
+                  <p>{productDescription}</p>
+                  <p>£ {productUnitPrice} </p>
+                </div>
               </div>
-   
-          </div>
-          )
-        }  
-      )}
-    </div>
-  </>)
-  
+               
+              <div> 
+              <p>City:</p>
+                <p>{city}</p>
+              </div>             
+                
+              <div>
+                <p>ExpiryDate:</p>
+                <p>{productExpiryDate}</p>
+              </div>
 
+          </div>)
+      })}
+      </div>
 
+</>)
 }
 
 export default Product

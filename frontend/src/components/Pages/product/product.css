@@ -8,9 +8,13 @@
   flex-direction: column;
 }
 .container-product-card {
-  display: flex;
-  flex-direction: row;
-  border: "1px solid #ccc";
-  padding: "15px";
-  margin: "10px";
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr 0.5fr;
+  border: 1px solid #ccc;
+  max-width: 40em;
+  align-items: center;
+}
+
+h2 {
+  font-size: 1rem;
 }
