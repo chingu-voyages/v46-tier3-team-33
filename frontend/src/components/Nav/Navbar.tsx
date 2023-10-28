@@ -42,6 +42,11 @@ function Navbar() {
 								Product
 							</Link>
 						</li>
+						<li>
+							<Link to='/ProductDetails' className='link'>
+								Product Details
+							</Link>
+						</li>
 					</ul>
 				</div>
 			</div>
