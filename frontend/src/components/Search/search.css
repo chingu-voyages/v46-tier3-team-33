@@ -8,7 +8,30 @@
     cursor: pointer;
 }
 
-.filtered_data > ul {
-    list-style-type : none;
+/* Add this CSS to style your cards */
+.search-result-card {
+    display: flex;
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: white;
+  }
   
-}
+  .image-container {
+    margin-right: 10px;
+  }
+  
+  .image-container img {
+    width: 100px; /* Adjust the width as needed */
+    height: auto;
+  }
+  
+  .content {
+    flex: 1;
+    text-justify: left;
+  }
+  
+ 
+  

@@ -1,5 +1,6 @@
 import './search.css'
 import {useEffect, useState} from 'react'
+import SearchResultCard from './searchResultCard';
 
 
 const searchBar = () => {
@@ -7,21 +8,7 @@ const searchBar = () => {
     const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState<any[]>([]); // Use 'any' as a temporary type
 
-    // useEffect(() => {
-    //     //fetch('http://localhost:8081/product?_limit=10') //need to send token to backend for validation
-    //     fetch('https://jsonplaceholder.typicode.com/posts?_limit=10') //using placeholder data for now
-    //         .then((response) => response.json())
-    //         .then((data) => {
-    //             console.log(data);
-    //             setData(data);
-    //        })
-    //        .catch((err) => {
-    //             console.log(err.message);
-    //             //GET http://localhost:8081/product?_limit=10 401 (Unauthorized) get this error if token not sent
-    //        });
-    //  }, []);
-
-     const fetchData = async () => {
+    const fetchData = async () => {
         try {
             const response = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=10');
             if (response.ok) {
@@ -76,11 +63,7 @@ const searchBar = () => {
                 <div className="filtered_data">
                     <ul>
                         {filteredData.map((item: any) => (
-                            <li key={item.id}>
-                                <strong>Title:</strong> {item.title}<br />
-                                <strong>User ID:</strong> {item.userId}<br />
-                                <strong>Body:</strong> {item.body}
-                            </li>
+                            <SearchResultCard key={item.id} item={item} />
                         ))}
                     </ul>
                 </div>
