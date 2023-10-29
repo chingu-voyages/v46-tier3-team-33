@@ -1,6 +1,7 @@
 import './search.css'
-import {useEffect, useState} from 'react'
+import { useState } from 'react'
 import SearchResultCard from './searchResultCard';
+import jsTokens from "js-tokens" // Import the library for working with tokens
 
 
 const searchBar = () => {
@@ -9,8 +10,18 @@ const searchBar = () => {
     const [filteredData, setFilteredData] = useState<any[]>([]); // Use 'any' as a temporary type
 
     const fetchData = async () => {
+        // Get the token from the cookie using js-tokens
+        //const token = jsTokens.get('your_token_cookie_name'); // Replace with your actual cookie name
+
         try {
-            const response = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=10');
+            const response = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=10', 
+            //{
+            //     headers: {
+            //         Authorization: `Bearer ${token}` // Include the token in the request headers
+            //     }
+            // }
+            );
+
             if (response.ok) {
                 const jsonData = await response.json();
                 setData(jsonData);
