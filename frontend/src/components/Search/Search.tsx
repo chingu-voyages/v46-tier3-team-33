@@ -76,7 +76,11 @@ const searchBar = () => {
                 <div className="filtered_data">
                     <ul>
                         {filteredData.map((item: any) => (
-                            <li key={item.id}>{item.title}</li>
+                            <li key={item.id}>
+                                <strong>Title:</strong> {item.title}<br />
+                                <strong>User ID:</strong> {item.userId}<br />
+                                <strong>Body:</strong> {item.body}
+                            </li>
                         ))}
                     </ul>
                 </div>
