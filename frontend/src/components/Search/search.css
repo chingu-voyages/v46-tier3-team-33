@@ -17,6 +17,13 @@
     justify-content: flex-start;
     align-items: flex-start;
     background-color: white;
+    width: 65em;
+  }
+
+  .card-content {
+    text-align: justify;
+    color:green;
+
   }
   
   .image-container {

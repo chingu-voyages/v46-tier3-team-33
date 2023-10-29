@@ -21,7 +21,7 @@ const SearchResultCard: React.FC<{ item: Item }> = ({ item }) => {
           alt="Result Image"
         />
       </div>
-      <div className="content">
+      <div className="card-content">
         <strong>Title:</strong> {item.title}
         <br />
         <strong>User ID:</strong> {item.userId}
