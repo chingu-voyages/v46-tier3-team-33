@@ -4,7 +4,6 @@ import { Product } from "../models/product";
 interface ProductCreateRequestBody {
   name: string;
   price: number;
-  img?: any; // you may want to refine this type later based on how images are handled
   unit: string;
   expired_date: Date;
   description: string;
@@ -15,13 +14,17 @@ const productCreateController = async (
   req: Request<{}, {}, ProductCreateRequestBody>,
   res: Response
 ) => {
-  const { name, price, img, unit, expired_date, description, stock } = req.body;
+  if (!req.file) return res.status(400).json({ message: "Picture required" });
+  const { name, price, unit, expired_date, description, stock } = req.body;
 
   try {
     const product = await Product.create({
       name,
       price,
-      img,
+      image: {
+        fileName: req.file.filename,
+        contentType: req.file.mimetype,
+      },
       unit,
       expired_date,
       description,
