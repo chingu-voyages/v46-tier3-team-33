@@ -14,22 +14,17 @@ const productCreateController = async (
   req: Request<{}, {}, ProductCreateRequestBody>,
   res: Response
 ) => {
+  if (!req.file) return res.status(400).json({ message: "Picture required" });
   const { name, price, unit, expired_date, description, stock } = req.body;
-
-  // get img info
-  let image = null; 
-  if(req.file){
-    image = {
-      fileName: req.file.filename,
-      contentType: req.file.mimetype,
-    }
-  }
 
   try {
     const product = await Product.create({
       name,
       price,
-      image,
+      image: {
+        fileName: req.file.filename,
+        contentType: req.file.mimetype,
+      },
       unit,
       expired_date,
       description,
