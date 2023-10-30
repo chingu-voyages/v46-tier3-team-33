@@ -15,6 +15,7 @@ import productCreateController from "./controllers/productCreateController";
 import productListController from "./controllers/productListController";
 
 import cors from "cors"; // Import the cors middleware
+import upload from "./multerSetup";
 
 
 dotenv.config();
@@ -35,7 +36,7 @@ app.post("/login", loginController);
 
 app.post("/logout", logoutController);
 
-app.post("/product", jwtVerification, productCreateController);
+app.post("/product", jwtVerification, upload.single("picture"), productCreateController);
 
 app.get("/product", jwtVerification, productListController);
 
