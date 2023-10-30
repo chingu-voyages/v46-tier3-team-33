@@ -4,7 +4,10 @@ import { Schema, model, Model, Document } from "mongoose";
 interface IProduct extends Document {
   name: string;
   price: number;
-  img?: any; // We'll use 'any' type for now since it's not confirmed how to implement this attribute.
+  image: {
+    contentType: string,
+    fileName: string
+  }
   unit: string;
   expired_date: Date;
   description: string;
@@ -16,7 +19,10 @@ interface IProduct extends Document {
 const productSchema = new Schema<IProduct>({
   name: { type: String, required: true },
   price: { type: Number, required: true },
-  img: { type: Schema.Types.Mixed }, // Used Mixed type for now due to uncertainty.
+  image: {
+    contentType: String,
+    fileName: String,
+  },
   unit: {
     type: String,
     required: true,
