@@ -1,7 +1,7 @@
  
 label {
     font-size: 18px;
-    margin-bottom: 10px;
+    margin: 10px;
   }
   
 input {
@@ -16,18 +16,22 @@ button {
     background-color: #0e722f;
     color: #fff;
     padding: 10px 20px;
+    margin-bottom: 20px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
   }
 
+
+
 /* styling for forms */
 .input_form {
+    
     display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* Make the container take the full viewport height */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; /* Make the container take the full viewport height */
 
 }
 
@@ -36,17 +40,3 @@ button {
     justify-content: space-between;
     
 }
-
-.container {
-    padding: 20px;
-    background-color:#f1f1f1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} 
-
-.img_container {
-
-    text-align: center;
-    margin: 24px 0 12px 0;
-  }

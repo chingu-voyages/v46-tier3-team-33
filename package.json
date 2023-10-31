@@ -12,6 +12,9 @@
         "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
       }
     
+
+    "@emailjs/browser": "^3.11.0"
+
   }
   
 }

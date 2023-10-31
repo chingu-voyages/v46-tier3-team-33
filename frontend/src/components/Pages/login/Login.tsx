@@ -1,46 +1,75 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './login.css'
+import { useState} from 'react';
+//import { useState, useContext } from 'react'; for use later
+//import UserContext from '../../../utils/UserContext';
+
+//Typescript needs this set up for useContext?
+// interface UserContextBody {
+// 	currentUser?: string;
+// 	password?: string;
+//   }
 
 const LoginForm: React.FC = () => {
-  const [username, setUsername] = React.useState('');
-  const [password, setPassword] = React.useState('');
+  	const [email, setEmail] = useState('');
+  	const [password, setPassword] = useState('');
+	//const {currentUser, setCurrentUser} = useContext(UserContext);
+
   const navigate = useNavigate(); // Initialize the navigate object
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log('username:', username); //need to work out where these details go next
-    console.log('password:', password); //how do we secure the password?
 
-	// Implement your login logic here
+	try {
+		const response = await fetch('http://localhost:8081/login', {
+		  method: 'POST',
+		  headers: {
+			'Content-Type': 'application/json',
+		  },
+		  body: JSON.stringify({ email, password }),
 
-	//need to check emails are valid and passwords are long enough.
+		});
+  
+		if (response.ok) {
+		  // Assuming the login is successful, relocate the user to the home page
+		  navigate('/');
+		} else {
+		  // Handle login failure, such as displaying an error message to the user
+		  console.log('Login failed');
+		  console.log(email)
+		  console.log(password)
+		}
+	  } catch (error) {
+		console.error('An error occurred:', error);
+	  }
+	
 
-    // Assuming the login is successful, relocate the user to the home page
-    navigate('/'); // navigates to home page after login
   };
 
-  return (
-    <form className='input_form' onSubmit={handleSubmit}>
-      <div className = 'form_row'>
-	  	<label>
-        	Email:
-        		<input type="text" value={username} onChange={(event) => setUsername(event.target.value)} required/>
-      	</label>
-	</div>
-	  
-	<div className = 'form_row'>
-      	<label>
-        	Password:
-        	<input type="password" value={password} onChange={(event) => setPassword(event.target.value)} required />
-      	</label>
-	</div>
-	
-	<div className = 'form_row'>
-		<button type="submit">Login</button>
-	</div>
 
+  return (
+	<>
+    <form className='input_form' onSubmit={handleSubmit}>
+      	<div className = 'form_row'>
+	  		<label htmlFor="email">Email</label>
+        	<input type="email" id="email" placeholder = "youremail@gmail.com" value={email} onChange={(event) => setEmail(event.target.value)} required/>
+		</div>
+	  
+		<div className = 'form_row'>
+      		<label htmlFor="password">Password</label>
+       	 	<input type="password" id="password" value={password} onChange={(event) => setPassword(event.target.value)} required />
+      	</div>
+	
+		<div className = 'form_row'>
+			<button type="submit">Login</button>
+		</div>
+		
+		<span>Don't have an account? <a href="/signUp">Sign up here</a></span>
+		
 	</form>
+	
+	</>
   );
 };
 

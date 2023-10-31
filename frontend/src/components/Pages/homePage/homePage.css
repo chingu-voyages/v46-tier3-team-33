@@ -1,0 +1,34 @@
+
+.container {
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.text_container{
+    text-align: center;
+    position: absolute; 
+    font-family: Verdana, sans-serif;
+    
+}
+
+h1 {
+    color:green;
+    font-size: 78px;
+    text-shadow: 2px 2px 0px black; 
+
+}
+h3 {
+    font-size: 28px;
+    text-shadow: 1px 1px 0px white; 
+  
+}
+
+img {
+    width:100%;
+    height: 100%;
+    opacity: 0.5;
+}
+

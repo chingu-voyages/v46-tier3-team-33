@@ -1,24 +1,19 @@
-import mongoose from 'mongoose';
-import { Schema } from 'mongoose';
+import mongoose from "mongoose";
+import dotenv from "dotenv";
 
-const mongoDbUrl = 'mongodb://0.0.0.0/vegilicious';
-mongoose.connect(mongoDbUrl);
+dotenv.config();
+const mongoDbUrl = process.env.MONGODB_URL || "mongodb://0.0.0.0/vegilicious";
 
-const db = mongoose.connection;
+const connect = async () => {
+  try {
+    await mongoose.connect(mongoDbUrl);
+    console.log("Connected to MongoDB");
+    const db = mongoose.connection;
+    return db;
+  } catch (error) {
+    console.log("Unable to connect to Mongodb", error);
+    throw error;
+  }
+};
 
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-db.once('open', () => {
-  console.log('Connected to MongoDB');
-
-  // const model = mongoose.model('Test', new Schema({ name: String }));
-  // const doc = new model();
-  // doc.name = "Testin insert";
-
-  // doc.save().then(() => {
-  //   console.log('saved');
-  // }).catch((error) => {
-  //   console.log(error);
-  // });
-});
-
-export default db;
+export default connect;

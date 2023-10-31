@@ -9,7 +9,7 @@ Technology has meant that people can now access food online in a variety of apps
 
 ### Wireframing
 
-The initial homepage was designed as follows-
+The initial homepage was designed as follows-  wireframes to be added.
 
 
 ## Tech
