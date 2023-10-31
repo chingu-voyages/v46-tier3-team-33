@@ -3,7 +3,7 @@ import './productDetails.css'
 import productimage from './productImageExample.jpg'
  
 
-//need to pass props here
+//Will pass props here
 const ProductDetails: React.FC = () => {
   interface Product {
     productName: string;
