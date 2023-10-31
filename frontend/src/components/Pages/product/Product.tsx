@@ -3,7 +3,7 @@ import './product.css'
 import productimage from './productImageExample.jpg'
 const Product:React.FC = () => {
 
-// hardcoded data 
+// hardcoded data. 
 //  interface Farmer {
 //     username: string;
 //     city: string;

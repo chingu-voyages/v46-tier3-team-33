@@ -1,4 +1,4 @@
-//test here
+//test here.
 import { render, screen } from '@testing-library/react';
 import Product from './Product'; 
 import '@testing-library/jest-dom';
