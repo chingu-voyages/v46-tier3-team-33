@@ -1,8 +1,9 @@
 import jwt from "jsonwebtoken";
 import { Request, Response, NextFunction } from "express";
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
+import { User } from "../utils/interface";
 
-dotenv.config();
+// dotenv.config();
 
 const jwtVerification = (req: Request, res: Response, next: NextFunction) => {
   // Get token from cookies
@@ -22,13 +23,13 @@ const jwtVerification = (req: Request, res: Response, next: NextFunction) => {
   try {
     // Verify token
     interface DecodedToken {
-      farmerId: string;
+      user: User;
       iat?: number; // issued at
       exp?: number; // expiration time
     }
 
     const decoded = jwt.verify(token, JWT_SECRET) as DecodedToken;
-    res.locals.farmerId = decoded.farmerId;
+    res.locals.user = decoded.user;
     next();
   } catch (error) {
     console.error(error);

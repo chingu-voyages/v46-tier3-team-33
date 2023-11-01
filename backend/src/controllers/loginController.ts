@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import { Farmer } from "../models/farmer";
 import dotenv from "dotenv";
+import { User } from "../utils/interface";
 
 dotenv.config();
 
@@ -41,10 +42,23 @@ const loginController = async (
       throw new Error("JWT_SECRET not defined in environment");
     }
 
+    // Create user object for signing JWT
+    const user: User = {
+      identity: "farmer",
+      email: farmer.email,
+      userID: farmer._id.toString(),
+    };
+
     // Create JWT token
-    const token = jwt.sign({ farmerId: farmer._id.toString() }, JWT_SECRET, {
-      expiresIn: "24h",
-    });
+    const token = jwt.sign(
+      {
+        user,
+      },
+      JWT_SECRET,
+      {
+        expiresIn: "24h",
+      }
+    );
 
     // Set JWT as an HttpOnly, Secure cookie (you can adjust the settings as necessary)
     res.cookie("token", token, {
@@ -53,7 +67,9 @@ const loginController = async (
       maxAge: 86400000, // Token expiration, here it's set to 24 hour
     });
 
-    res.status(200).json({ message: "Logged in successfully" });
+    res.status(200).json({ message: "Logged in successfully", user });
+    console.log("Logged in successfully");
+    console.log(user);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server error" });
