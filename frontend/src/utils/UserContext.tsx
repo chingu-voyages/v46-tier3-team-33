@@ -1,5 +1,10 @@
 import { createContext } from "react";
-    //attempting to utilise useContext to hold state for other components
-    const UserContext = createContext({});
+import { UserContextType } from "./interface";
+//attempting to utilise useContext to hold state for other components
+
+const UserContext = createContext<UserContextType>({
+  currentUser: null,
+  setCurrentUser: () => {},
+});
 
 export default UserContext;
