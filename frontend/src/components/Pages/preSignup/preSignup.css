@@ -1,0 +1,10 @@
+#preSignup-container {
+  height: 115rem;
+  margin: auto;
+  max-width: var(--container-max-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
