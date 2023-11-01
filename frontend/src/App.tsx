@@ -12,6 +12,7 @@ import ProductUploadForm from "./components/Pages/productUploadForm/ProductUploa
 import { useState, useEffect } from "react";
 import UserContext from "./utils/UserContext";
 import { User } from "./utils/interface";
+import PreSignup from "./components/Pages/preSignup/PreSignup";
 
 function App() {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
@@ -59,7 +60,9 @@ function App() {
               <Route path="/Contact" element={<Contact />} />
               <Route path="/Help" element={<Help />} />
               <Route path="/Login" element={<Login />} />
-              <Route path="/SignUp" element={<SignUp />} />
+              <Route path="PreSignup" element={<PreSignup />} />
+              <Route path="/SignUp/farmer" element={<SignUp />} />
+              <Route path="/SignUp/customer" element={<SignUp />} />
               <Route path="/Upload" element={<ProductUploadForm />} />
             </Routes>
           </div>
