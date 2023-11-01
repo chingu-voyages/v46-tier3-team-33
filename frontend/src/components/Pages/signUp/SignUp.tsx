@@ -34,30 +34,30 @@ const SignUp: React.FC = () => {
     }
 
     const handleSubmit = async (e: React.FormEvent) => {
-            e.preventDefault();
-            try {
-                //API call 
-                const response = await fetch('http://localhost:8081/signup', {
-		        method: 'POST',
-		        headers: {
-			        'Content-Type': 'application/json',
-		        },
-		        body: JSON.stringify({ email, password }),
+        e.preventDefault();
+        try {
+            //API call 
+            const response = await fetch('http://localhost:8081/signup', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
 
-		        });
-                if (response.ok) {
-                    // Assuming the signup is successful, relocate the user to the home page
-                    navigate('/');
-                } else {
-                    // Handle singup failure, such as displaying an error message to the user
-                    console.log('Sign up failed');
-                    console.log(email)
-                    console.log(password)
-                }
-                } catch (error) {
-                  console.error('An error occurred:', error);
-                }
-        }
+            });
+            if (response.ok) {
+                // Assuming the signup is successful, relocate the user to the home page
+                navigate('/');
+            } else {
+                // Handle singup failure, such as displaying an error message to the user
+                console.log('Sign up failed');
+                console.log(email)
+                console.log(password)
+            }
+            } catch (error) {
+                console.error('An error occurred:', error);
+            }
+    }
     return (<>
     <div className='front-page'>
         <div>
