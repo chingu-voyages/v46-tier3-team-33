@@ -33,4 +33,4 @@ export default function FarmerSearch({ onSearch }: Props) {
       </form>
     </>
   );
-}
+} 

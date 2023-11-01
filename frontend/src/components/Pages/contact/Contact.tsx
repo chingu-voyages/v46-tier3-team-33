@@ -62,7 +62,7 @@ const ContactForm: React.FC = () => {
         <input
           type="text"
           name="user_name"
-          placeholder="David Attenborough"
+          placeholder="Your name here"
           value={formData.user_name}
           onChange={handleChange}
         />
@@ -71,7 +71,7 @@ const ContactForm: React.FC = () => {
         <input
           type="email"
           name="user_email"
-          placeholder="blueplanet@gmail.com"
+          placeholder="email@email.com"
           value={formData.user_email}
           onChange={handleChange}
         />
@@ -79,7 +79,7 @@ const ContactForm: React.FC = () => {
         <label> Subject: </label>
         <input
           name="subject"
-          placeholder="Saving the planet"
+          placeholder="Nature of your request"
           onChange={handleChange}
           value={formData.subject}
         />
@@ -88,7 +88,7 @@ const ContactForm: React.FC = () => {
         <textarea
           onChange={handleChange}
           name="message"
-          placeholder="Let's connect"
+          placeholder="Your message"
         ></textarea>
         <input type="submit" value="Submit" />
       </form>
