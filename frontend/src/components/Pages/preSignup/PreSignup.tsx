@@ -8,9 +8,8 @@ const PreSignup: React.FC = () => {
       <div id='preSignup-container'>
         <h1><a href="/SignUp/farmer"> Signup as a Farmer </a></h1>
         <h1><a href="/SignUp/customer"> Signup as a Customer </a></h1>
-          
-        <p className='prompt-login-text'>Have an account?  <a href="/login" className='prompt-login-link'>Login</a> now</p>
       </div>
+      <p className='prompt-login-text'>Have an account?  <a href="/login" className='prompt-login-link'>Login</a> now</p>
 				
 
     </div> 
