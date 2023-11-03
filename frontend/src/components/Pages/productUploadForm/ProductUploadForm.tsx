@@ -56,7 +56,6 @@ export default function ProductUploadForm() {
       setFormValues((prev) => ({ ...prev, picture: files[0] }));
     }
   };
-  kdjka;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
