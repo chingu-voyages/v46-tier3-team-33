@@ -8,6 +8,7 @@ import Contact from "./components/Pages/contact/Contact";
 import Help from "./components/Pages/help/Help";
 import Login from "./components/Pages/login/Login";
 import SignUpFarmer from "./components/Pages/signUpFarmer/SignUpFarmer";
+import SignUpCustomer from "./components/Pages/signUpCustomer/SignUpCustomer";
 import ProductUploadForm from "./components/Pages/productUploadForm/ProductUploadForm";
 import { useState, useEffect } from "react";
 import UserContext from "./utils/UserContext";
@@ -60,9 +61,9 @@ function App() {
               <Route path="/Contact" element={<Contact />} />
               <Route path="/Help" element={<Help />} />
               <Route path="/Login" element={<Login />} />
-              <Route path="PreSignup" element={<PreSignup />} />
+              <Route path="/PreSignup" element={<PreSignup />} />
               <Route path="/SignUp/farmer" element={<SignUpFarmer />} />
-              <Route path="/SignUp/customer" element={<SignUpFarmer />} />
+              <Route path="/SignUp/customer" element={<SignUpCustomer />} />
               <Route path="/Upload" element={<ProductUploadForm />} />
             </Routes>
           </div>
