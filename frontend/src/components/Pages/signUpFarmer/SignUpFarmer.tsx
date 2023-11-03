@@ -42,7 +42,7 @@ const SignUpFarmer: React.FC = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ email, password }),
+            body: JSON.stringify({ email, password, farmer: true }),
 
             });
             if (response.ok) {

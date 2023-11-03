@@ -42,7 +42,7 @@ const SignUpCustomer: React.FC = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ email, password }),
+            body: JSON.stringify({ email, password, farmer: false }),
 
             });
             if (response.ok) {
