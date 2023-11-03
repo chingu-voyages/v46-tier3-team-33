@@ -40,7 +40,7 @@ function Navbar() {
             {currentUser === null ? (
               <>
                 <li>
-                  <Link to="/signUp" className="link">
+                  <Link to="/preSignup" className="link">
                     Sign Up
                   </Link>
                 </li>

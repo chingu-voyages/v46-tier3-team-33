@@ -1,5 +1,5 @@
 import { render, fireEvent, screen } from '@testing-library/react';
-import SignUp from './SignUp'; 
+import SignUp from './SignUpFarmer'; 
 import '@testing-library/jest-dom';
 /**
  * @jest-environment jsdom

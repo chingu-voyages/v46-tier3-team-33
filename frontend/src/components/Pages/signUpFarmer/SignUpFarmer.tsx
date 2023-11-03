@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react'
 
-const SignUp: React.FC = () => {
+const SignUpFarmer: React.FC = () => {
 
     const [email, setEmail] = useState<string>('');
     const [isEmailValid, setIsEmailValid] = useState(true);
@@ -99,4 +99,4 @@ const SignUp: React.FC = () => {
     </>)    
 }
 
-export default SignUp;
+export default SignUpFarmer;
