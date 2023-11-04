@@ -13,7 +13,7 @@
 .links-container {
 	margin-right: 20px;
 	display: flex;
-	width: 600px;
+	width: 90%;
 	justify-content: space-evenly;
 	list-style: none;
 }
