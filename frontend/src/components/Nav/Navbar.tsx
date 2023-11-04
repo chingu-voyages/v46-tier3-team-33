@@ -2,8 +2,13 @@ import logo from "/src/assets/logo.svg";
 import "./Navbar.css";
 
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import UserContext from "../../utils/UserContext";
 
 function Navbar() {
+
+  const { currentUser } = useContext(UserContext);
+
 
   return (
     <>
@@ -24,16 +29,6 @@ function Navbar() {
               </Link>
             </li>
             <li>
-              <Link to="/signUp" className="link">
-                Sign Up
-              </Link>
-            </li>
-            <li>
-              <Link to="/Login" className="link">
-                Login
-              </Link>
-            </li>
-            <li>
               <Link to="/Contact" className="link">
                 Contact
               </Link>
@@ -43,6 +38,26 @@ function Navbar() {
                 Upload Products
               </Link>
             </li>
+            {/* Check if currentUser is null */}
+            {currentUser === null ? (
+              <>
+                <li>
+                  <Link to="/signUp" className="link">
+                    Sign Up
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/Login" className="link">
+                    Login
+                  </Link>
+                </li>
+              </>
+            ) : (
+              // If currentUser exists, show their identity or email
+              <li className="link">
+                Hello, {currentUser.identity} {currentUser.email}
+              </li>
+            )}
           </ul>
         </div>
       </div>

@@ -9,9 +9,49 @@ import Help from "./components/Pages/help/Help";
 import Login from "./components/Pages/login/Login";
 import SignUp from "./components/Pages/signUp/SignUp";
 import ProductUploadForm from "./components/Pages/productUploadForm/ProductUploadForm";
+
+
+import { useState, useEffect } from "react";
+import UserContext from "./utils/UserContext";
+import { User } from "./utils/interface";
+
+
 function App() {
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
+  const [authchecked, setAuthChecked] = useState<boolean>(false);
+
+  useEffect(() => {
+    const validateToken = async () => {
+      try {
+        const response = await fetch("http://localhost:8081/user", {
+          method: "GET",
+          credentials: "include", // Ensures the request includes the cookie
+        });
+
+        if (!response.ok) {
+          throw new Error("Not logged in");
+        }
+
+        const data = await response.json();
+        console.log(data);
+
+        setCurrentUser(data.user);
+      } catch (err: unknown) {
+        console.error((err as Error).message);
+      } finally {
+        setAuthChecked(true);
+      }
+    };
+
+    validateToken();
+  }, []);
+
+  if (!authchecked) {
+    return null;
+  }
+
   return (
-    <>
+    <UserContext.Provider value={{ currentUser, setCurrentUser }}>
       <Router>
         <div className="App">
           <Navbar />
@@ -28,7 +68,7 @@ function App() {
           </div>
         </div>
       </Router>
-    </>
+    </UserContext.Provider>
   );
 }
 
