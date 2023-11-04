@@ -4,12 +4,18 @@ Users can then arrange to buy and collect produce and leave reviews on the produ
 
 
 ## Goal
-Technology has meant that people can now access food online in a variety of apps.  There is also a need for small local producers to have a space where they can showcase the produce they have so that people can purchase it.  We worked hard to come up with a project idea during our first sprint and finally we decided on teh idea of this app.
+Technology has meant that people can now access food online in a variety of apps.  There is also a need for small local producers to have a space where they can showcase the produce they have so that people can purchase it.  
+We worked hard to come up with a project idea during our first sprint and finally we decided on the idea of this app.
 
 
 ### Component tree
 The component tree was put together using ideas and comments from all team members and is shown below.
 ![Component tree](./userdesign/component_tree.png)
+
+### Wireframing
+
+The initial homepage was designed as follows-  wireframes to be added.
+
 
 
 ## Tech
@@ -28,10 +34,11 @@ To develop the Vegelicious app we made use of the following stack of technologie
 
 - Back-End
  - [nodejs](https://www.w3schools.com/nodejs/nodejs_intro.asp)
+ - [expressjs](https://expressjs.com/)
 
 ### The Database Design
 - The database was designed to allow CRUD functionality to be available to registered users, when signed in.
-- We used mongodb for our nosql database.  Items in the database were:
+- We used Mongodb for our NoSQL database.  Items in the database were:
 "const {
     name,
     price,
@@ -58,9 +65,6 @@ Path   |   Method	|  Data Requested (json)   |  Function
 /product/name   |	get	  |  	{name:string}  |	search products by nameS
 
 
-
- 
-
 ### Dependencies including deployment
 - The app was deployed to [vercel](https://vercel.com/) 
 
@@ -84,7 +88,7 @@ We would like to give credit to the following individuals, organizations, and re
 
 
 
-## guide from Chingu - to be removed later
+## Guide from Chingu - to be removed later
 
 Your project's `readme` is as important to success as your code. For 
 this reason you should put as much care into its creation and maintenance
