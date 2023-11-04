@@ -1,14 +1,14 @@
 import './search.css'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import SearchResultCard from './searchResultCard';
-import jsTokens from "js-tokens" // Import the library for working with tokens
 
 
 const searchBar = () => {
     const [value, setValue] = useState('');
     const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState<any[]>([]); // Use 'any' as a temporary type
-
+    //const [currentUser, setCurrentUser] = useContext(UserContext);
+    
     const fetchData = async () => {
         // Get the token from the cookie using js-tokens
         //const token = jsTokens.get('your_token_cookie_name'); // Replace with your actual cookie name
