@@ -16,9 +16,11 @@ type Item = {
     availabilityTime: string;
   };
   
+
+  
 // Use the Item type to type the item parameter
 const SearchResultCard: React.FC<{ item: Item }> = ({ item }) => {
-
+  console.log("Image URL:", item.picture);
   return (
     <div className="search-result-card">
       <div className="image-container">
@@ -27,7 +29,7 @@ const SearchResultCard: React.FC<{ item: Item }> = ({ item }) => {
           alt={item.description}
         />
       </div>
-      <div className="card-content">
+      <div className="card-content" >
         <strong>Name:</strong> {item.name}
         <br />
         <strong>User ID:</strong> {item.userId}
