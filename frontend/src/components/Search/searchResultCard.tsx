@@ -2,12 +2,12 @@ import './search.css'
 
 // Define the Item type
 type Item = {
-    _id:Object;
+    _id: Object;
     userId: string;
     name: string;
     picture: string;
-    description:string;
-    postcode:string;
+    description: string;
+    postcode: string;
     price: number;
     quantityOfUnit: number;
     unitOfMeasure: string;

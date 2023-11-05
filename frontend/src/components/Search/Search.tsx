@@ -30,7 +30,7 @@ const searchBar = () => {
                     item.name.toLowerCase().includes(value.toLowerCase())
                 );
                 setFilteredData(filtered);
-                console.log("Filtered results:",filtered)
+                
             } else {
                 console.error('API request failed with status:', response.status);
             }
