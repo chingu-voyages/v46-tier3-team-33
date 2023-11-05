@@ -81,8 +81,6 @@ const SignUp: React.FC = () => {
       } else {
         // Handle signup failure, such as displaying an error message to the user
         console.log("Sign up failed");
-        console.log(email);
-        console.log(password);
       }
     } catch (error) {
       console.error("An error occurred:", error);
