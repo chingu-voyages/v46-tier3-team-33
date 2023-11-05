@@ -20,7 +20,6 @@ type Item = {
   
 // Use the Item type to type the item parameter
 const SearchResultCard: React.FC<{ item: Item }> = ({ item }) => {
-  console.log("Image URL:", item.picture);
   return (
     <div className="search-result-card">
       <div className="image-container">

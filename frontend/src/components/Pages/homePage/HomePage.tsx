@@ -8,7 +8,7 @@ function HomePage() {
 	return (
 	<>
 		<div className="container">
-		<img  src="src/assets/inigo-de-la-maza-marketstall-unsplash.jpg" alt = "fresh vegetables and fruit" ></img>
+		<img className="background_img" src="src/assets/inigo-de-la-maza-marketstall-unsplash.jpg" alt = "fresh vegetables and fruit" ></img>
 			
 			<div className="text_container">
 				<h1>Welcome to Vegilicious</h1>

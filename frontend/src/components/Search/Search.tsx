@@ -9,7 +9,6 @@ const searchBar = () => {
     const [value, setValue] = useState('');
     const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState<any[]>([]); // Use 'any' as a temporary type
-    //const { currentUser } = useContext(UserContext);
 
     
     const fetchData = async () => {
