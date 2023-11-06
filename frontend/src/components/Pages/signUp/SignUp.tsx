@@ -1,8 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
-import "./SignUp.css"; // Create a CSS file for styling
+import "./signUp.css"; // Create a CSS file for styling
 
-const SignUp: React.FC = () => {
+interface SignUpProps {
+  isFarmer: boolean
+}
+
+const SignUp = (props: SignUpProps) => {
+
   const [email, setEmail] = useState<string>("");
   const [isEmailValid, setIsEmailValid] = useState(true);
 
@@ -41,7 +46,6 @@ const SignUp: React.FC = () => {
       setProgressBarColor("green");
     }
   };
-
   const calculatePasswordStrength = (password: string): string => {
     // Add your own logic to calculate password strength here
     // For simplicity, let's consider it strong if it's at least 8 characters long
@@ -73,7 +77,7 @@ const SignUp: React.FC = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email, password, farmer: props.isFarmer }),
       });
       if (response.ok) {
         // Assuming the signup is successful, relocate the user to the home page

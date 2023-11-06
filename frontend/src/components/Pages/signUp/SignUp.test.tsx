@@ -14,18 +14,18 @@ test('use jsdom in this test file', () => {
 describe('<SignUp />', () => {
 
   it('renders SignUp', () => {
-    render(<SignUp />);
+    render(<SignUp isFarmer={false}/>);
   });
 
   it('validates email', () => {
-    render(<SignUp />);
+    render(<SignUp isFarmer={false}/>);
     const emailInput = screen.getByPlaceholderText('Email');
     fireEvent.change(emailInput, { target: { value: 'invalid-email' } });
     expect(screen.getByText('Please enter a valid email.')).toBeInTheDocument();
   });
 
   it('checks password repetition', () => {
-    render(<SignUp />);
+    render(<SignUp isFarmer={false}/>);
     const passwordInput = screen.getByPlaceholderText('Password');
     const repeatPasswordInput = screen.getByPlaceholderText('Repeat Password');
 
