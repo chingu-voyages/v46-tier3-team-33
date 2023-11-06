@@ -1,8 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
-import "./SignUp.css"; // Create a CSS file for styling
+import "./SignUpCustomer.css"; // Create a CSS file for styling
 
-const SignUpCustomer: React.FC = () => {
+interface SignUpProps {
+  isFarmer: boolean
+}
+
+const SignUpCustomer = (props: SignUpProps) => {
 
   const [email, setEmail] = useState<string>("");
   const [isEmailValid, setIsEmailValid] = useState(true);
@@ -73,7 +77,7 @@ const SignUpCustomer: React.FC = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password, farmer: false}),
+        body: JSON.stringify({ email, password, farmer: props.isFarmer, x: "gel"}),
       });
       if (response.ok) {
         // Assuming the signup is successful, relocate the user to the home page
