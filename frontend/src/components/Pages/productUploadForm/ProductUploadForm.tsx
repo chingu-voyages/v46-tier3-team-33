@@ -72,7 +72,21 @@ export default function ProductUploadForm() {
       formData.append('expiryDate', formValues.expiryDate);
       formData.append('quantityAvailable', formValues.quantityAvailable.toString());
       formData.append('availabilityTime', formValues.availabilityTime);
-  };
+
+      const response = await fetch('/your-server-endpoint', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok){
+        const data = await response.json();
+        console.log(data)
+      } else {
+        console.error("Server error: ", response.status, response.statusText);
+      }
+  } catch (error){
+    console.error("Error submitting the form: ", error)
+  }
 
   return (
     <form className="upload-form" onSubmit={handleSubmit}>
