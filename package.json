@@ -3,6 +3,7 @@
     "@types/jest": "^29.5.5"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.11.0"
+    "@emailjs/browser": "^3.11.0",
+    "mongodb": "^6.2.0"
   }
 }
