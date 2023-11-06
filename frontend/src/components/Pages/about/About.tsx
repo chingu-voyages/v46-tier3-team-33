@@ -8,7 +8,7 @@ function About() {
       <h1>About Us</h1>
       <p>We are a team of developers who have put together this app to connect</p>
 	  <p>local people with local producers of fruit and vegetables.</p>
-	  <p>We all have different experiences in coding, which we  bring to this app</p>
+	  <p>We all have different experiences in coding, which we  bring to this app.</p>
 	  <p>We are all part of the <a href="https://www.chingu.io/" target="_blank">Chingu voyage 46 experience</a></p>
 	  <p>and have worked hard to get this app completed in the 6 week timeframe we have.</p>
 
