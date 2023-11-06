@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
-import "./SignUpCustomer.css"; // Create a CSS file for styling
+import "./signUp.css"; // Create a CSS file for styling
 
 interface SignUpProps {
   isFarmer: boolean
 }
 
-const SignUpCustomer = (props: SignUpProps) => {
+const SignUp = (props: SignUpProps) => {
 
   const [email, setEmail] = useState<string>("");
   const [isEmailValid, setIsEmailValid] = useState(true);
@@ -145,4 +145,4 @@ const SignUpCustomer = (props: SignUpProps) => {
   );
 };
 
-export default SignUpCustomer;
+export default SignUp;

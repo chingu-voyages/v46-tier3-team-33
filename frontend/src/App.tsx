@@ -7,7 +7,7 @@ import About from "./components/Pages/about/About";
 import Contact from "./components/Pages/contact/Contact";
 import Help from "./components/Pages/help/Help";
 import Login from "./components/Pages/login/Login";
-import SignUpCustomer from "./components/Pages/signUpCustomer/SignUpCustomer";
+import SignUp from "./components/Pages/signUp/SignUp";
 import ProductUploadForm from "./components/Pages/productUploadForm/ProductUploadForm";
 import { useState, useEffect } from "react";
 import UserContext from "./utils/UserContext";
@@ -61,8 +61,8 @@ function App() {
               <Route path="/Help" element={<Help />} />
               <Route path="/Login" element={<Login />} />
               <Route path="/PreSignup" element={<PreSignup />} />
-              <Route path="/SignUp/farmer" element={<SignUpCustomer isFarmer={true} />} />
-              <Route path="/SignUp/customer" element={<SignUpCustomer isFarmer={false}/>} />
+              <Route path="/SignUp/farmer" element={<SignUp isFarmer={true} />} />
+              <Route path="/SignUp/customer" element={<SignUp isFarmer={false}/>} />
               <Route path="/Upload" element={<ProductUploadForm />} />
             </Routes>
           </div>
