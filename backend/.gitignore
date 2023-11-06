@@ -21,3 +21,4 @@ logs
 # Error logs
 npm-debug.log*
 yarn-error.log*
+.vercel

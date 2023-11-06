@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/login",
+      "dest": "/api/controllers/loginController.ts"
+    },
+    {
+      "src": "/api/logout",
+      "dest": "/api/controllers/logoutController.ts"
+    },
+    {
+      "src": "/api/signup",
+      "dest": "/api/controllers/signupController.ts"
+    }
+  ]
+}
