@@ -60,6 +60,18 @@ export default function ProductUploadForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log(formValues);
+    try {
+      const formData = new FormData();
+      formData.append('name', formValues.name);
+      formData.append('picture', formValues.picture as File);
+      formData.append('description', formValues.description);
+      formData.append('postcode', formValues.postcode);
+      formData.append('price', formValues.price.toString());
+      formData.append('quantityOfUnit', formValues.quantityOfUnit.toString());
+      formData.append('unitOfMeasure', formValues.unitOfMeasure);
+      formData.append('expiryDate', formValues.expiryDate);
+      formData.append('quantityAvailable', formValues.quantityAvailable.toString());
+      formData.append('availabilityTime', formValues.availabilityTime);
   };
 
   return (
@@ -70,7 +82,7 @@ export default function ProductUploadForm() {
         className="upload-form-input"
         type="text"
         name="name"
-        placeholder="Your Name"
+        placeholder="Product Name"
         onChange={handleInputChange}
         value={formValues.name}
       />
