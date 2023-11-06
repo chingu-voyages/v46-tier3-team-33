@@ -77,7 +77,7 @@ const SignUpCustomer = (props: SignUpProps) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password, farmer: props.isFarmer, x: "gel"}),
+        body: JSON.stringify({ email, password, farmer: props.isFarmer }),
       });
       if (response.ok) {
         // Assuming the signup is successful, relocate the user to the home page
