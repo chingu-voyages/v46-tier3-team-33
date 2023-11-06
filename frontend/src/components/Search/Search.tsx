@@ -4,7 +4,7 @@ import SearchResultCard from './searchResultCard';
 //import UserContext from '../../utils/UserContext';
 
 
-const searchBar = () => {
+const SearchBar = () => {
     
     const [value, setValue] = useState('');
     const [data, setData] = useState([]);
@@ -85,5 +85,5 @@ const searchBar = () => {
 }
 
 
-export default searchBar
+export default SearchBar
 
