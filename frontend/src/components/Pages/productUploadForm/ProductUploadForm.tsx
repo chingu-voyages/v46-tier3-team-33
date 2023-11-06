@@ -57,37 +57,40 @@ export default function ProductUploadForm() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log(formValues);
     try {
       const formData = new FormData();
-      formData.append('name', formValues.name);
-      formData.append('picture', formValues.picture as File);
-      formData.append('description', formValues.description);
-      formData.append('postcode', formValues.postcode);
-      formData.append('price', formValues.price.toString());
-      formData.append('quantityOfUnit', formValues.quantityOfUnit.toString());
-      formData.append('unitOfMeasure', formValues.unitOfMeasure);
-      formData.append('expiryDate', formValues.expiryDate);
-      formData.append('quantityAvailable', formValues.quantityAvailable.toString());
-      formData.append('availabilityTime', formValues.availabilityTime);
+      formData.append("name", formValues.name);
+      formData.append("picture", formValues.picture as File);
+      formData.append("description", formValues.description);
+      formData.append("postcode", formValues.postcode);
+      formData.append("price", formValues.price.toString());
+      formData.append("quantityOfUnit", formValues.quantityOfUnit.toString());
+      formData.append("unitOfMeasure", formValues.unitOfMeasure);
+      formData.append("expiryDate", formValues.expiryDate);
+      formData.append(
+        "quantityAvailable",
+        formValues.quantityAvailable.toString()
+      );
+      formData.append("availabilityTime", formValues.availabilityTime);
 
-      const response = await fetch('/your-server-endpoint', {
-        method: 'POST',
+      const response = await fetch("http://localhost:8081/product", {
+        method: "POST",
         body: formData,
       });
 
-      if (response.ok){
+      if (response.ok) {
         const data = await response.json();
-        console.log(data)
+        console.log(data);
       } else {
         console.error("Server error: ", response.status, response.statusText);
       }
-  } catch (error){
-    console.error("Error submitting the form: ", error)
-  }
-
+    } catch (error) {
+      console.error("Error submitting the form: ", error);
+    }
+  };
   return (
     <form className="upload-form" onSubmit={handleSubmit}>
       <label htmlFor="name">Name</label>
