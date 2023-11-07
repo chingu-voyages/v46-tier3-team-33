@@ -46,11 +46,6 @@ function Navbar() {
                     Login
                   </Link>
                 </li>
-                <li>
-                  <Link to="/Product" className="link">
-                    Product
-                  </Link>
-                </li>
               </>
             ) : (              
               // If currentUser exists, show their identity or email 
