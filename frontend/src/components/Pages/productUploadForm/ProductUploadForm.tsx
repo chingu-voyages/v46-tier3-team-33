@@ -19,7 +19,7 @@ export default function ProductUploadForm() {
     name: "",
     picture: null,
     description: "",
-    postcode: "",
+    postcode: "", 
     price: 0,
     quantityOfUnit: 0,
     unitOfMeasure: "",
