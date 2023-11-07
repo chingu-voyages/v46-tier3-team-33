@@ -27,7 +27,7 @@ const encryptPassword = async (password: string): Promise<string> => {
 const signup = async (req: Request, res: Response) => {
   try {
     const password = await encryptPassword(req.body.password);
-    const farmer = new Farmer({ email: req.body.email, password });
+    const farmer = new Farmer({ email: req.body.email, password, isFarmer: req.body.farmer });
     await farmer.save();
     res.status(200).send(farmer.toJSON());
   } catch (error) {
