@@ -4,7 +4,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import UserContext from "../../utils/UserContext";
-import SignoutButton from "../Pages/logout/SignoutButton";
+import LogoutButton from "../Pages/logout/LogoutButton";
 
 function Navbar() {
   const { currentUser } = useContext(UserContext);
@@ -68,7 +68,7 @@ function Navbar() {
                   </Link>
                 </li>
                 <li>
-                  <SignoutButton />
+                  <LogoutButton />
                 </li>
               </>
             )}

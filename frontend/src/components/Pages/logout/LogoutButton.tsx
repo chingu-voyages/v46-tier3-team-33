@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import UserContext from "../../../utils/UserContext";
 
-const SignoutButton: React.FC = () => {
+const LogoutButton: React.FC = () => {
   const { setCurrentUser } = useContext(UserContext);
   const navigate = useNavigate();
 
@@ -31,4 +31,4 @@ const SignoutButton: React.FC = () => {
   );
 };
 
-export default SignoutButton;
+export default LogoutButton;
