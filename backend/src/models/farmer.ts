@@ -11,7 +11,9 @@ interface IFarmer extends Document {
 const farmerSchema = new Schema<IFarmer>({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true, select: false },
-  isFarmer: { type: Boolean, required: true }
+
+  isFarmer: { type: Boolean, required: true },
+
 });
 
 // 3. Create a Model.

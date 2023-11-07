@@ -1,8 +1,6 @@
 import "./homePage.css"
 import Search from "../../Search/Search";
 
-
-
 function HomePage() {
 
 
@@ -17,7 +15,6 @@ function HomePage() {
 				<Search></Search>
 				
 			</div>
-			
 			
 		</div>
 	</>
