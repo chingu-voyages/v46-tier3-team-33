@@ -4,12 +4,14 @@ import { Schema, model, Model, Document } from "mongoose";
 interface IFarmer extends Document {
   email: string;
   password: string;
+  isFarmer: boolean;
 }
 
 // 2. Create a Schema corresponding to the document interface.
 const farmerSchema = new Schema<IFarmer>({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true, select: false },
+  isFarmer: { type: Boolean, required: true },
 });
 
 // 3. Create a Model.

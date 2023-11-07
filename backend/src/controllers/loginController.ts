@@ -10,13 +10,14 @@ dotenv.config();
 interface LoginRequestBody {
   email?: string;
   password?: string;
+  isFarmer?: boolean;
 }
 
 const loginController = async (
   req: Request<{}, {}, LoginRequestBody>,
   res: Response
 ) => {
-  const { email, password } = req.body;
+  const { email, password, isFarmer } = req.body;
 
   // Validate credentials
   if (!email || !password) {
@@ -27,6 +28,12 @@ const loginController = async (
     // Check if farmer exists
     const farmer = await Farmer.findOne({ email }).select("+password");
     if (!farmer) {
+      return res.status(401).json({ message: "Invalid email or password" });
+    }
+
+    // Check if identity matches
+    const identityMatch = farmer.isFarmer === isFarmer;
+    if (!identityMatch) {
       return res.status(401).json({ message: "Invalid email or password" });
     }
 
@@ -42,9 +49,11 @@ const loginController = async (
       throw new Error("JWT_SECRET not defined in environment");
     }
 
+    const identity = farmer ? "farmer" : "customer";
+
     // Create user object for signing JWT
     const user: User = {
-      identity: "farmer",
+      identity: identity,
       email: farmer.email,
       userID: farmer._id.toString(),
     };

@@ -3,11 +3,10 @@ import React, { useState } from "react";
 import "./signUp.css"; // Create a CSS file for styling
 
 interface SignUpProps {
-  isFarmer: boolean
+  isFarmer: boolean;
 }
 
 const SignUp = (props: SignUpProps) => {
-
   const [email, setEmail] = useState<string>("");
   const [isEmailValid, setIsEmailValid] = useState(true);
 
