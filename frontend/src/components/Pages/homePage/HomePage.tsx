@@ -1,6 +1,6 @@
 import "./homePage.css"
 import Search from "../../Search/Search";
-import PreSignup from "../preSignup/PreSignup";
+
 
 
 function HomePage() {
@@ -17,7 +17,7 @@ function HomePage() {
 				<Search></Search>
 				
 			</div>
-			<PreSignup />
+			
 			
 		</div>
 	</>

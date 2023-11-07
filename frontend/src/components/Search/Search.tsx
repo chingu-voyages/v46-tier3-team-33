@@ -1,11 +1,13 @@
 import './search.css'
 import { useContext, useState } from 'react'
 import SearchResultCard from './searchResultCard';
-//import UserContext from '../../utils/UserContext';
+import UserContext from '../../utils/UserContext';
 
 
 const SearchBar = () => {
-    
+    const currentUser = useContext(UserContext);
+    console.log("Current user: ", currentUser)
+    const [message, setMessage] = useState('')
     const [value, setValue] = useState('');
     const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState<any[]>([]); // Use 'any' as a temporary type
@@ -24,28 +26,36 @@ const SearchBar = () => {
             if (response.ok) {
                 const jsonData = await response.json();
                 setData(jsonData);
-
+                
                 // Apply filtering here
                 const filtered = jsonData.filter((item: any) =>
                     item.name.toLowerCase().includes(value.toLowerCase())
                 );
                 setFilteredData(filtered);
+                // If no matches on search term setMessage to no results found.
+                if ( filteredData.length === 0) {
+                    setMessage("No results found")
+                } 
                 
             } else {
+                setMessage("Please login to search");
                 console.error('API request failed with status:', response.status);
             }
         } catch (error: any) {
             console.error('API request error:', error.message);
+            setMessage("Server Error - Please come back later");
         }
     };
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();    
-        console.log('search term:', value);    
+        event.preventDefault();        
+        if (currentUser === null) {
+            setMessage("Please login to search")
 
-         // Call the fetchData function to make the API request and apply filtering
-         fetchData();
-        
+        } else {
+            // Call the fetchData function to make the API request and apply filtering
+            fetchData();
+        }
     }
 
     return (
@@ -78,7 +88,7 @@ const SearchBar = () => {
                     </ul>
                 </div>
             ) : (
-                <div>No matching results found</div>
+                <div>{message}</div>
             )}
         </>
     )
