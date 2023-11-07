@@ -17,7 +17,6 @@ function HomePage() {
 				<Search></Search>
 				
 			</div>
-			<PreSignup />
 			
 		</div>
 	</>
