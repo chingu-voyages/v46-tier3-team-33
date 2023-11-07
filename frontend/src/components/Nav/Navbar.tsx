@@ -32,11 +32,7 @@ function Navbar() {
                 Contact
               </Link>
             </li>
-            <li>
-              <Link to="/Upload" className="link">
-                Upload Products
-              </Link>
-            </li>
+            
             {/* Check if currentUser is null */}
             {currentUser === null ? (
               <>
@@ -56,20 +52,21 @@ function Navbar() {
                   </Link>
                 </li>
               </>
-            ) : (
-              // If currentUser exists, show their identity or email
+            ) : (              
+              // If currentUser exists, show their identity or email 
+              //and give access to upload products link.
               <>
-                <li className="link">
-                  Hello, {currentUser.identity} {currentUser.email}
-                </li>
-                <li>
-                  <Link to="/ProductDetails" className="link">
-                    Product
-                  </Link>
-                </li>
-                <li>
-                  <LogoutButton />
-                </li>
+              <li className="link">
+                Hello, {currentUser.identity} {currentUser.email}
+              </li>
+              <li>
+              <Link to="/Upload" className="link">
+                Upload Products
+              </Link>
+              </li>
+              <li>
+              <LogoutButton />
+              </li>
               </>
             )}
           </ul>

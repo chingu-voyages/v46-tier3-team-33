@@ -1,7 +1,5 @@
 import "./homePage.css"
 import Search from "../../Search/Search";
-import PreSignup from "../preSignup/PreSignup";
-
 
 function HomePage() {
 
@@ -9,7 +7,7 @@ function HomePage() {
 	return (
 	<>
 		<div className="container">
-		<img  src="src/assets/inigo-de-la-maza-marketstall-unsplash.jpg" alt = "fresh vegetables and fruit" ></img>
+		<img className="background_img" src="src/assets/inigo-de-la-maza-marketstall-unsplash.jpg" alt = "fresh vegetables and fruit" ></img>
 			
 			<div className="text-container">
 				<h1>Welcome to Vegilicious</h1>
@@ -17,7 +15,6 @@ function HomePage() {
 				<Search></Search>
 				
 			</div>
-			<PreSignup />
 			
 		</div>
 	</>
