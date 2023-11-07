@@ -1,26 +1,25 @@
 import './search.css'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import SearchResultCard from './searchResultCard';
-import jsTokens from "js-tokens" // Import the library for working with tokens
+//import UserContext from '../../utils/UserContext';
 
 
-const searchBar = () => {
+const SearchBar = () => {
+    
     const [value, setValue] = useState('');
     const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState<any[]>([]); // Use 'any' as a temporary type
 
+    
     const fetchData = async () => {
-        // Get the token from the cookie using js-tokens
-        //const token = jsTokens.get('your_token_cookie_name'); // Replace with your actual cookie name
-
+        
         try {
-            const response = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=10', 
-            //{
-            //     headers: {
-            //         Authorization: `Bearer ${token}` // Include the token in the request headers
-            //     }
-            // }
-            );
+            
+            const response = await fetch('http://localhost:8081/product', 
+            {
+                method: 'GET',
+                credentials: 'include'
+            });
 
             if (response.ok) {
                 const jsonData = await response.json();
@@ -28,10 +27,10 @@ const searchBar = () => {
 
                 // Apply filtering here
                 const filtered = jsonData.filter((item: any) =>
-                    item.title.toLowerCase().includes(value.toLowerCase())
+                    item.name.toLowerCase().includes(value.toLowerCase())
                 );
                 setFilteredData(filtered);
-                console.log("Filtered results:",filtered)
+                
             } else {
                 console.error('API request failed with status:', response.status);
             }
@@ -74,7 +73,7 @@ const searchBar = () => {
                 <div className="filtered_data">
                     <ul>
                         {filteredData.map((item: any) => (
-                            <SearchResultCard key={item.id} item={item} />
+                            <SearchResultCard key={item._id} item={item} />
                         ))}
                     </ul>
                 </div>
@@ -86,5 +85,5 @@ const searchBar = () => {
 }
 
 
-export default searchBar
+export default SearchBar
 

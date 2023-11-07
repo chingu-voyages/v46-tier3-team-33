@@ -5,11 +5,17 @@ Users can then arrange to buy and collect produce and leave reviews on the produ
 
 ## Goal
 Technology has meant that people can now access food online in a variety of apps.  There is also a need for small local producers to have a space where they can showcase the produce they have so that people can purchase it.  
+We worked hard to come up with a project idea during our first sprint and finally we decided on the idea of this app.
 
+
+### Component tree
+The component tree was put together using ideas and comments from all team members and is shown below.
+![Component tree](./userdesign/component_tree.png)
 
 ### Wireframing
 
 The initial homepage was designed as follows-  wireframes to be added.
+
 
 
 ## Tech
@@ -18,27 +24,53 @@ In the tech section, we provide information about the technology stack, dependen
 
 ### Tech Stack
 
-For the development of Rainbow warriors we made use of the following stack of technologies:
+To develop the Vegelicious app we made use of the following stack of technologies:
 
 - Front-End
- - HTML3
- - CSS5
- - bootstrap5
- - react
- - typescript
+ - [HTML3](https://www.w3schools.com/html/)
+ - [CSS5](https://www.w3schools.com/css/default.asp)
+ - [react](https://www.w3schools.com/react/default.asp)
+ - [typescript](https://www.w3schools.com/typescript/typescript_intro.php)
 
 - Back-End
- - nodejs
+ - [nodejs](https://www.w3schools.com/nodejs/nodejs_intro.asp)
+ - [expressjs](https://expressjs.com/)
 
 ### The Database Design
-The database was designed to allow CRUD functionality to be available to registered users, when signed in. 
+- The database was designed to allow CRUD functionality to be available to registered users, when signed in.
+- We used Mongodb for our NoSQL database.  Items in the database were:
+"const {
+    name,
+    price,
+    img,
+    unit,
+    expired_date,
+    description,
+    stock,
+    farmer,
+  }"
 
- 
+- The database was set up with full CRUD functionality.
+Path   |   Method	|  Data Requested (json)   |  Function
+---| ---| ---| ---|  
+/signup   |	post |   {email:string, password:string}	|  register an account
+/login   |	post  |		{email:string, password:string}	| log in
+/logout	 | get	|  |		log out
+/profile  |	put	 |	any data changed |	edit profile
+/delete  |	delete	|	None |	delete account
+
+/product |	get	| |	depends on how to display products in the main page	
+/product |	put	|   |	all the data required for editing a product	
+/product | 	delete	|   |	data id 	
+/product/name   |	get	  |  	{name:string}  |	search products by nameS
+
 
 ### Dependencies including deployment
+- The app was deployed to [vercel](https://vercel.com/) 
 
 
 ### Testing
+- testing was done at the start for the project using [jest](https://jestjs.io/)
 
 
 ### Future improvements
@@ -56,7 +88,7 @@ We would like to give credit to the following individuals, organizations, and re
 
 
 
-## guide from Chingu - to be removed later
+## Guide from Chingu - to be removed later
 
 Your project's `readme` is as important to success as your code. For 
 this reason you should put as much care into its creation and maintenance
