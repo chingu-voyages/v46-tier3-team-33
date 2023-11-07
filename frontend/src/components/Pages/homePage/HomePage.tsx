@@ -1,7 +1,5 @@
 import "./homePage.css"
 import Search from "../../Search/Search";
-import PreSignup from "../preSignup/PreSignup";
-
 
 function HomePage() {
 
