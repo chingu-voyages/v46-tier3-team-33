@@ -4,6 +4,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import UserContext from "../../utils/UserContext";
+import SignoutButton from "../Pages/signOut/SignoutButton";
 
 function Navbar() {
   const { currentUser } = useContext(UserContext);
@@ -49,13 +50,28 @@ function Navbar() {
                     Login
                   </Link>
                 </li>
+                <li>
+                  <Link to="/Product" className="link">
+                    Product
+                  </Link>
+                </li>
               </>
             ) : (
               // If currentUser exists, show their identity or email
-              <li className="link">
-                Hello, {currentUser.identity} {currentUser.email}
-              </li>
+              <>
+                <li className="link">
+                  Hello, {currentUser.identity} {currentUser.email}
+                </li>
+                <li>
+                  <Link to="/ProductDetails" className="link">
+                    Product
+                  </Link>
+                </li>
+              </>
             )}
+            {/* <li>
+              <SignoutButton />
+            </li> */}
           </ul>
         </div>
       </div>

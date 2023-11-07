@@ -13,6 +13,8 @@ import { useState, useEffect } from "react";
 import UserContext from "./utils/UserContext";
 import { User } from "./utils/interface";
 import PreSignup from "./components/Pages/preSignup/PreSignup";
+import Product from "./components/Pages/product/Product";
+import ProductDetails from "./components/Pages/productDetails/ProductDetails";
 
 function App() {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
@@ -64,6 +66,8 @@ function App() {
               <Route path="/SignUp/farmer" element={<SignUp isFarmer={true} />} />
               <Route path="/SignUp/customer" element={<SignUp isFarmer={false}/>} />
               <Route path="/Upload" element={<ProductUploadForm />} />
+              <Route path="/Product" element={<Product />} />
+              <Route path="/ProductDetails" element={<ProductDetails />} />
             </Routes>
           </div>
         </div>
