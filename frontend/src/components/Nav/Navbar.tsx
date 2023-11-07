@@ -4,7 +4,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import UserContext from "../../utils/UserContext";
-import SignoutButton from "../Pages/signOut/SignoutButton";
+import SignoutButton from "../Pages/logout/SignoutButton";
 
 function Navbar() {
   const { currentUser } = useContext(UserContext);
@@ -67,11 +67,11 @@ function Navbar() {
                     Product
                   </Link>
                 </li>
+                <li>
+                  <SignoutButton />
+                </li>
               </>
             )}
-            {/* <li>
-              <SignoutButton />
-            </li> */}
           </ul>
         </div>
       </div>
