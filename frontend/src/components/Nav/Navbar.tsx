@@ -59,7 +59,7 @@ function Navbar() {
                 Upload Products
               </Link>
               </li>
-              <li>
+              <li className="link">
               <LogoutButton />
               </li>
               </>

@@ -76,9 +76,9 @@ const LoginForm: React.FC = () => {
           <button type="submit">Login</button>
         </div>
 
-        <span>
-          Don't have an account? <a href="/signUp">Sign up here</a>
-        </span>
+        <p>
+          Don't have an account? <a href="/preSignup">Sign up here</a>
+        </p>
       </form>
     </>
   );

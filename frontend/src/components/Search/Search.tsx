@@ -33,7 +33,7 @@ const SearchBar = () => {
                 );
                 setFilteredData(filtered);
                 // If no matches on search term setMessage to no results found.
-                if ( filteredData.length === 0) {
+                if ( filtered.length === 0) {
                     setMessage("No results found")
                 } 
                 
