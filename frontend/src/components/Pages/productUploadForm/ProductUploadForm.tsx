@@ -30,7 +30,7 @@ export default function ProductUploadForm() {
   });
 
   const navigate = useNavigate(); // Initialize the navigate object
-  
+
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormValues((prev) => ({ ...prev, [name]: value }));
@@ -66,6 +66,7 @@ export default function ProductUploadForm() {
       // API call
       const response = await fetch("http://localhost:8081/product", {
         method: "POST",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
