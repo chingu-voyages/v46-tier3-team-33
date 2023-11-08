@@ -1,21 +1,36 @@
 # Vegilicious
-An app for farmers to post pictures and descriptions of their produce and for users to notifiy farmers of their intention to buy these.
+![Vegilicious home screen](./userdesign/vegelicious_screen.png)
+
+An app for farmers to post pictures and descriptions of their produce and for users to notify farmers of their intention to buy these.
 Users can then arrange to buy and collect produce and leave reviews on the produce they have bought.  Reviews and produce can be seen by all users.
 
 
 ## Goal
 Technology has meant that people can now access food online in a variety of apps.  There is also a need for small local producers to have a space where they can showcase the produce they have so that people can purchase it.  
-We worked hard to come up with a project idea during our first sprint and finally we decided on the idea of this app.
-
+We worked hard to come up with a project idea during our first sprint and finally we decided on the idea of this app.  The project was coded in React and Typescript and we used Node.js for the backend.
+ 
 
 ### Component tree
 The component tree was put together using ideas and comments from all team members and is shown below.
 ![Component tree](./userdesign/component_tree.png)
 
-### Wireframing
+### Collaboration
 
-The initial homepage was designed as follows-  wireframes to be added.
+The app was designed and worked on by 6 team members.  Tasks were divided into front end and back end.  Valeria was the product owner and held meetings at least 3 times a week as well as doing some backend coding.  Three members of the team, Valeria, Justin and Robi were engaged working the backend with Robi working on deployment.  Four members of the team Jena, Shanis, Debbie and Becky worked on frontend tasks.  Valeria created a Jira board where we could all enter and assign tasks to work on.  People chose to work on whatever tasks they felt most comfortable with and they were also able to work on learning new technologies to extend their skills if they chose.  Debbie needed to learn react and typescript as these were new to her having previously coded in Python using Flask and Django.  Becky set up an agile stand up sheet in google docs where people could add accomplishments on a daily basis; this helped with sprint planning.  Our main meeting was on a Friday afternoon where we talked about what had been accomplished in each sprint and planned for the next one, using the agile methodology to plan and manage our work.
 
+## Team Documents
+
+We used other time documents to help us plan and design the app, most of these were provided by Chingu and are listed below.
+
+- [Team Project Ideas](./docs/team_project_ideas.md)
+- [Team Decision Log](./docs/team_decision_log.md)
+
+Meeting Agenda templates 
+
+- Meeting - Voyage Kickoff 
+- Meeting - App Vision & Feature Planning 
+- Meeting - Sprint Retrospective, Review, and Planning
+- Meeting - Sprint Open Topic Session 
 
 
 ## Tech
@@ -24,13 +39,13 @@ In the tech section, we provide information about the technology stack, dependen
 
 ### Tech Stack
 
-To develop the Vegelicious app we made use of the following stack of technologies:
+To develop the Vegilicious app we made use of the following stack of technologies:
 
 - Front-End
  - [HTML3](https://www.w3schools.com/html/)
  - [CSS5](https://www.w3schools.com/css/default.asp)
- - [react](https://www.w3schools.com/react/default.asp)
- - [typescript](https://www.w3schools.com/typescript/typescript_intro.php)
+ - [React](https://www.w3schools.com/react/default.asp)
+ - [Typescript](https://www.w3schools.com/typescript/typescript_intro.php)
 
 - Back-End
  - [nodejs](https://www.w3schools.com/nodejs/nodejs_intro.asp)
@@ -38,8 +53,7 @@ To develop the Vegelicious app we made use of the following stack of technologie
 
 ### The Database Design
 - The database was designed to allow CRUD functionality to be available to registered users, when signed in.
-- We used Mongodb for our NoSQL database.  Items in the database were:
-"const {
+- We used MongoDb for our non relational database.  Items in the database were:
     name,
     price,
     img,
@@ -47,72 +61,51 @@ To develop the Vegelicious app we made use of the following stack of technologie
     expired_date,
     description,
     stock,
-    farmer,
-  }"
+    farmer
+  
 
-- The database was set up with full CRUD functionality.
-Path   |   Method	|  Data Requested (json)   |  Function
----| ---| ---| ---|  
-/signup   |	post |   {email:string, password:string}	|  register an account
-/login   |	post  |		{email:string, password:string}	| log in
-/logout	 | get	|  |		log out
-/profile  |	put	 |	any data changed |	edit profile
-/delete  |	delete	|	None |	delete account
+- The database was set up with full CRUD functionality in mind.
 
-/product |	get	| |	depends on how to display products in the main page	
-/product |	put	|   |	all the data required for editing a product	
-/product | 	delete	|   |	data id 	
-/product/name   |	get	  |  	{name:string}  |	search products by nameS
+**path**|**method**|data requested (json) |**function**
+:-----:|:-----:|:-----:|:-----:
+signup|post |email:string, password:string|register an account
+login|post |email:string, password:string|login
+logout|post |email:string, password:string|logout
+profile|put|any data changed|edit profile
+delete|delete|none|delete account
+product|get|display products on main page|display products
+product|put|data id assigned to product|add product
+product|delete|data id|delete product
+product|get|name:string|search for product
 
 
 ### Dependencies including deployment
-- The app was deployed to [vercel](https://vercel.com/) 
+- The app was deployed to [Vercel](https://vercel.com/) 
 
 
 ### Testing
-- testing was done at the start for the project using [jest](https://jestjs.io/)
-
+- testing was attempted at the start for the project using [Jest](https://jestjs.io/) but we didn't use it extensively in the project.
 
 ### Future improvements
-
-
-
-### Media
-
+- users get an email from a farmer when a new product is available , a user has previously registered interest in a new product.
+- users are able to post reviews of products they have purchased from farmers.
+- products are put into categories making it easier for a user to search.
+- a forum for users and farmers to exchange comments and ideas on fruits and veggies.
 
 
 ## Credits
-We would like to give credit to the following individuals, organizations, and resources that have contributed to the project or provided inspiration:
+#### We would like to give credit to the following individuals, organizations, and resources that have contributed to the project or provided inspiration:
+- we used Unsplash for many of the photos on the app.  In particular:
+- Root vegetable picture
+Photo by Nathan Dumlao on Unsplash  
+
+- Question mark picture
+Photo by Simone Secci on Unsplash
+
+- A very big thank you to [Chingu](https://www.chingu.io/) for all the help and support, documentation and very useful articles during this project.
 
 
 
 
 
-## Guide from Chingu - to be removed later
 
-Your project's `readme` is as important to success as your code. For 
-this reason you should put as much care into its creation and maintenance
-as you would any other component of the application.
-
-If you are unsure of what should go into the `readme` let this article,
-written by an experienced Chingu, be your starting point - 
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
-
-And before we go there's "one more thing"! Once you decide what to include
-in your `readme` feel free to replace the text we've provided here.
-
-> Own it & Make it your Own!
-
-## Team Documents
-
-You may find these helpful as you work together to organize your project.
-
-- [Team Project Ideas](./docs/team_project_ideas.md)
-- [Team Decision Log](./docs/team_decision_log.md)
-
-Meeting Agenda templates (located in the `/docs` directory in this repo):
-
-- Meeting - Voyage Kickoff --> ./docs/meeting-voyage_kickoff.docx
-- Meeting - App Vision & Feature Planning --> ./docs/meeting-vision_and_feature_planning.docx
-- Meeting - Sprint Retrospective, Review, and Planning --> ./docs/meeting-sprint_retrospective_review_and_planning.docx
-- Meeting - Sprint Open Topic Session --> ./docs/meeting-sprint_open_topic_session.docx
