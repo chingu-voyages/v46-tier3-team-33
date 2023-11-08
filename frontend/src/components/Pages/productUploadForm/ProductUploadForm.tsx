@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./productUploadForm.css";
+import { useNavigate } from "react-router-dom";
 
 interface FormValues {
   name: string;
@@ -28,6 +29,8 @@ export default function ProductUploadForm() {
     availabilityTime: "",
   });
 
+  const navigate = useNavigate(); // Initialize the navigate object
+  
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormValues((prev) => ({ ...prev, [name]: value }));
@@ -57,9 +60,25 @@ export default function ProductUploadForm() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formValues);
+    try {
+      // API call
+      const response = await fetch("http://localhost:8081/product", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formValues),
+      });
+      if (response.ok) {
+        navigate("/");
+      } else {
+        console.log("Submit failed");
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
   };
 
   return (
