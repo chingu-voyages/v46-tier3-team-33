@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-import { Farmer } from "../models/farmer";
+import { UserModel } from "../models/user";
 import dotenv from "dotenv";
 import { User } from "../utils/interface";
 
@@ -25,20 +25,14 @@ const loginController = async (
   }
 
   try {
-    // Check if farmer exists
-    const farmer = await Farmer.findOne({ email }).select("+password");
-    if (!farmer) {
-      return res.status(401).json({ message: "Invalid email or password" });
-    }
-
-    // Check if identity matches
-    const identityMatch = farmer.isFarmer === isFarmer;
-    if (!identityMatch) {
+    // Check if user exists
+    const userResult = await UserModel.findOne({ email }).select("+password");
+    if (!userResult) {
       return res.status(401).json({ message: "Invalid email or password" });
     }
 
     // Check if password matches
-    const isMatch = await bcrypt.compare(password, farmer.password);
+    const isMatch = await bcrypt.compare(password, userResult.password);
     if (!isMatch) {
       return res.status(401).json({ message: "Invalid email or password" });
     }
@@ -49,19 +43,19 @@ const loginController = async (
       throw new Error("JWT_SECRET not defined in environment");
     }
 
-    const identity = farmer ? "farmer" : "customer";
+    const identity = userResult.isFarmer ? "farmer" : "customer";
 
     // Create user object for signing JWT
     const user: User = {
       identity: identity,
-      email: farmer.email,
-      userID: farmer._id.toString(),
+      email: userResult.email,
+      userID: userResult._id.toString(),
     };
 
     // Create JWT token
     const token = jwt.sign(
       {
-        user,
+        user: userResult,
       },
       JWT_SECRET,
       {
@@ -76,9 +70,11 @@ const loginController = async (
       maxAge: 86400000, // Token expiration, here it's set to 24 hour
     });
 
-    res.status(200).json({ message: "Logged in successfully", user });
+    res
+      .status(200)
+      .json({ message: "Logged in successfully", user: userResult });
     console.log("Logged in successfully");
-    console.log(user);
+    console.log(userResult);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server error" });

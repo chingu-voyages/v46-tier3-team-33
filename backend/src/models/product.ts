@@ -5,14 +5,14 @@ interface IProduct extends Document {
   name: string;
   price: number;
   image: {
-    contentType: string,
-    fileName: string
-  }
+    contentType: string;
+    fileName: string;
+  };
   unit: string;
   expired_date: Date;
   description: string;
   stock: number;
-  farmerId: Schema.Types.ObjectId; // A reference to the farmer schema.
+  userId: Schema.Types.ObjectId; // A reference to the farmer schema.
 }
 
 // 2. Create a Schema corresponding to the document interface.
@@ -52,7 +52,7 @@ const productSchema = new Schema<IProduct>({
     type: Number,
     required: true,
   },
-  farmerId: { type: Schema.Types.ObjectId, ref: "Farmer", required: true }, // Reference to the Farmer model.
+  userId: { type: Schema.Types.ObjectId, ref: "User", required: true }, // Reference to the User model.
 });
 
 // 3. Create a Model.
