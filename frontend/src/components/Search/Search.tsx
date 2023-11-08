@@ -6,7 +6,7 @@ import UserContext from '../../utils/UserContext';
 
 const SearchBar = () => {
     const currentUser = useContext(UserContext);
-    console.log("Current user: ", currentUser)
+    
     const [message, setMessage] = useState('')
     const [value, setValue] = useState('');
     const [data, setData] = useState([]);
@@ -24,11 +24,11 @@ const SearchBar = () => {
             });
 
             if (response.ok) {
-                const jsonData = await response.json();
-                setData(jsonData);
+                const data = await response.json();
+                setData(data);
                 
                 // Apply filtering here
-                const filtered = jsonData.filter((item: any) =>
+                const filtered = data.filter((item: any) =>
                     item.name.toLowerCase().includes(value.toLowerCase())
                 );
                 setFilteredData(filtered);
