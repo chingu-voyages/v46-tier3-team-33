@@ -3,6 +3,7 @@ import { Product } from "../models/product";
 
 interface ProductCreateRequestBody {
   name: string;
+  picutre: string;
   price: number;
   unit: string;
   expired_date: Date;
@@ -29,7 +30,7 @@ const productCreateController = async (
       expired_date,
       description,
       stock,
-      farmerId: res.locals.farmerId,
+      userId: res.locals.farmerId,
     });
     res.status(200).json({ message: "Product created successfully" });
   } catch (error) {
