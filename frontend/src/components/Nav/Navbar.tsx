@@ -4,6 +4,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import UserContext from "../../utils/UserContext";
+import LogoutButton from "../Pages/logout/LogoutButton";
 
 function Navbar() {
   const { currentUser } = useContext(UserContext);
@@ -46,8 +47,7 @@ function Navbar() {
                   </Link>
                 </li>
               </>
-            ) : (
-              
+            ) : (              
               // If currentUser exists, show their identity or email 
               //and give access to upload products link.
               <>
@@ -58,8 +58,11 @@ function Navbar() {
               <Link to="/Upload" className="link">
                 Upload Products
               </Link>
-            </li>
-            </>
+              </li>
+              <li>
+              <LogoutButton />
+              </li>
+              </>
             )}
           </ul>
         </div>
