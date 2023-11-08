@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { Farmer } from "../models/farmer";
+import { UserModel } from "../models/user";
 import bcrypt from "bcrypt";
 
 const emailRegexp = new RegExp(
@@ -28,14 +28,14 @@ const signup = async (req: Request, res: Response) => {
   try {
     const password = await encryptPassword(req.body.password);
 
-    const farmer = new Farmer({
+    const user = new UserModel({
       email: req.body.email,
       password,
       isFarmer: req.body.farmer,
     });
 
-    await farmer.save();
-    res.status(200).send(farmer.toJSON());
+    await user.save();
+    res.status(200).send(user.toJSON());
   } catch (error) {
     res.status(500).send({ error: "Server error" });
   }
