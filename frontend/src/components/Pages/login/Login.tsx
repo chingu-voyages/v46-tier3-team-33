@@ -35,13 +35,11 @@ const LoginForm: React.FC = () => {
         // Assuming the login is successful, relocate the user to the home page
         const data = await response.json();
         setCurrentUser(data.user);
-        console.log(data.user);
         navigate("/");
       } else {
         // Handle login failure, such as displaying an error message to the user
         console.log("Login failed");
-        console.log(email);
-        console.log(password);
+       
       }
     } catch (error) {
       console.error("An error occurred:", error);
