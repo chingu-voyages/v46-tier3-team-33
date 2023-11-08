@@ -10,14 +10,13 @@ dotenv.config();
 interface LoginRequestBody {
   email?: string;
   password?: string;
-  isFarmer?: boolean;
 }
 
 const loginController = async (
   req: Request<{}, {}, LoginRequestBody>,
   res: Response
 ) => {
-  const { email, password, isFarmer } = req.body;
+  const { email, password } = req.body;
 
   // Validate credentials
   if (!email || !password) {
@@ -28,13 +27,13 @@ const loginController = async (
     // Check if user exists
     const userResult = await UserModel.findOne({ email }).select("+password");
     if (!userResult) {
-      return res.status(401).json({ message: "Invalid email or password" });
+      return res.status(401).json({ message: "Invalid email or password1" });
     }
 
     // Check if password matches
     const isMatch = await bcrypt.compare(password, userResult.password);
     if (!isMatch) {
-      return res.status(401).json({ message: "Invalid email or password" });
+      return res.status(401).json({ message: "Invalid email or password2" });
     }
 
     // Ensure JWT_SECRET is available
@@ -47,7 +46,7 @@ const loginController = async (
 
     // Create user object for signing JWT
     const user: User = {
-      identity: identity,
+      identity,
       email: userResult.email,
       userID: userResult._id.toString(),
     };
