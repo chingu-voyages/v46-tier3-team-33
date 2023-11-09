@@ -55,17 +55,26 @@ export default function ProductUploadForm() {
     const files = e.target.files as FileList; // using type assertion here
     if (files.length > 0) {
       setFormValues((prev) => ({ ...prev, picture: files[0] }));
-      console.log(files[0] );
+      console.log(files[0]);
     }
     console.log(files);
   };
 
   const newFormData = () => {
     const formData = new FormData();
-    formData.append('picture', formValues.picture as Blob);
-    
-    return formData
-  }
+    formData.append("name", formValues.name);
+    formData.append("description", formValues.description);
+    formData.append("postcode", formValues.postcode);
+    formData.append("price", formValues.price);
+    formData.append("stock", formValues.stock);
+    formData.append("unit", formValues.unit);
+    formData.append("expiryDate", formValues.expiryDate);
+    formData.append("availabilityTime", formValues.availabilityTime);
+    if (formValues.picture) {
+      formData.append("picture", formValues.picture);
+    }
+    return formData;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -148,18 +157,19 @@ export default function ProductUploadForm() {
         id="quantityAvailable"
         className="upload-form-input"
         type="number"
-        name="quantityAvailable"
+        name="stock"
         placeholder="Quantity of item"
         onChange={handleInputChange}
         value={formValues.stock}
       />
 
-      <label htmlFor="unitOfMeasure">Units</label>
+      <label htmlFor="unit">Units</label>
       <select
         className="upload-form-select"
-        id="unitOfMeasure"
-        name="unitOfMeasure"
+        id="unit"
+        name="unit"
         onChange={handleSelectChange}
+        value={formValues.unit}
       >
         <option value="g">Gram (g)</option>
         <option value="kg">Kilogram (kg)</option>
