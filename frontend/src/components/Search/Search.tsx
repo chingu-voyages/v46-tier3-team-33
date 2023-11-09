@@ -35,7 +35,6 @@ const SearchBar = () => {
                 } else {
                     //if the user selects product search
                     if (searchSelection === "product") {
-                        console.log("search selection: ", searchSelection)
 
                         const filtered = data.filter((item: any) =>
                         item.name.toLowerCase().includes(value.toLowerCase())
@@ -44,8 +43,7 @@ const SearchBar = () => {
                     
                     //if the user selects postcode search
                     } else if (searchSelection === "postcode") {
-                        console.log("search selection: ", searchSelection)
-
+                      
                         const filtered = data.filter((item: any) =>
                         item.postcode.toLowerCase().includes(value.toLowerCase())
                     );

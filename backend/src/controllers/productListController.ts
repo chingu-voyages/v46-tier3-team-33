@@ -4,8 +4,8 @@ import { Product } from "../models/product";
 const listProductController = async (req: Request, res: Response) => {
   try {
     const products = await Product.find().populate({
-      path: "farmerId",
-      select: "email",
+      path: "_id",
+      select: "name",
     });
 
     res.status(200).json(products);

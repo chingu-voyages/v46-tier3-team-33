@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 interface FormValues {
   name: string;
-  picture: File | null;
+  image: File | null;
   description: string;
   postcode: string;
   price: number;
@@ -17,7 +17,7 @@ interface FormValues {
 export default function ProductUploadForm() {
   const [formValues, setFormValues] = useState<FormValues>({
     name: "",
-    picture: null,
+    image: null,
     description: "",
     postcode: "",
     price: 0,
@@ -54,7 +54,7 @@ export default function ProductUploadForm() {
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files as FileList; // using type assertion here
     if (files.length > 0) {
-      setFormValues((prev) => ({ ...prev, picture: files[0] }));
+      setFormValues((prev) => ({ ...prev, image: files[0] }));
       console.log(files[0] );
     }
     console.log(files);
@@ -62,7 +62,7 @@ export default function ProductUploadForm() {
 
   const newFormData = () => {
     const formData = new FormData();
-    formData.append('picture', formValues.picture as Blob);
+    formData.append('picture', formValues.image as Blob);
     formData.append("name", formValues.name);
     formData.append("description", formValues.description);
     formData.append("postcode", formValues.postcode);

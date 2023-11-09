@@ -3,7 +3,7 @@ import { Product } from "../models/product";
 
 interface ProductCreateRequestBody {
   name: string;
-  picture: File | null;
+  image: File | null;
   description: string;
   postcode: string;
   price: number;
