@@ -69,11 +69,10 @@ const SearchBar = () => {
     useEffect(() => {
         // This effect will run whenever filteredData changes
         if ( data.length === 0){
-            setMessage("Choose a search option")
-
+            setMessage("Choose a search option first")
         }
-        else if (filteredData.length === 0) {
-            setMessage("No results found");
+        else if (filteredData.length === 0 ) {
+            setMessage("No results found, try again");
 
         } else {
             setMessage(`${filteredData.length} results found`);
