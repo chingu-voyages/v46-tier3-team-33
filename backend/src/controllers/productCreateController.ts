@@ -3,12 +3,14 @@ import { Product } from "../models/product";
 
 interface ProductCreateRequestBody {
   name: string;
-  picutre: string;
-  price: number;
-  unit: string;
-  expired_date: Date;
+  picture: File | null;
   description: string;
+  postcode: string;
+  price: number;
   stock: number;
+  unit: string;
+  expiryDate: string;
+  availabilityTime: string;
 }
 
 const productCreateController = async (
@@ -16,7 +18,7 @@ const productCreateController = async (
   res: Response
 ) => {
   if (!req.file) return res.status(400).json({ message: "Picture required" });
-  const { name, price, unit, expired_date, description, stock } = req.body;
+  const { name, price, postcode, unit, expiryDate,availabilityTime, description, stock } = req.body;
 
   try {
     const product = await Product.create({
@@ -27,10 +29,12 @@ const productCreateController = async (
         contentType: req.file.mimetype,
       },
       unit,
-      expired_date,
+      expiryDate,
       description,
       stock,
-      userId: res.locals.farmerId,
+      postcode,
+      availabilityTime,
+      userId: res.locals.user,
     });
     res.status(200).json({ message: "Product created successfully" });
   } catch (error) {

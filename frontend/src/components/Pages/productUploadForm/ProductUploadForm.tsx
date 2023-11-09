@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./productUploadForm.css";
+import { useNavigate } from "react-router-dom";
 
 interface FormValues {
   name: string;
@@ -7,10 +8,9 @@ interface FormValues {
   description: string;
   postcode: string;
   price: number;
-  quantityOfUnit: number;
-  unitOfMeasure: string;
+  stock: number;
+  unit: string;
   expiryDate: string;
-  quantityAvailable: number;
   availabilityTime: string;
 }
 
@@ -21,12 +21,13 @@ export default function ProductUploadForm() {
     description: "",
     postcode: "",
     price: 0,
-    quantityOfUnit: 0,
-    unitOfMeasure: "",
+    stock: 0,
+    unit: "",
     expiryDate: "",
-    quantityAvailable: 0,
     availabilityTime: "",
   });
+
+  const navigate = useNavigate(); // Initialize the navigate object
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -54,12 +55,42 @@ export default function ProductUploadForm() {
     const files = e.target.files as FileList; // using type assertion here
     if (files.length > 0) {
       setFormValues((prev) => ({ ...prev, picture: files[0] }));
+      console.log(files[0] );
     }
+    console.log(files);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const newFormData = () => {
+    const formData = new FormData();
+    formData.append('picture', formValues.picture as Blob);
+    formData.append("name", formValues.name);
+    formData.append("description", formValues.description);
+    formData.append("postcode", formValues.postcode);
+    formData.append("price", formValues.price.toString());
+    formData.append("stock", formValues.stock.toString());
+    formData.append("unit", formValues.unit);
+    formData.append("expiryDate", formValues.expiryDate);
+    formData.append("availabilityTime", formValues.availabilityTime);
+    return formData;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formValues);
+    try {
+      // API call
+      const response = await fetch("http://localhost:8081/product", {
+        method: "POST",
+        credentials: "include",
+        body: newFormData(),
+      });
+      if (response.ok) {
+        navigate("/");
+      } else {
+        console.log("Submit failed");
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
   };
 
   return (
@@ -116,22 +147,22 @@ export default function ProductUploadForm() {
         value={formValues.price}
       />
 
-      <label htmlFor="quantityAvailable">Available Quantity</label>
+      <label htmlFor="stock">Available Quantity</label>
       <input
-        id="quantityAvailable"
+        id="stock"
         className="upload-form-input"
         type="number"
-        name="quantityAvailable"
+        name="stock"
         placeholder="Quantity of item"
         onChange={handleInputChange}
-        value={formValues.quantityAvailable}
+        value={formValues.stock}
       />
 
-      <label htmlFor="unitOfMeasure">Units</label>
+      <label htmlFor="unit">Units</label>
       <select
         className="upload-form-select"
-        id="unitOfMeasure"
-        name="unitOfMeasure"
+        id="unit"
+        name="unit"
         onChange={handleSelectChange}
       >
         <option value="g">Gram (g)</option>

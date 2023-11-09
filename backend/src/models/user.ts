@@ -16,6 +16,6 @@ const userSchema = new Schema<IUser>({
 });
 
 // 3. Create a Model.
-const Farmer: Model<IUser> = model<IUser>("User", userSchema);
+const UserModel: Model<IUser> = model<IUser>("User", userSchema);
 
-export { Farmer, IUser as IUser };
+export { UserModel, IUser as IUser };
