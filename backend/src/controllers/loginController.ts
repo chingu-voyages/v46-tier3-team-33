@@ -54,7 +54,7 @@ const loginController = async (
     // Create JWT token
     const token = jwt.sign(
       {
-        user: userResult,
+        user,
       },
       JWT_SECRET,
       {
@@ -69,11 +69,9 @@ const loginController = async (
       maxAge: 86400000, // Token expiration, here it's set to 24 hour
     });
 
-    res
-      .status(200)
-      .json({ message: "Logged in successfully", user: userResult });
+    res.status(200).json({ message: "Logged in successfully", user });
     console.log("Logged in successfully");
-    console.log(userResult);
+    console.log(user);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server error" });
