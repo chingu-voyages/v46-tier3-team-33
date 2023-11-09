@@ -6,13 +6,13 @@ export default function useMultiStepForm(steps: ReactElement[]) {
   function next() {
     setCurrentStepIndex((i) => {
       if (i >= steps.length - 1) return i;
-      i + 1;
+      return i + 1;
     });
   }
   function back() {
     setCurrentStepIndex((i: number) => {
       if (i <= 0) return i;
-      return i + 1;
+      return i - 1;
     });
   }
   function goTo(index: number) {

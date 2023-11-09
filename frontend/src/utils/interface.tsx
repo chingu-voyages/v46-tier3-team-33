@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 
 interface User {
+  isFarmer: any;
   identity: "farmer" | "customer"; // User identity
   email: string;
   userID: string;

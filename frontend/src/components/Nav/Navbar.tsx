@@ -8,6 +8,8 @@ import LogoutButton from "../Pages/logout/LogoutButton";
 
 function Navbar() {
   const { currentUser } = useContext(UserContext);
+  console.log("Current user: ", currentUser)
+
 
   return (
     <>
@@ -52,13 +54,17 @@ function Navbar() {
               //and give access to upload products link.
               <>
               <li className="link">
-                Hello, {currentUser.identity} {currentUser.email}
+                Hello, {currentUser.email}
               </li>
-              <li>
-              <Link to="/Upload" className="link">
-                Upload Products
-              </Link>
-              </li>
+                {/* Check if isFarmer is true before rendering the link */}
+                {currentUser.isFarmer && (
+                  <li>
+                    <Link to="/Upload" className="link">
+                      Upload Products
+                    </Link>
+                  </li>
+                )}
+             
               <li className="link">
               <LogoutButton />
               </li>
