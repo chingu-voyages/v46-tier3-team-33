@@ -16,7 +16,6 @@ type Item = {
     availabilityTime: string;
   };
   
-
   
 // Use the Item type to type the item parameter
 const SearchResultCard: React.FC<{ item: Item }> = ({ item }) => {
