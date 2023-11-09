@@ -11,7 +11,7 @@ const SearchBar = () => {
     const [value, setValue] = useState('');
     const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState<any[]>([]); // Use 'any' as a temporary type
-
+    const [searchSelection, setSearchSelection] = useState('')
     
     const fetchData = async () => {
         
@@ -27,13 +27,16 @@ const SearchBar = () => {
                 const data = await response.json();
                 setData(data);
                 
+                
                 // Apply filtering here
                 const filtered = data.filter((item: any) =>
                     item.name.toLowerCase().includes(value.toLowerCase())
                 );
                 setFilteredData(filtered);
+
+
                 // If no matches on search term setMessage to no results found.
-                if ( filtered.length === 0) {
+                if ( filteredData.length === 0) {
                     setMessage("No results found")
                 } 
                 
