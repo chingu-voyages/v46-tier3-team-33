@@ -12,7 +12,7 @@ interface IProduct extends Document {
   price: number;
   stock: number;
   unit: string;
-  expiryDate: Date;
+  expiryDate: string;
   availabilityTime: string;
   userId: Schema.Types.ObjectId; // A reference to the farmer schema.
 }
@@ -38,7 +38,7 @@ const productSchema = new Schema<IProduct>({
       "items",
     ], // An enumeration of valid values.
   },
-  expiryDate: { type: Date, required: true },
+  expiryDate: { type: String, required: true },
   description: { type: String, required: true },
   stock: {
     type: Number,

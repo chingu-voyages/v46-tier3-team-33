@@ -4,24 +4,30 @@ import './search.css'
 type Item = {
     _id: Object;
     name: string;
-    picture: string;
+    image:
+    { contentType: string; 
+      fileName: string;
+
+    };
     description: string;
     postcode: string;
     price: number;
     stock: number;
-    unitOfMeasure: string;
+    unit: string;
     expiryDate: string;
     availabilityTime: string;
   };
   
-  
 // Use the Item type to type the item parameter
 const SearchResultCard: React.FC<{ item: Item }> = ({ item }) => {
+  //set image url for render
+  const imageUrl = `public/uploads/${item.image.fileName}`
+
   return (
     <div className="search-result-card">
       <div className="image-container">
         <img
-          src={item.picture}
+          src={imageUrl}
           alt={item.description}
         />
       </div>
@@ -36,7 +42,7 @@ const SearchResultCard: React.FC<{ item: Item }> = ({ item }) => {
         <br />
         <strong>Quantity of unit:</strong> {item.stock}
         <br />
-        <strong>Unit of measure:</strong> {item.unitOfMeasure}
+        <strong>Unit of measure:</strong> {item.unit}
         <br />
         <strong>Expiry date:</strong> {item.expiryDate}
         <br />
