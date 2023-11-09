@@ -3,16 +3,14 @@ import './search.css'
 // Define the Item type
 type Item = {
     _id: Object;
-    userId: string;
     name: string;
     picture: string;
     description: string;
     postcode: string;
     price: number;
-    quantityOfUnit: number;
+    stock: number;
     unitOfMeasure: string;
     expiryDate: string;
-    quantityAvailable: number;
     availabilityTime: string;
   };
   
@@ -30,21 +28,17 @@ const SearchResultCard: React.FC<{ item: Item }> = ({ item }) => {
       <div className="card-content" >
         <strong>Name:</strong> {item.name}
         <br />
-        <strong>User ID:</strong> {item.userId}
-        <br />
         <strong>Description:</strong> {item.description}
         <br />
         <strong>Postcode:</strong> {item.postcode}
         <br />
         <strong>Price per unit:</strong> {item.price}
         <br />
-        <strong>Quantity of unit:</strong> {item.quantityOfUnit}
+        <strong>Quantity of unit:</strong> {item.stock}
         <br />
         <strong>Unit of measure:</strong> {item.unitOfMeasure}
         <br />
         <strong>Expiry date:</strong> {item.expiryDate}
-        <br />
-        <strong>Quantity available:</strong> {item.quantityAvailable}
         <br />
         <strong>Availability time:</strong> {item.availabilityTime}
       </div>
