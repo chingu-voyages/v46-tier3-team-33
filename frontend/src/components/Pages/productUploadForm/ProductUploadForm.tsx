@@ -74,9 +74,6 @@ export default function ProductUploadForm() {
       const response = await fetch("http://localhost:8081/product", {
         method: "POST",
         credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
         body: newFormData(),
       });
       if (response.ok) {
