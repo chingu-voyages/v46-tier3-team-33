@@ -63,9 +63,16 @@ export default function ProductUploadForm() {
   const newFormData = () => {
     const formData = new FormData();
     formData.append('picture', formValues.picture as Blob);
-    
-    return formData
-  }
+    formData.append("name", formValues.name);
+    formData.append("description", formValues.description);
+    formData.append("postcode", formValues.postcode);
+    formData.append("price", formValues.price.toString());
+    formData.append("stock", formValues.stock.toString());
+    formData.append("unit", formValues.unit);
+    formData.append("expiryDate", formValues.expiryDate);
+    formData.append("availabilityTime", formValues.availabilityTime);
+    return formData;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -140,22 +147,22 @@ export default function ProductUploadForm() {
         value={formValues.price}
       />
 
-      <label htmlFor="quantityAvailable">Available Quantity</label>
+      <label htmlFor="stock">Available Quantity</label>
       <input
-        id="quantityAvailable"
+        id="stock"
         className="upload-form-input"
         type="number"
-        name="quantityAvailable"
+        name="stock"
         placeholder="Quantity of item"
         onChange={handleInputChange}
         value={formValues.stock}
       />
 
-      <label htmlFor="unitOfMeasure">Units</label>
+      <label htmlFor="unit">Units</label>
       <select
         className="upload-form-select"
-        id="unitOfMeasure"
-        name="unitOfMeasure"
+        id="unit"
+        name="unit"
         onChange={handleSelectChange}
       >
         <option value="g">Gram (g)</option>
