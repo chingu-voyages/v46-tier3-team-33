@@ -31,7 +31,7 @@ const SearchBar = () => {
                 if (searchSelection === '') {
                     setMessage("Choose a search option first")
 
-                // Apply filtering here
+                
                 } else {
                     //if the user selects product search
                     if (searchSelection === "product") {
@@ -68,12 +68,17 @@ const SearchBar = () => {
     //gives the user a message about the number of results found 
     useEffect(() => {
         // This effect will run whenever filteredData changes
-        if (filteredData.length === 0) {
+        if ( data.length === 0){
+            setMessage("Choose a search option")
+
+        }
+        else if (filteredData.length === 0) {
             setMessage("No results found");
+
         } else {
             setMessage(`${filteredData.length} results found`);
         }
-    }, [filteredData]); // This ensures that the effect runs when filteredData changes
+    }, [filteredData, data]); // This ensures that the effect runs when filteredData changes
 
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
