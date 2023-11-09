@@ -3,15 +3,17 @@ import { Schema, model, Model, Document } from "mongoose";
 // 1. Create an interface representing a document in MongoDB.
 interface IProduct extends Document {
   name: string;
-  price: number;
   image: {
     contentType: string;
     fileName: string;
   };
-  unit: string;
-  expired_date: Date;
   description: string;
+  postcode: string;
+  price: number;
   stock: number;
+  unit: string;
+  expiryDate: Date;
+  availabilityTime: string;
   userId: Schema.Types.ObjectId; // A reference to the farmer schema.
 }
 
@@ -46,12 +48,14 @@ const productSchema = new Schema<IProduct>({
       "gallon",
     ], // An enumeration of valid values.
   },
-  expired_date: { type: Date, required: true },
+  expiryDate: { type: Date, required: true },
   description: { type: String, required: true },
   stock: {
     type: Number,
     required: true,
   },
+  availabilityTime: { type: String },
+  postcode: { type: String, required: true },
   userId: { type: Schema.Types.ObjectId, ref: "User", required: true }, // Reference to the User model.
 });
 

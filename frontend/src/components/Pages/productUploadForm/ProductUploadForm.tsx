@@ -8,10 +8,9 @@ interface FormValues {
   description: string;
   postcode: string;
   price: number;
-  quantityOfUnit: number;
-  unitOfMeasure: string;
+  stock: number;
+  unit: string;
   expiryDate: string;
-  quantityAvailable: number;
   availabilityTime: string;
 }
 
@@ -22,10 +21,9 @@ export default function ProductUploadForm() {
     description: "",
     postcode: "",
     price: 0,
-    quantityOfUnit: 0,
-    unitOfMeasure: "",
+    stock: 0,
+    unit: "",
     expiryDate: "",
-    quantityAvailable: 0,
     availabilityTime: "",
   });
 
@@ -57,8 +55,17 @@ export default function ProductUploadForm() {
     const files = e.target.files as FileList; // using type assertion here
     if (files.length > 0) {
       setFormValues((prev) => ({ ...prev, picture: files[0] }));
+      console.log(files[0] );
     }
+    console.log(files);
   };
+
+  const newFormData = () => {
+    const formData = new FormData();
+    formData.append('picture', formValues.picture as Blob);
+    
+    return formData
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -70,7 +77,7 @@ export default function ProductUploadForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formValues),
+        body: newFormData(),
       });
       if (response.ok) {
         navigate("/");
@@ -144,7 +151,7 @@ export default function ProductUploadForm() {
         name="quantityAvailable"
         placeholder="Quantity of item"
         onChange={handleInputChange}
-        value={formValues.quantityAvailable}
+        value={formValues.stock}
       />
 
       <label htmlFor="unitOfMeasure">Units</label>

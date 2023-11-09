@@ -17,11 +17,13 @@ import productListController from "./controllers/productListController";
 
 import cors from "cors"; // Import the cors middleware
 import upload from "./multerSetup";
+import multer from "multer";
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
+app.use(multer);
 app.use(cookieParser());
 app.use(
   cors({
