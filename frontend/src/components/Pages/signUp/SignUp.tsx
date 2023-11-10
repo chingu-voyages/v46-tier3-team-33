@@ -36,14 +36,14 @@ const SignUp = (props: SignUpProps) => {
     const strength = calculatePasswordStrength(newPassword);
     setPasswordStrength(strength);
 
-    // Set progress bar color based on password strength
-    if (strength === "Weak") {
-      setProgressBarColor("red");
-    } else if (strength === "Medium") {
-      setProgressBarColor("orange");
-    } else {
-      setProgressBarColor("green");
-    }
+    // // Set progress bar color based on password strength
+    // if (strength === "Weak") {
+    //   setProgressBarColor("red");
+    // } else if (strength === "Medium") {
+    //   setProgressBarColor("orange");
+    // } else {
+    //   setProgressBarColor("green");
+    // }
   };
   const calculatePasswordStrength = (password: string): string => {
     // Add your own logic to calculate password strength here

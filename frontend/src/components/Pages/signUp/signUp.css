@@ -1,13 +1,3 @@
-.signup-container {
-  max-width: 25rem;
-  margin: 5rem auto;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  gap: 1em;
-
-}
-
 h1{
   text-align: center;
 }
@@ -21,6 +11,17 @@ input{
 p{
   padding-bottom: 0.5rem;
 }
+.signup-container {
+  max-width: 25rem;
+  margin: 5rem auto;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  gap: 1em;
+
+}
+
+
 
 .buttoncontainer{
   display: flex;
