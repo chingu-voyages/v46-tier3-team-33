@@ -17,6 +17,7 @@ const LoginForm: React.FC = () => {
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [loginFailedMessage, setLoginFailedMessage] = useState('')
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -39,6 +40,7 @@ const LoginForm: React.FC = () => {
       } else {
         // Handle login failure, such as displaying an error message to the user
         console.log("Login failed");
+        setLoginFailedMessage("Login failed - please try again")
        
       }
     } catch (error) {
@@ -79,7 +81,10 @@ const LoginForm: React.FC = () => {
         <p>
           Don't have an account? <a href="/preSignup">Sign up here</a>
         </p>
+
+        <div>{loginFailedMessage}</div>
       </form>
+      
     </>
   );
 };
