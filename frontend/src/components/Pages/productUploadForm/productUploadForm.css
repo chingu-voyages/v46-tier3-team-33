@@ -30,20 +30,3 @@
   resize: vertical;
 }
 
-.upload-form-button {
-  cursor: pointer;
-  padding: 10px 20px;
-  background-color: white;
-  color: black;
-  border: 1px;
-  border-color: black;
-  border-radius: 5px;
-  transition: background-color 0.3s; /* Smooth transition for hover effect */
-}
-
-.upload-form-button:hover {
-  background-color: #035405;
-  color: white;
-  border: 1px;
-  border-color: black;
-}

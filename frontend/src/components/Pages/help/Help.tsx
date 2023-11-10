@@ -16,8 +16,6 @@ function Help() {
 			<p>Unregistered users can see farmers listings but cannot post items to sell and </p>
 			<p>cannot contact farmers about the veggies or fruit they have for sale.</p>
 		</div>
-		
-	  
     </div>
 );
 }
