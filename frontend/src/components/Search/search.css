@@ -1,31 +1,3 @@
-.button {
-    background-color: green; 
-    color: white; 
-    padding: 10px 20px; 
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 5px; 
-    box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.7); 
-    cursor: pointer;
-}
-
-.buttonSearchSelection {
-  background-color: green; 
-  color: white; 
-  padding: 10px 20px; 
-  margin: 20px;
-  border: none;
-  border-radius: 5px; 
-  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.7); 
-  cursor: pointer;
-}
-
-.buttonSearchSelection.selected {
-  background-color: white; 
-  color: green;
-  border: 2px solid green; /* Add a border to indicate selection */
-}
-
 /* Add this CSS to style your cards */
 .search-result-card {
     display: flex;

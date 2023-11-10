@@ -15,7 +15,7 @@ const SignUp = (props: SignUpProps) => {
   const [isRepeat, setIsRepeat] = useState(true);
 
   const [passwordStrength, setPasswordStrength] = useState<string>(""); // Weak, Medium, Strong
-  const [progressBarColor, setProgressBarColor] = useState<string>("");
+  // const [progressBarColor, setProgressBarColor] = useState<string>("");
 
   const navigate = useNavigate(); // Initialize the navigate object
 
@@ -36,14 +36,14 @@ const SignUp = (props: SignUpProps) => {
     const strength = calculatePasswordStrength(newPassword);
     setPasswordStrength(strength);
 
-    // Set progress bar color based on password strength
-    if (strength === "Weak") {
-      setProgressBarColor("red");
-    } else if (strength === "Medium") {
-      setProgressBarColor("orange");
-    } else {
-      setProgressBarColor("green");
-    }
+    // // Set progress bar color based on password strength
+    // if (strength === "Weak") {
+    //   setProgressBarColor("red");
+    // } else if (strength === "Medium") {
+    //   setProgressBarColor("orange");
+    // } else {
+    //   setProgressBarColor("green");
+    // }
   };
   const calculatePasswordStrength = (password: string): string => {
     // Add your own logic to calculate password strength here
@@ -92,53 +92,71 @@ const SignUp = (props: SignUpProps) => {
 
   return (
     <>
-      <div className="front-page">
-        <div>
-          <h1>Vegilicious</h1>
-        </div>
-
-        <div className="signup-container">
-          <h2>Sign Up</h2>
-          <form onSubmit={handleSubmit}>
+      <div className="signup-container">
+        <form onSubmit={handleSubmit}>
+          <h1>Sign Up</h1>
+          <div>
+            <label htmlFor="email">Email</label>
+            <br/>
             <input
+              id="email"
               type="email"
               placeholder="Email"
               value={email}
               onChange={onHandleEmailChange}
             />
             {!isEmailValid && <p>Please enter a valid email.</p>}
+          </div>
+
+          <div>
+            <label htmlFor="password">Password</label>
+            <br/>
             <input
+              id="password"
               type="password"
               placeholder="Password"
               value={password}
               onChange={onHandlePasswordChange}
             />
-            <div className="password-strength">
-              <div
-                className="password-progress"
-                style={{
-                  width: `${password.length * 10}%`,
-                  background: progressBarColor,
-                }}
-              ></div>
-              <p className={`strength-text ${passwordStrength.toLowerCase()}`}>
-                Password Strength: {passwordStrength}
-              </p>
-            </div>
+          </div>
+
+          <div>
+            <label htmlFor="repeatpassword">Repeat Password</label>
+            <br/>
             <input
+              id="repeatpassword"
               type="password"
               placeholder="Repeat Password"
               value={repeatPassword}
               onChange={onHandleRepeatPassword}
             />
-            {!isRepeat && <p>Please repeat the correct password.</p>}
-            <button type="submit">Sign Up</button>
-          </form>
 
-          <span>
+            <div className="password-strength">
+              {/* <div
+                className="password-progress"
+                style={{
+                  width: `${password.length * 10}%`,
+                  background: progressBarColor,
+                }}
+              ></div> */}
+              {password && (
+                <span
+                  className={`strength-text ${passwordStrength.toLowerCase()}`}
+                >
+                  Password Strength: {passwordStrength}
+                </span>
+              )}
+              {!isRepeat && <p>Please repeat the correct password.</p>}
+            </div>
+          </div>
+          <div className="buttoncontainer">
+            <button type="submit">Sign Up</button>
+          </div>
+
+          <p>
             Have an account? <a href="/login">Login here</a>
-          </span>
-        </div>
+          </p>
+        </form>
       </div>
     </>
   );

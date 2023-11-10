@@ -40,6 +40,7 @@ const LoginForm: React.FC = () => {
       } else {
         // Handle login failure, such as displaying an error message to the user
         console.log("Login failed");
+
         setLoginFailedMessage("Login failed - please try again")
        
       }
@@ -50,33 +51,36 @@ const LoginForm: React.FC = () => {
 
   return (
     <>
-      <form className="input_form" onSubmit={handleSubmit}>
-        <div className="form_row">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            placeholder="youremail@gmail.com"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-            required
-          />
-        </div>
+      <div className="login-container">
+        <h1>Login</h1>
+        <form className="input_form" onSubmit={handleSubmit}>
+          <div className="form_row">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="youremail@gmail.com"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              required
+            />
+          </div>
 
-        <div className="form_row">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-            required
-          />
-        </div>
+          <div className="form_row">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              required
+            />
+          </div>
 
-        <div className="form_row">
-          <button type="submit">Login</button>
-        </div>
+          <div className="buttoncontainer">
+            <button type="submit">Login</button>
+          </div>
+
 
         <p>
           Don't have an account? <a href="/preSignup">Sign up here</a>
@@ -85,6 +89,9 @@ const LoginForm: React.FC = () => {
         <div>{loginFailedMessage}</div>
       </form>
       
+
+      </div>
+
     </>
   );
 };
