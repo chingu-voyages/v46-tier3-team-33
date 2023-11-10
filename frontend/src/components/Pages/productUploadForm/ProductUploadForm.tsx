@@ -94,112 +94,117 @@ export default function ProductUploadForm() {
   };
 
   return (
-    <form className="upload-form" onSubmit={handleSubmit}>
-      <label htmlFor="name">Name</label>
-      <input
-        id="name"
-        className="upload-form-input"
-        type="text"
-        name="name"
-        placeholder="Your Name"
-        onChange={handleInputChange}
-        value={formValues.name}
-      />
+    <div className="form-container">
+      <h1>Product Upload Form</h1>
+      <form className="upload-form" onSubmit={handleSubmit}>
+        <label htmlFor="name">Name</label>
+        <input
+          id="name"
+          className="upload-form-input"
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          onChange={handleInputChange}
+          value={formValues.name}
+        />
 
-      <label htmlFor="picture">Upload Product Image</label>
-      <input
-        id="picture"
-        className="upload-form-input"
-        type="file"
-        name="picture"
-        onChange={handleImageChange}
-      />
+        <label htmlFor="picture">Upload Product Image</label>
+        <input
+          id="picture"
+          className="upload-form-input"
+          type="file"
+          name="picture"
+          onChange={handleImageChange}
+        />
 
-      <label htmlFor="description">Description of Product</label>
-      <textarea
-        id="description"
-        name="description"
-        placeholder="Describe your produce"
-        onChange={handleInputChange}
-        value={formValues.description}
-        className="upload-form-textarea"
-      />
+        <label htmlFor="description">Description of Product</label>
+        <textarea
+          id="description"
+          name="description"
+          placeholder="Describe your produce"
+          onChange={handleInputChange}
+          value={formValues.description}
+          className="upload-form-textarea"
+        />
 
-      <label htmlFor="postcode">Postcode</label>
-      <input
-        id="postcode"
-        className="upload-form-input"
-        type="text"
-        name="postcode"
-        placeholder="Postcode"
-        onChange={handleInputChange}
-        value={formValues.postcode}
-      />
+        <label htmlFor="postcode">Postcode</label>
+        <input
+          id="postcode"
+          className="upload-form-input"
+          type="text"
+          name="postcode"
+          placeholder="Postcode"
+          onChange={handleInputChange}
+          value={formValues.postcode}
+        />
 
-      <label htmlFor="price">Price in £</label>
-      <input
-        id="price"
-        className="upload-form-input"
-        type="number"
-        name="price"
-        placeholder="Price"
-        onChange={handleInputChange}
-        value={formValues.price}
-      />
+        <label htmlFor="price">Price in £</label>
+        <input
+          id="price"
+          className="upload-form-input"
+          type="number"
+          name="price"
+          placeholder="Price"
+          onChange={handleInputChange}
+          value={formValues.price}
+          min="1"
+        />
 
-      <label htmlFor="stock">Available Quantity</label>
-      <input
-        id="stock"
-        className="upload-form-input"
-        type="number"
-        name="stock"
-        placeholder="Quantity of item"
-        onChange={handleInputChange}
-        value={formValues.stock}
-      />
+        <label htmlFor="stock">Available Quantity</label>
+        <input
+          id="stock"
+          className="upload-form-input"
+          type="number"
+          name="stock"
+          placeholder="Quantity of item"
+          onChange={handleInputChange}
+          value={formValues.stock}
+          min="1"
+        />
 
-      <label htmlFor="unit">Units</label>
-      <select
-        className="upload-form-select"
-        id="unit"
-        name="unit"
-        onChange={handleSelectChange}
-      >
-        <option value="g">Gram (g)</option>
-        <option value="kg">Kilogram (kg)</option>
-        <option value="oz">Ounce (oz)</option>
-        <option value="lb">Pound (lb)</option>
-        <option value="ml">Millilitre (ml)</option>
-        <option value="l">Litre (l)</option>
-        <option value="items">Individual Items</option>
-      </select>
+        <label htmlFor="unit">Units</label>
+        <select
+          className="upload-form-select"
+          id="unit"
+          name="unit"
+          onChange={handleSelectChange}
+        >
+          <option value="g">Gram (g)</option>
+          <option value="kg">Kilogram (kg)</option>
+          <option value="oz">Ounce (oz)</option>
+          <option value="lb">Pound (lb)</option>
+          <option value="ml">Millilitre (ml)</option>
+          <option value="l">Litre (l)</option>
+          <option value="items">Individual Items</option>
+        </select>
+        <br />
+        <label htmlFor="expiryDate">Expiry Date</label>
+        <input
+          id="expiryDate"
+          type="text"
+          name="expiryDate"
+          placeholder="DD/MM/YY"
+          onChange={handleInputChange}
+          value={formValues.expiryDate}
+          maxLength={10}
+          className="upload-form-input"
+        />
 
-      <label htmlFor="expiryDate">Expiry Date</label>
-      <input
-        id="expiryDate"
-        type="text"
-        name="expiryDate"
-        placeholder="DD/MM/YY"
-        onChange={handleInputChange}
-        value={formValues.expiryDate}
-        maxLength={10}
-        className="upload-form-input"
-      />
+        <label htmlFor="availabilityTime">Pick Up Time</label>
+        <input
+          id="availabilityTime"
+          type="text"
+          name="availabilityTime"
+          placeholder="When to pick it up?"
+          onChange={handleInputChange}
+          value={formValues.availabilityTime}
+          className="upload-form-input"
+        />
 
-      <label htmlFor="availabilityTime">Pick Up Time</label>
-      <input
-        id="availabilityTime"
-        type="text"
-        name="availabilityTime"
-        placeholder="When to pick it up?"
-        onChange={handleInputChange}
-        value={formValues.availabilityTime}
-        className="upload-form-input"
-      />
-
-      <button className="upload-form-button" type="submit">
-        Submit
-      </button>
-    </form>
+        <button className="upload-form-button" type="submit">
+          Submit
+        </button>
+      </form>
+    </div>
   );
 }

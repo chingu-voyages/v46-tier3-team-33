@@ -1,14 +1,14 @@
-h1{
+h1 {
   text-align: center;
 }
-label{
-  margin-right:0.5rem;
+label {
+  margin-right: 0.5rem;
 }
-input{
+input {
   width: 93%;
 }
 
-p{
+p {
   padding-bottom: 0.5rem;
 }
 .signup-container {
@@ -20,15 +20,10 @@ p{
   gap: 1em;
 }
 
-
-
-.buttoncontainer{
+.buttoncontainer {
   display: flex;
   justify-content: center;
 }
-
-
-
 
 /* .password-strength {
   margin: 10px 0;
