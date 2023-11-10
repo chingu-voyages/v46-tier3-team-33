@@ -23,3 +23,14 @@
 	text-decoration: none;
 	color: rgb(14, 34, 14);
 }
+
+ul.home-container {
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+
+.home-link {
+	text-decoration: none;
+	color: rgb(14, 34, 14);
+}
