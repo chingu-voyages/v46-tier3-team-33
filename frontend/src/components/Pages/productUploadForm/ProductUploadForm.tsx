@@ -55,14 +55,14 @@ export default function ProductUploadForm() {
     const files = e.target.files as FileList; // using type assertion here
     if (files.length > 0) {
       setFormValues((prev) => ({ ...prev, image: files[0] }));
-      console.log(files[0] );
+      console.log(files[0]);
     }
     console.log(files);
   };
 
   const newFormData = () => {
     const formData = new FormData();
-    formData.append('picture', formValues.image as Blob);
+    formData.append("picture", formValues.image as Blob);
     formData.append("name", formValues.name);
     formData.append("description", formValues.description);
     formData.append("postcode", formValues.postcode);
@@ -179,7 +179,7 @@ export default function ProductUploadForm() {
         id="expiryDate"
         type="text"
         name="expiryDate"
-        placeholder="DD/MM/YYYY"
+        placeholder="DD/MM/YY"
         onChange={handleInputChange}
         value={formValues.expiryDate}
         maxLength={10}
