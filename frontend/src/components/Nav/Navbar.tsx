@@ -8,7 +8,7 @@ import LogoutButton from "../Pages/logout/LogoutButton";
 
 function Navbar() {
   const { currentUser } = useContext(UserContext);
-  console.log("Current user: ", currentUser);
+  //console.log("Current user: ", currentUser);
 
   return (
     <>
