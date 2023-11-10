@@ -88,6 +88,8 @@ const SearchBar = () => {
 
         <>
         <div >
+        <p>Choose your search category and hit enter <span>&#8617;</span> to search</p>
+
             <form className='search-container' onSubmit={handleSubmit}>
                 <input className="search-box"
                     required
@@ -104,21 +106,17 @@ const SearchBar = () => {
 
             </form>   
         </div>
-        <p>Choose your search category and hit enter <span>&#8617;</span> to search</p>
-
-        {/* Conditionally render the filtered data */}
-        {filteredData.length > 0 ? (
-                <div className="filtered-data">
-                    <div>{message}</div>
-                    <ul>
-                        {filteredData.map((item: any) => (
-                            <SearchResultCard key={item._id} item={item} />
-                        ))}
-                    </ul>
-                </div>
-            ) : (
-                <div className='results-message'>{message}</div>
-            )}
+        <div className='results-message'>{message}</div>
+    
+            <div className="filtered-data">
+                
+                <ul>
+                    {filteredData.map((item: any) => (
+                        <SearchResultCard key={item._id} item={item} />
+                    ))}
+                </ul>
+            </div>
+            
         </>
     )
 }
