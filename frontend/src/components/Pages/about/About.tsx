@@ -5,8 +5,8 @@ import "./about.css"
 function About() {
   return (
     <div className="about-container">
-		<div className="about-image">
-           <img  src="src\assets\nathan-dumlao-bRdRUUtbxO0-unsplash.jpg" alt = "yellow question mark" ></img>
+		<div >
+           <img className="about-image" src="src/assets/nathan-dumlao-bRdRUUtbxO0-unsplash.jpg" alt = "yellow-red question mark" ></img>
         </div>
 		<div className="text">
 			<h1>About Us</h1>

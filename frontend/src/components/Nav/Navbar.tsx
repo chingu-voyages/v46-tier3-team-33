@@ -16,11 +16,18 @@ function Navbar() {
         <a href="/">
           <img src={logo} className="logo" alt="logo" />
         </a>
+        <ul className="home-container">
+        <li className="home-link">
+              <Link to="/" className="link">
+                Home
+              </Link>
+        </li>
+        </ul>
         <div className="links-container">
           <ul className="links-container">
             <li className="link">
               <Link to="/About" className="link">
-                About
+                About Us
               </Link>
             </li>
             <li>

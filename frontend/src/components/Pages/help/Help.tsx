@@ -3,8 +3,8 @@ import "./help.css"
 function Help() {
   return (
     <div className="help-container">
-		<div className="help-image">
-        <img  src="src/assets/simone-secci-49uySSA678U-unsplash.jpg" alt = "yellow question mark" ></img>
+		<div >
+        <img  className="help-image" src="src/assets/simone-secci-49uySSA678U-unsplash.jpg" alt = "yellow question mark" ></img>
         </div>
         <div className="text">
 			<h1>Help</h1>

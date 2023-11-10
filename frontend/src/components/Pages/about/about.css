@@ -13,10 +13,13 @@
     
 }
 
-.about-img {
-    max-width: 50%;
-    max-height:50%;
-    float: left;
+.about-image {
+ 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: 50%;
   }
   
   .text {
