@@ -1,36 +1,27 @@
-/* body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-} */
-
 .signup-container {
   max-width: 400px;
-  margin: 2em auto;
-  padding: 1em;
+  margin: 5rem auto;
+  padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
-}
-
-.signup-container {
   display: flex;
   flex-direction: row;
   gap: 1em;
+  text-align: center;
 }
 
-.password-strength {
+/* .password-strength {
   margin: 10px 0;
-}
+} */
 
-.password-progress {
+/* .password-progress {
   height: 8px;
   border-radius: 4px;
   margin-top: 5px;
-}
+} */
 
 .strength-text {
-  margin-top: 5px;
+  margin-top: 0.5rem;
   font-weight: bold;
 }
 

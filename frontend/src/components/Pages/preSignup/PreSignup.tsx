@@ -6,12 +6,10 @@ const PreSignup: React.FC = () => {
   return (
     <div className="preSignup-god-container">
       <div id='preSignup-container'>
-        <h1><a href="/SignUp/farmer"> Signup as a Farmer </a></h1>
-        <h1><a href="/SignUp/customer"> Signup as a Customer </a></h1>
+        <h1>Sign up as</h1>
+        <a className="button" href="/SignUp/farmer">Farmer</a>
+        <a className="button" href="/SignUp/customer">Customer</a>
       </div>
-      <p className='prompt-login-text'>Have an account?  <a href="/login" className='prompt-login-link'>Login</a> now</p>
-				
-
     </div> 
   )
 };

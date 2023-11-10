@@ -1,4 +1,3 @@
-import logo from "/src/assets/logo.svg";
 import "./Navbar.css";
 
 import { Link } from "react-router-dom";
@@ -13,9 +12,6 @@ function Navbar() {
   return (
     <>
       <div className="navbar">
-        <a href="/">
-          <img src={logo} className="logo" alt="logo" />
-        </a>
         <ul className="home-container">
         <li className="home-link">
               <Link to="/" className="link">

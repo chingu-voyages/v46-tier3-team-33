@@ -15,7 +15,7 @@ const SignUp = (props: SignUpProps) => {
   const [isRepeat, setIsRepeat] = useState(true);
 
   const [passwordStrength, setPasswordStrength] = useState<string>(""); // Weak, Medium, Strong
-  const [progressBarColor, setProgressBarColor] = useState<string>("");
+  // const [progressBarColor, setProgressBarColor] = useState<string>("");
 
   const navigate = useNavigate(); // Initialize the navigate object
 
@@ -92,14 +92,11 @@ const SignUp = (props: SignUpProps) => {
 
   return (
     <>
-      <div className="front-page">
-        <div>
-          <h1>Vegilicious</h1>
-        </div>
 
         <div className="signup-container">
-          <h2>Sign Up</h2>
+          
           <form onSubmit={handleSubmit}>
+          <h1>Sign Up</h1>
             <input
               type="email"
               placeholder="Email"
@@ -113,33 +110,42 @@ const SignUp = (props: SignUpProps) => {
               value={password}
               onChange={onHandlePasswordChange}
             />
-            <div className="password-strength">
-              <div
-                className="password-progress"
-                style={{
-                  width: `${password.length * 10}%`,
-                  background: progressBarColor,
-                }}
-              ></div>
-              <p className={`strength-text ${passwordStrength.toLowerCase()}`}>
-                Password Strength: {passwordStrength}
-              </p>
-            </div>
+
+            <div>
             <input
               type="password"
               placeholder="Repeat Password"
               value={repeatPassword}
               onChange={onHandleRepeatPassword}
             />
-            {!isRepeat && <p>Please repeat the correct password.</p>}
+                        
+           
+            <div className="password-strength">
+              {/* <div
+                className="password-progress"
+                style={{
+                  width: `${password.length * 10}%`,
+                  background: progressBarColor,
+                }}
+              ></div> */}
+              {password && <p className={`strength-text ${passwordStrength.toLowerCase()}`}>
+                Password Strength: {passwordStrength}
+              </p>}
+              {!isRepeat && <p>Please repeat the correct password.</p>}
+            </div>
+            </div>
+            <div>
             <button type="submit">Sign Up</button>
+            </div>
+            
+            <p>
+            Have an account? <a href="/login">Login here</a>
+          </p>
           </form>
 
-          <span>
-            Have an account? <a href="/login">Login here</a>
-          </span>
+
         </div>
-      </div>
+      
     </>
   );
 };
