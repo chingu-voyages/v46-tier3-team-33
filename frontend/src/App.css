@@ -37,13 +37,13 @@ button:hover, .button:hover {
     color: var(--background-color);
 }
 
-input, select, textarea {
+input, select {
     border: 1px solid #DDDDDD;
     border-radius: 0.5rem;
     padding: 0.8rem;
     margin-bottom: 1rem;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus, select:focus {
     border-color: var(--primary);
 }
