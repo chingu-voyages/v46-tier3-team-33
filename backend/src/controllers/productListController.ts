@@ -3,9 +3,16 @@ import { Product } from "../models/product";
 
 const listProductController = async (req: Request, res: Response) => {
   try {
-    const products = await Product.find().populate({
-      path: "_id",
-      select: "name",
+    const { searchType, searchTerm } = req.query;
+
+    const query: { [key: string]: any } = {};
+    if (searchType && searchTerm) {
+      query[searchType as string] = { $regex: searchTerm, $options: "i" };
+    }
+
+    const products = await Product.find(query).populate({
+      path: "userId",
+      select: "email",
     });
 
     res.status(200).json(products);

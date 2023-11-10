@@ -1,37 +1,31 @@
-import './search.css'
+import "./search.css";
 
 // Define the Item type
 type Item = {
-    _id: Object;
-    name: string;
-    image:
-    { contentType: string; 
-      fileName: string;
+  _id: object;
+  name: string;
+  image: { contentType: string; fileName: string };
+  description: string;
+  postcode: string;
+  price: number;
+  stock: number;
+  unit: string;
+  expiryDate: string;
+  availabilityTime: string;
+  userId: { email: string; _id: string };
+};
 
-    };
-    description: string;
-    postcode: string;
-    price: number;
-    stock: number;
-    unit: string;
-    expiryDate: string;
-    availabilityTime: string;
-  };
-  
 // Use the Item type to type the item parameter
 const SearchResultCard: React.FC<{ item: Item }> = ({ item }) => {
   //set image url for render
-  const imageUrl = `public/uploads/${item.image.fileName}`
+  const imageUrl = `public/uploads/${item.image.fileName}`;
 
   return (
     <div className="search-result-card">
       <div className="image-container">
-        <img
-          src={imageUrl}
-          alt={item.description}
-        />
+        <img src={imageUrl} alt={item.description} />
       </div>
-      <div className="card-content" >
+      <div className="card-content">
         <strong>Name:</strong> {item.name}
         <br />
         <strong>Description:</strong> {item.description}
@@ -47,10 +41,11 @@ const SearchResultCard: React.FC<{ item: Item }> = ({ item }) => {
         <strong>Expiry date:</strong> {item.expiryDate}
         <br />
         <strong>Availability time:</strong> {item.availabilityTime}
+        <br />
+        <strong>Contact Email:</strong> {item.userId?.email}
       </div>
     </div>
   );
-}
+};
 
 export default SearchResultCard;
-
