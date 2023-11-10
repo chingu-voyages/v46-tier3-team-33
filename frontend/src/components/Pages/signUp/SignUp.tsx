@@ -92,34 +92,45 @@ const SignUp = (props: SignUpProps) => {
 
   return (
     <>
-
-        <div className="signup-container">
-          
-          <form onSubmit={handleSubmit}>
+      <div className="signup-container">
+        <form onSubmit={handleSubmit}>
           <h1>Sign Up</h1>
+          <div>
+            <label htmlFor="email">Email</label>
+            <br/>
             <input
+              id="email"
               type="email"
               placeholder="Email"
               value={email}
               onChange={onHandleEmailChange}
             />
             {!isEmailValid && <p>Please enter a valid email.</p>}
+          </div>
+
+          <div>
+            <label htmlFor="password">Password</label>
+            <br/>
             <input
+              id="password"
               type="password"
               placeholder="Password"
               value={password}
               onChange={onHandlePasswordChange}
             />
+          </div>
 
-            <div>
+          <div>
+            <label htmlFor="repeatpassword">Repeat Password</label>
+            <br/>
             <input
+              id="repeatpassword"
               type="password"
               placeholder="Repeat Password"
               value={repeatPassword}
               onChange={onHandleRepeatPassword}
             />
-                        
-           
+
             <div className="password-strength">
               {/* <div
                 className="password-progress"
@@ -128,24 +139,25 @@ const SignUp = (props: SignUpProps) => {
                   background: progressBarColor,
                 }}
               ></div> */}
-              {password && <p className={`strength-text ${passwordStrength.toLowerCase()}`}>
-                Password Strength: {passwordStrength}
-              </p>}
+              {password && (
+                <span
+                  className={`strength-text ${passwordStrength.toLowerCase()}`}
+                >
+                  Password Strength: {passwordStrength}
+                </span>
+              )}
               {!isRepeat && <p>Please repeat the correct password.</p>}
             </div>
-            </div>
-            <div>
+          </div>
+          <div className="buttoncontainer">
             <button type="submit">Sign Up</button>
-            </div>
-            
-            <p>
+          </div>
+
+          <p>
             Have an account? <a href="/login">Login here</a>
           </p>
-          </form>
-
-
-        </div>
-      
+        </form>
+      </div>
     </>
   );
 };
