@@ -1,4 +1,4 @@
-import './search.css'
+import './searchResults.css'
 
 // Define the Item type
 type Item = {

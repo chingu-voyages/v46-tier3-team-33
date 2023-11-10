@@ -51,7 +51,7 @@ const LoginForm: React.FC = () => {
       <form className="input_form" onSubmit={handleSubmit}>
         <div className="form_row">
           <label htmlFor="email">Email</label>
-          <input
+          <input className="input_login"
             type="email"
             id="email"
             placeholder="youremail@gmail.com"
@@ -63,7 +63,7 @@ const LoginForm: React.FC = () => {
 
         <div className="form_row">
           <label htmlFor="password">Password</label>
-          <input
+          <input className="input_login"
             type="password"
             id="password"
             value={password}

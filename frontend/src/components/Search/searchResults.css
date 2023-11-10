@@ -1,0 +1,35 @@
+/* Add this CSS to style your cards */
+.search-result-card {
+    display: flex;
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: white;
+    width: 65em;
+  }
+
+  .card-content {
+    text-align: justify;
+    color:green;
+
+  }
+  
+  .image-container {
+    margin-right: 10px;
+  }
+  
+  .image-container img {
+    width: 200px; /* Adjust the width as needed */
+    height: auto;
+  }
+  
+  .content {
+    flex: 1;
+    text-justify: left;
+  }
+  
+ .searchOptions {
+  margin: 20px;
+ }

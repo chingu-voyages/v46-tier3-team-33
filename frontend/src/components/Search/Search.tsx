@@ -11,8 +11,8 @@ const SearchBar = () => {
     const [value, setValue] = useState('');
     const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState<any[]>([]); // Use 'any' as a temporary type
-    const [searchSelection, setSearchSelection] = useState('')
-    
+    const [searchSelection, setSearchSelection] = useState('product')
+        
     const fetchData = async () => {
         
         try {
@@ -27,30 +27,25 @@ const SearchBar = () => {
                 const data = await response.json();
                 setData(data);
                 
-                //check if searchSelection has been set.
-                if (searchSelection === '') {
-                    setMessage("Choose a search option first")
+                //if the user selects product search
+                if (searchSelection === "product") {
+
+                    const filtered = data.filter((item: any) =>
+                    item.name.toLowerCase().includes(value.toLowerCase())
+                );
+                setFilteredData(filtered);
 
                 
-                } else {
-                    //if the user selects product search
-                    if (searchSelection === "product") {
-
-                        const filtered = data.filter((item: any) =>
-                        item.name.toLowerCase().includes(value.toLowerCase())
-                    );
-                    setFilteredData(filtered);
+                //if the user selects postcode search
+                } else if (searchSelection === "postcode") {
                     
-                    //if the user selects postcode search
-                    } else if (searchSelection === "postcode") {
-                      
-                        const filtered = data.filter((item: any) =>
-                        item.postcode.toLowerCase().includes(value.toLowerCase())
-                    );
-                    
-                    setFilteredData(filtered);
-                    }
+                    const filtered = data.filter((item: any) =>
+                    item.postcode.toLowerCase().includes(value.toLowerCase())
+                );
+                
+                setFilteredData(filtered);
                 }
+            
                 
             } else {
                 setMessage("Please login to search");
@@ -66,16 +61,16 @@ const SearchBar = () => {
     //gives the user a message about the number of results found 
     useEffect(() => {
         // This effect will run whenever filteredData changes
-        if ( data.length === 0){
-            setMessage("Choose a search option first")
+        if ( data === null) {
+            setMessage("Search");
         }
-        else if (filteredData.length === 0 ) {
+        else if (filteredData.length === 0 && data.length === 0) {
             setMessage("No results found, try again");
 
         } else {
             setMessage(`${filteredData.length} results found`);
         }
-    }, [filteredData, data]); // This ensures that the effect runs when filteredData changes
+    }, [filteredData]); // This ensures that the effect runs when filteredData changes
 
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -92,14 +87,11 @@ const SearchBar = () => {
     return (
 
         <>
-        <button className={`buttonSearchSelection ${searchSelection === "product" ? "selected" : ""}`} onClick={() => setSearchSelection("product")}>Product Search</button>
-        <button className={`buttonSearchSelection ${searchSelection === "postcode" ? "selected" : ""}`} onClick={() => setSearchSelection("postcode")}>Postcode Search</button>
-
-        <form onSubmit={handleSubmit}>
-            <div className="search_bar">
-                <input required
+        <div >
+            <form className='search-container' onSubmit={handleSubmit}>
+                <input className="search-box"
+                    required
                     type="text"
-                    className="search_text"
                     placeholder={`Search for ${searchSelection}..`}
                     value={value}
                     onChange={(e) => {
@@ -107,14 +99,16 @@ const SearchBar = () => {
                     }}
                     
                 />
-                <div className = 'search_submit' >
-                    <button className="button" type="submit" >Search</button>
-                </div>
-            </div>
-        </form>
+                <button className={`buttonSearchSelection ${searchSelection === "product" ? "selected" : ""}`} onClick={() => setSearchSelection("product")}>Product Search</button>
+                <button className={`buttonSearchSelection ${searchSelection === "postcode" ? "selected" : ""}`} onClick={() => setSearchSelection("postcode")}>Postcode Search</button>
+
+            </form>   
+        </div>
+        <p>Choose your search category and hit enter <span>&#8617;</span> to search</p>
+
         {/* Conditionally render the filtered data */}
         {filteredData.length > 0 ? (
-                <div className="filtered_data">
+                <div className="filtered-data">
                     <div>{message}</div>
                     <ul>
                         {filteredData.map((item: any) => (
@@ -123,7 +117,7 @@ const SearchBar = () => {
                     </ul>
                 </div>
             ) : (
-                <div>{message}</div>
+                <div className='results-message'>{message}</div>
             )}
         </>
     )
