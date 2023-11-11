@@ -70,3 +70,27 @@
     border-radius: 15px;
   }
 }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .search-container {
+    flex-direction: row;
+  }
+
+  .search-bar {
+    width: 250px;
+    margin: 10px;
+  }
+
+  .buttonSearchSelection {
+    padding: 10px;
+    margin-bottom: 1rem;
+  }
+
+  .results-message {
+    padding: 5px;
+  }
+
+  .hero-image {
+    border-radius: 20px;
+  }
+}
