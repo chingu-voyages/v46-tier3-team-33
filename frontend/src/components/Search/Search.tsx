@@ -62,6 +62,23 @@ const SearchBar = () => {
         Choose your search category and hit enter <span>&#8617;</span> to search
       </p>
       <div className="search-container">
+        
+      <button
+          className={`buttonSearchSelection ${
+            searchSelection === "name" ? "selected" : ""
+          }`}
+          onClick={() => setSearchSelection("name")}>
+          Product
+        </button>
+
+        <button
+          className={`buttonSearchSelection ${
+            searchSelection === "postcode" ? "selected" : ""
+          }`}
+          onClick={() => setSearchSelection("postcode")}>
+          Postcode
+        </button>
+
         <form onSubmit={handleSubmit}>
           <div className="search-bar">
             <input
@@ -77,23 +94,6 @@ const SearchBar = () => {
           </div>
         </form>
 
-        <button
-          className={`buttonSearchSelection ${
-            searchSelection === "name" ? "selected" : ""
-          }`}
-          onClick={() => setSearchSelection("name")}
-        >
-          Product
-        </button>
-
-        <button
-          className={`buttonSearchSelection ${
-            searchSelection === "postcode" ? "selected" : ""
-          }`}
-          onClick={() => setSearchSelection("postcode")}
-        >
-          Postcode
-        </button>
       </div>
 
       <div className="results-message">{message}</div>

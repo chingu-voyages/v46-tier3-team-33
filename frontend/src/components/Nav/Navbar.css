@@ -33,4 +33,5 @@ ul.home-container {
 .home-link {
 	text-decoration: none;
 	color: rgb(14, 34, 14);
+	margin:1rem;
 }
