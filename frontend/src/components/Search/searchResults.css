@@ -3,16 +3,16 @@
     display: flex;
     border: 1px solid #ccc;
     margin: 10px;
-    padding: 10px;
+    padding: 2rem;
     justify-content: flex-start;
     align-items: flex-start;
     background-color: white;
-    width: 65em;
+    width: 40em;
   }
 
   .card-content {
     text-align: justify;
-    color:green;
+
 
   }
   
@@ -21,10 +21,10 @@
   }
   
   .image-container img {
-    width: 200px; /* Adjust the width as needed */
-    height: auto;
+    width: 8rem; /* Adjust the width as needed */
+    height:11rem;
+    object-fit: cover;
   }
-  
   .content {
     flex: 1;
     text-justify: left;
