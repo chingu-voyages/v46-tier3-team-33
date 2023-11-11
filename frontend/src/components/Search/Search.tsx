@@ -35,7 +35,7 @@ const SearchBar = () => {
       if (response.ok) {
         const data = await response.json();
         setFilteredData(data);
-        console.log(data);
+        
       } else {
         setMessage("Please login to search");
         console.error("API request failed with status:", response.status);
