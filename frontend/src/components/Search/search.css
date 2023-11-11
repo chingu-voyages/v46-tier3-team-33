@@ -8,7 +8,7 @@
   width: 300px; /* Adjust the width to your desired size */
   margin: 10px; /* Adjust the padding as needed */
   font-size: 16px; /* Adjust the font size as needed */
- 
+  /* Add any other styling properties as needed */
 }
 
 .results-message {
@@ -16,6 +16,15 @@
   padding: 5px;
 }
 
+/* .button {
+  color: white; 
+  padding: 10px; 
+  margin: 2px;
+  border: none;
+  border-radius: 5px; 
+  box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.7); 
+  cursor: pointer;
+} */
 .buttonSearchSelection {
   color: white;
   padding: 10px;
