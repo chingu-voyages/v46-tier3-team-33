@@ -18,6 +18,7 @@ import productListController from "./controllers/productListController";
 import cors from "cors"; // Import the cors middleware
 import upload from "./multerSetup";
 import multer from "multer";
+import productDeleteController from "./controllers/productDeleteController";
 
 dotenv.config();
 
@@ -52,6 +53,8 @@ app.post(
 );
 
 app.get("/product", jwtVerification, productListController);
+
+app.delete("/product/:id", jwtVerification, productDeleteController);
 
 connect().then(() => {
   // start the server
