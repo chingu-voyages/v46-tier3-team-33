@@ -1,49 +1,55 @@
 :root {
-    --primary: #00B8A9;
-    --accent: #000000;
-    --text-color: #333333;
-    --background-color: #FFFFFF;
+  --primary: #00b8a9;
+  --accent: #000000;
+  --text-color: #333333;
+  --background-color: #ffffff;
 }
 
 body {
-    font-family: "Montserrat","sans-serif";
-    color: var(--text-color);
-    background-color: var(--background-color);
+  font-family: "Montserrat", "sans-serif";
+  color: var(--text-color);
+  background: #def0f4;
 }
 
-h1, h2, h3 {
-    font-family: "Montserrat";
-    color: var(--primary);
+h1,
+h2,
+h3 {
+  font-family: "Montserrat";
+  color: var(--primary);
 }
-a{
-    text-decoration: none;
-    color:unset;
-}
-
-button, .button {
-    background-color: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 0.5rem;
-    padding: 1rem 2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    min-width: 5rem;
-    text-align: center;
+a {
+  text-decoration: none;
+  color: unset;
 }
 
-button:hover, .button:hover {
-    background-color: var(--accent);
-    color: var(--background-color);
+button,
+.button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 5rem;
+  text-align: center;
 }
 
-input, select {
-    border: 1px solid #DDDDDD;
-    border-radius: 0.5rem;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
+button:hover,
+.button:hover {
+  background-color: var(--accent);
+  color: var(--background-color);
 }
 
-input:focus, select:focus {
-    border-color: var(--primary);
+input,
+select {
+  border: 1px solid #dddddd;
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--primary);
 }

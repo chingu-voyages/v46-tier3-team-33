@@ -1,6 +1,6 @@
-  .search-container {
-    display: flex;
-    align-items: center;
+.search-container {
+  display: flex;
+  align-items: center;
 }
 
 .search-bar {
@@ -12,7 +12,7 @@
 
 .results-message {
   justify-self: center;
-  padding:5px;
+  padding: 5px;
 }
 
 /* .button {
@@ -25,18 +25,22 @@
   cursor: pointer;
 } */
 .buttonSearchSelection {
-  color: white; 
-  padding: 10px; 
+  color: white;
+  padding: 10px;
   margin-bottom: 1rem;
   margin-left: 4px;
   border: none;
-  border-radius: 5px; 
-  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.7); 
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.7);
   cursor: pointer;
 }
 
 .buttonSearchSelection.selected {
-  background-color: white; 
+  background-color: white;
   color: black;
   border: 2px solid black; /* Add a border to indicate selection */
+}
+
+.hero-image {
+  border-radius: 30px;
 }
