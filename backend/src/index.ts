@@ -18,6 +18,7 @@ import productListController from "./controllers/productListController";
 import cors from "cors"; // Import the cors middleware
 import upload from "./multerSetup";
 import multer from "multer";
+import productDeleteController from "./controllers/productDeleteController";
 
 dotenv.config();
 
@@ -56,6 +57,8 @@ app.get("/product", jwtVerification, productListController);
 // Define a route for fetching products specific to the current user
 app.get("/currentUser/products", currentUserProductController);
 
+
+app.delete("/product/:id", jwtVerification, productDeleteController);
 
 connect().then(() => {
   // start the server
