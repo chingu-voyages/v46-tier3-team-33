@@ -53,3 +53,16 @@ input:focus,
 select:focus {
   border-color: var(--primary);
 }
+
+@media (max-width: 768px) {
+  button,
+  .button {
+    padding: 0.8rem 1.5rem;
+  }
+
+  input,
+  select {
+    padding: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+}
