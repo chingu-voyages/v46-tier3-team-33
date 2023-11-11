@@ -7,14 +7,13 @@ function HomePage() {
 	return (
 	<>
 		<div className="container">
-		<img className="background_image" src="src/assets/inigo-de-la-maza-marketstall-unsplash.jpg" alt = "fresh vegetables and fruit" ></img>
-			
+		<Search></Search>
+{/* 			
 			<div className="text-container">
 				<h1>Welcome to Vegilicious</h1>
 				<h3>The place to find fresh local and homegrown produce!</h3>
-				<Search></Search>
-				
-			</div>
+					
+			</div> */}
 			
 		</div>
 	</>

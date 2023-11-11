@@ -77,7 +77,7 @@ const LoginForm: React.FC = () => {
             />
           </div>
 
-          <div className="buttoncontainer">
+          <div className="button-container">
             <button type="submit">Login</button>
           </div>
 

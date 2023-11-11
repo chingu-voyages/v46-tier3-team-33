@@ -10,7 +10,7 @@ const SearchBar = () => {
   const [value, setValue] = useState("");
   //   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState<any[]>([]); // Use 'any' as a temporary type
-  const [searchSelection, setSearchSelection] = useState("");
+  const [searchSelection, setSearchSelection] = useState("product");
 
   useEffect(() => {
     if ((searchSelection === "" || value === "") && filteredData.length === 0) {
@@ -35,7 +35,7 @@ const SearchBar = () => {
       if (response.ok) {
         const data = await response.json();
         setFilteredData(data);
-        console.log(data);
+        
       } else {
         setMessage("Please login to search");
         console.error("API request failed with status:", response.status);
@@ -59,55 +59,51 @@ const SearchBar = () => {
 
   return (
     <>
-      <button
-        className={`buttonSearchSelection ${
-          searchSelection === "name" ? "selected" : ""
-        }`}
-        onClick={() => setSearchSelection("name")}
-      >
-        Product Search
-      </button>
-      <button
-        className={`buttonSearchSelection ${
-          searchSelection === "postcode" ? "selected" : ""
-        }`}
-        onClick={() => setSearchSelection("postcode")}
-      >
-        Postcode Search
-      </button>
+    <p>Choose your search category and hit enter <span>&#8617;</span> to search</p>
+    <div className="search-container">
+        <form onSubmit={handleSubmit}>
+            <div className="search-bar">
+            <input
+                required
+                type="text"
+                className="search_text"
+                placeholder={`Search for ${searchSelection}..`}
+                value={value}
+                onChange={(e) => {
+                setValue(e.target.value);
+                }}
+            />
+            
+            </div>
+        </form>
+    
+        <button
+            className={`buttonSearchSelection ${
+            searchSelection === "name" ? "selected" : ""
+            }`}
+            onClick={() => setSearchSelection("name")}>
+            Product
+        </button>
 
-      <form onSubmit={handleSubmit}>
-        <div className="search_bar">
-          <input
-            required
-            type="text"
-            className="search_text"
-            placeholder={`Search for ${searchSelection}..`}
-            value={value}
-            onChange={(e) => {
-              setValue(e.target.value);
-            }}
-          />
-          <div className="search_submit">
-            <button className="button" type="submit">
-              Search
-            </button>
-          </div>
-        </div>
-      </form>
-      {/* Conditionally render the filtered data */}
-      {filteredData.length > 0 ? (
-        <div className="filtered_data">
-          <div>{message}</div>
-          <ul>
-            {filteredData.map((item: any) => (
-              <SearchResultCard key={item._id} item={item} />
-            ))}
-          </ul>
-        </div>
-      ) : (
-        <div>{message}</div>
-      )}
+        <button
+            className={`buttonSearchSelection ${
+            searchSelection === "postcode" ? "selected" : ""
+            }`}
+            onClick={() => setSearchSelection("postcode")}>
+            Postcode
+        </button>
+      </div>
+      
+      <div className='results-message'>{message}</div>
+    
+            <div className="filtered-data">
+                
+                <ul>
+                    {filteredData.map((item: any) => (
+                        <SearchResultCard key={item._id} item={item} />
+                    ))}
+                </ul>
+            </div>
     </>
   );
 };
