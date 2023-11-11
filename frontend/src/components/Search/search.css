@@ -1,46 +1,11 @@
-/* Add this CSS to style your cards */
-.search-result-card {
+  .search-container {
     display: flex;
-    border: 1px solid #ccc;
-    margin: 10px;
-    padding: 10px;
-    justify-content: flex-start;
-    align-items: flex-start;
-    background-color: white;
-    width: 65em;
-  }
-
-  .card-content {
-    text-align: justify;
-    color:green;
-
-  }
-  
-  .image-container {
-    margin-right: 10px;
-  }
-  
-  .image-container img {
-    width: 200px; /* Adjust the width as needed */
-    height: auto;
-  }
-  
-  .content {
-    flex: 1;
-    text-justify: left;
-  }
-  
-
-  
- .search-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+    align-items: center;
 }
 
 .search-bar {
   width: 300px; /* Adjust the width to your desired size */
-  padding: 10px; /* Adjust the padding as needed */
+  margin: 10px; /* Adjust the padding as needed */
   font-size: 16px; /* Adjust the font size as needed */
   /* Add any other styling properties as needed */
 }
@@ -50,8 +15,7 @@
   padding:5px;
 }
 
-.button {
-  
+/* .button {
   color: white; 
   padding: 10px; 
   margin: 2px;
@@ -59,11 +23,12 @@
   border-radius: 5px; 
   box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.7); 
   cursor: pointer;
-}
+} */
 .buttonSearchSelection {
   color: white; 
   padding: 10px; 
-  margin: 2px;
+  margin-bottom: 1rem;
+  margin-left: 4px;
   border: none;
   border-radius: 5px; 
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.7); 

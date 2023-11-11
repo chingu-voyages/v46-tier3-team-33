@@ -20,7 +20,7 @@ p {
   gap: 1em;
 }
 
-.buttoncontainer {
+.button-container {
   display: flex;
   justify-content: center;
 }

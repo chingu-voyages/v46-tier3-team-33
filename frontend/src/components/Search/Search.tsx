@@ -10,7 +10,7 @@ const SearchBar = () => {
   const [value, setValue] = useState("");
   //   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState<any[]>([]); // Use 'any' as a temporary type
-  const [searchSelection, setSearchSelection] = useState("");
+  const [searchSelection, setSearchSelection] = useState("product");
 
   useEffect(() => {
     if ((searchSelection === "" || value === "") && filteredData.length === 0) {
@@ -82,7 +82,7 @@ const SearchBar = () => {
             searchSelection === "name" ? "selected" : ""
             }`}
             onClick={() => setSearchSelection("name")}>
-            Product Search
+            Product
         </button>
 
         <button
@@ -90,7 +90,7 @@ const SearchBar = () => {
             searchSelection === "postcode" ? "selected" : ""
             }`}
             onClick={() => setSearchSelection("postcode")}>
-            Postcode Search
+            Postcode
         </button>
       </div>
       

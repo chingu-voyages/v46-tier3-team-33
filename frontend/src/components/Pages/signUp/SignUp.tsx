@@ -149,7 +149,7 @@ const SignUp = (props: SignUpProps) => {
               {!isRepeat && <p>Please repeat the correct password.</p>}
             </div>
           </div>
-          <div className="buttoncontainer">
+          <div className="button-container">
             <button type="submit">Sign Up</button>
           </div>
 

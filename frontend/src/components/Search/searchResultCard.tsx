@@ -1,4 +1,4 @@
-import "./search.css";
+import "./searchResults.css";
 
 // Define the Item type
 type Item = {
@@ -23,7 +23,7 @@ const SearchResultCard: React.FC<{ item: Item }> = ({ item }) => {
   return (
     <div className="search-result-card">
       <div className="image-container">
-        <img src={imageUrl} alt={item.description} />
+        <img className="thumbnail" src={imageUrl} alt={item.description} />
       </div>
       <div className="card-content">
         <strong>Name:</strong> {item.name}
