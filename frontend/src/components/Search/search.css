@@ -44,3 +44,29 @@
 .hero-image {
   border-radius: 30px;
 }
+
+@media (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .buttonSearchSelection {
+    padding: 8px;
+    margin-bottom: 0.5rem;
+  }
+
+  .results-message {
+    padding: 10px;
+  }
+
+  .hero-image {
+    width: 100%;
+    border-radius: 15px;
+  }
+}
