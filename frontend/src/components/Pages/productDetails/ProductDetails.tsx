@@ -8,10 +8,15 @@ const FarmersProductsDisplay = () => {
   const [filteredData, setFilteredData] = useState<any[]>([]); // Use 'any' as a temporary type
 
 
+  useEffect(() => {
+    fetchData();
+  }, [currentUser]);
+  console.log("Current user info: ", currentUser)
+
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8081/product`,
+          `http://localhost:8081/product?searchType=${currentUser}`,
           {
             method: "GET",
             credentials: "include",
@@ -21,7 +26,17 @@ const FarmersProductsDisplay = () => {
 
         if (response.ok) {
           const data = await response.json();
-          setFilteredData(data);
+          console.log("Response data", data)
+          const filtered = data.filter((item: any) =>
+            item.userId.currentUser=currentUser
+            );
+            setFilteredData(filtered);
+          //setFilteredData(data)
+          console.log("Response filtered data", filtered)
+         
+          if (data.length === 0) {
+            setMessage("No results found");}
+          
         } else {
           setMessage("Please login to search");
           console.error("API request failed with status:", response.status);
@@ -32,10 +47,12 @@ const FarmersProductsDisplay = () => {
       }
     };
 
-    fetchData();
+  
 
     return (
       <>
+       <div className="results-message">{message}</div>
+
       <div className="filtered-data">
           <ul>
             {filteredData.map((item: any) => (

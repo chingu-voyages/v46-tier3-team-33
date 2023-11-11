@@ -53,6 +53,10 @@ app.post(
 
 app.get("/product", jwtVerification, productListController);
 
+// Define a route for fetching products specific to the current user
+app.get("/currentUser/products", currentUserProductController);
+
+
 connect().then(() => {
   // start the server
   const PORT = process.env.BACK_PORT || 8081;
