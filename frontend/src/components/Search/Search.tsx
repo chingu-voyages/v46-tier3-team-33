@@ -2,13 +2,13 @@ import "./search.css";
 import { useContext, useEffect, useState } from "react";
 import SearchResultCard from "./searchResultCard";
 import UserContext from "../../utils/UserContext";
+import heroImage from "../../assets/vegilicious_hero.png";
 
 const SearchBar = () => {
   const currentUser = useContext(UserContext);
 
   const [message, setMessage] = useState("Please select a search option");
   const [value, setValue] = useState("");
-  //   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState<any[]>([]); // Use 'any' as a temporary type
   const [searchSelection, setSearchSelection] = useState("product");
 
@@ -35,7 +35,6 @@ const SearchBar = () => {
       if (response.ok) {
         const data = await response.json();
         setFilteredData(data);
-        
       } else {
         setMessage("Please login to search");
         console.error("API request failed with status:", response.status);
@@ -59,51 +58,57 @@ const SearchBar = () => {
 
   return (
     <>
-    <p>Choose your search category and hit enter <span>&#8617;</span> to search</p>
-    <div className="search-container">
+      <p>
+        Choose your search category and hit enter <span>&#8617;</span> to search
+      </p>
+      <div className="search-container">
         <form onSubmit={handleSubmit}>
-            <div className="search-bar">
+          <div className="search-bar">
             <input
-                required
-                type="text"
-                className="search_text"
-                placeholder={`Search for ${searchSelection}..`}
-                value={value}
-                onChange={(e) => {
+              required
+              type="text"
+              className="search_text"
+              placeholder={`Search for ${searchSelection}..`}
+              value={value}
+              onChange={(e) => {
                 setValue(e.target.value);
-                }}
+              }}
             />
-            
-            </div>
+          </div>
         </form>
-    
+
         <button
-            className={`buttonSearchSelection ${
+          className={`buttonSearchSelection ${
             searchSelection === "name" ? "selected" : ""
-            }`}
-            onClick={() => setSearchSelection("name")}>
-            Product
+          }`}
+          onClick={() => setSearchSelection("name")}
+        >
+          Product
         </button>
 
         <button
-            className={`buttonSearchSelection ${
+          className={`buttonSearchSelection ${
             searchSelection === "postcode" ? "selected" : ""
-            }`}
-            onClick={() => setSearchSelection("postcode")}>
-            Postcode
+          }`}
+          onClick={() => setSearchSelection("postcode")}
+        >
+          Postcode
         </button>
       </div>
-      
-      <div className='results-message'>{message}</div>
-    
-            <div className="filtered-data">
-                
-                <ul>
-                    {filteredData.map((item: any) => (
-                        <SearchResultCard key={item._id} item={item} />
-                    ))}
-                </ul>
-            </div>
+
+      <div className="results-message">{message}</div>
+
+      {value === "" ? (
+        <img src={heroImage} alt="Hero Image" className="hero-image" />
+      ) : (
+        <div className="filtered-data">
+          <ul>
+            {filteredData.map((item: any) => (
+              <SearchResultCard key={item._id} item={item} />
+            ))}
+          </ul>
+        </div>
+      )}
     </>
   );
 };

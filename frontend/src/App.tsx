@@ -1,3 +1,4 @@
+// import { useState } from 'react'
 import "./App.css";
 import Navbar from "./components/Nav/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -59,8 +60,14 @@ function App() {
               <Route path="/Help" element={<Help />} />
               <Route path="/Login" element={<Login />} />
               <Route path="/PreSignup" element={<PreSignup />} />
-              <Route path="/SignUp/farmer" element={<SignUp isFarmer={true} />} />
-              <Route path="/SignUp/customer" element={<SignUp isFarmer={false}/>} />
+              <Route
+                path="/SignUp/farmer"
+                element={<SignUp isFarmer={true} />}
+              />
+              <Route
+                path="/SignUp/customer"
+                element={<SignUp isFarmer={false} />}
+              />
               <Route path="/Upload" element={<ProductUploadForm />} />
             </Routes>
           </div>
