@@ -5,23 +5,20 @@ import mongoose from "mongoose";
 
   const currentUserProduct = async (req: Request, res: Response) => {
     try {
-      const currentUserId = req.query;
+      const currentUserId = req.query.userId;
 
-    const query: { [key: string]: any } = {};
-    if (!currentUserId) {
-      query[searchType as string] = { $regex: searchTerm, $options: "i" };
-    }
       console.log("Backend current user", currentUserId)
 
       // Validate currentUser
       if (!currentUserId) {
         return res.status(401).json({ message: "Unauthorized" });
       }
-     // Convert the userID to a Mongoose ObjectId
-      // const userIdObject = new mongoose.Types.ObjectId(currentUserId);
+      // Convert string ID to ObjectId
+      const objectIdUserId = new mongoose.Types.ObjectId(currentUserId as string);
+
 
       // Use direct match on userId
-      const products = await Product.find({ userId: currentUserId });
+      const products = await Product.find({ userId: objectIdUserId });
 
       res.status(200).json(products);
     } catch (error) {

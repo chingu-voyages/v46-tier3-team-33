@@ -11,12 +11,13 @@ const FarmersProductsDisplay = () => {
   useEffect(() => {
     fetchData();
   }, [currentUser]);
-  console.log("Current user info: ", currentUser)
+  console.log("Current user info: ", currentUser.currentUser)
 
   const fetchData = async () => {
     try {
+
       const response = await fetch(
-        `http://localhost:8081/products?userID=${currentUser.userID}`,
+        `http://localhost:8081/products?userId=${currentUser.currentUser.userID}`,
         {
           method: "GET",
           credentials: "include",
