@@ -21,7 +21,7 @@ Wireframes for frontend design are below
 
 ### Collaboration
 
-The app was designed and worked on by  team members.  Tasks were divided into front end and back end.  Valeria was the product owner and held meetings at least 3 times a week as well as doing some backend coding.  Three members of the team, Valeria, Justin and Robi were engaged working the backend with Robi working on deployment.  Four members of the team Jena, Shanis, Debbie and Becky worked on frontend tasks.  Valeria created a Jira board where we could all enter and assign tasks to work on.  People chose to work on whatever tasks they felt most comfortable with and they were also able to work on learning new technologies to extend their skills if they chose.  Debbie needed to learn react and typescript as these were new to her having previously coded in Python using Flask and Django.  Becky set up an agile stand up sheet in google docs where people could add accomplishments on a daily basis; this helped with sprint planning.  Our main meeting was on a Friday afternoon where we talked about what had been accomplished in each sprint and planned for the next one, using the agile methodology to plan and manage our work.
+The app was designed and worked on by 7 team members.  Tasks were divided into front end and back end.  Valeria was the product owner and held meetings at least 3 times a week as well as doing some backend coding.  Three members of the team, Valeria, Justin and Robi were engaged working the backend with Robi working on deployment.  Four members of the team Jena, Shanis, Debbie and Becky worked on frontend tasks.  Valeria created a Jira board where we could all enter and assign tasks to work on.  People chose to work on whatever tasks they felt most comfortable with and they were also able to work on learning new technologies to extend their skills if they chose.  Debbie needed to learn react and typescript as these were new to her having previously coded in Python using Flask and Django.  Becky set up an agile stand up sheet in google docs where people could add accomplishments on a daily basis; this helped with sprint planning.  Our main meeting was on a Friday afternoon where we talked about what had been accomplished in each sprint and planned for the next one, using the agile methodology to plan and manage our work.
 
 ## Team Documents
 
@@ -51,13 +51,12 @@ The following list of things are required to use the software:
    ```sh
    git clone https://github.com/chingu-voyages/v46-tier3-team-33
    ```
-- Install NPM packages
-   ```sh
-   npm install
-   ```
+
 - Create .env at the root of repo
 - Enter database url in .env  mongodb+srv://xxxxxxx:xxxxxxx@clusterx.xxxxxx.mo
 
+
+- Install NPM packages
 
 Now you are ready to run the project locally.  In a terminal type
 
@@ -76,7 +75,7 @@ Now you are ready to run the project locally.  In a terminal type
 For the backend first install tslint
 ```sh
 
-npm install tslint
+```npm install tslint```
 
 ```npm start
 ```
