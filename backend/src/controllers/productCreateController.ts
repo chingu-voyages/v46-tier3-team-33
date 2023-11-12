@@ -18,7 +18,16 @@ const productCreateController = async (
   res: Response
 ) => {
   if (!req.file) return res.status(400).json({ message: "Picture required" });
-  const { name, price, postcode, unit, expiryDate,availabilityTime, description, stock } = req.body;
+  const {
+    name,
+    price,
+    postcode,
+    unit,
+    expiryDate,
+    availabilityTime,
+    description,
+    stock,
+  } = req.body;
 
   try {
     const product = await Product.create({
@@ -34,7 +43,7 @@ const productCreateController = async (
       stock,
       postcode,
       availabilityTime,
-      userId: res.locals.user,
+      userId: res.locals.user.userID,
     });
     res.status(200).json({ message: "Product created successfully" });
   } catch (error) {
