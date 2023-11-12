@@ -1,25 +1,39 @@
 .contact-container {
-    max-width: 25rem;
-    margin: 5rem auto;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    gap: 1em;
-  }
+  max-width: 25rem;
+  margin: 5rem auto;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  gap: 1em;
+}
 
-  textarea { 
-    min-width: 98%;
-    min-height: 8rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  .buttoncontainer{
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-  }
+textarea {
+  min-width: 98%;
+  min-height: 8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.buttoncontainer {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
 
-  button{
-    width:100%
+button {
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .contact-container {
+    max-width: 20rem;
   }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-container {
+    max-width: 15rem;
+    margin: 3rem auto;
+    padding: 0.5rem;
+  }
+}
