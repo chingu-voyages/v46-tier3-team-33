@@ -20,8 +20,14 @@
   width: 50%;
 }
 
-@mdia screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .about-image {
     width: 70%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-image {
+    width: 90%;
   }
 }
