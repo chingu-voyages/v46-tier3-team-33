@@ -61,7 +61,7 @@ The following list of things are required to use the software:
 Now you are ready to run the project locally.  In a terminal type
 
 - type
- ``` sh
+ 
  `cd frontend` 
  then 
  
@@ -72,7 +72,7 @@ Now you are ready to run the project locally.  In a terminal type
 - just click on the URL shown to run the frontend.
 
 For the backend first install tslint
-```sh
+
 
 `npm install tslint`
 
