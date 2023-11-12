@@ -12,13 +12,13 @@ const FarmersProductsDisplay = () => {
     fetchData();
   }, [currentUser]);
   //Need to deconstruct currentUser twice to get userID as a string to send to the backend
-  //console.log("Current user info: ", currentUser.currentUser.userID)
+  console.log("Current user info: ", currentUser.currentUser.userID)
 
   const fetchData = async () => {
     try {
 
       const response = await fetch(
-        `http://localhost:8081/product?userId=${currentUser.currentUser.userID}`,
+        `http://localhost:8081/products?userId=${currentUser.currentUser.userID}`,
         {
           method: "GET",
           credentials: "include",
