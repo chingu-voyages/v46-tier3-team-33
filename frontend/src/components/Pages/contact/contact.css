@@ -32,8 +32,6 @@ button {
 
 @media screen and (max-width: 768px) {
   .contact-container {
-    max-width: 15rem;
-    margin: 3rem auto;
-    padding: 0.5rem;
+    max-width: 20rem;
   }
 }
