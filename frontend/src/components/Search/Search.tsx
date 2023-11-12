@@ -25,7 +25,7 @@ const SearchBar = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8081/product?searchType=${searchSelection}&searchTerm=${value}`,
+        `https://vegilicious-backend.vercel.app/api/product?searchType=${searchSelection}&searchTerm=${value}`,
         {
           method: "GET",
           credentials: "include",
@@ -62,12 +62,12 @@ const SearchBar = () => {
         Choose your search category and hit enter <span>&#8617;</span> to search
       </p>
       <div className="search-container">
-        
-      <button
+        <button
           className={`buttonSearchSelection ${
             searchSelection === "name" ? "selected" : ""
           }`}
-          onClick={() => setSearchSelection("name")}>
+          onClick={() => setSearchSelection("name")}
+        >
           Product
         </button>
 
@@ -75,7 +75,8 @@ const SearchBar = () => {
           className={`buttonSearchSelection ${
             searchSelection === "postcode" ? "selected" : ""
           }`}
-          onClick={() => setSearchSelection("postcode")}>
+          onClick={() => setSearchSelection("postcode")}
+        >
           Postcode
         </button>
 
@@ -93,7 +94,6 @@ const SearchBar = () => {
             />
           </div>
         </form>
-
       </div>
 
       <div className="results-message">{message}</div>

@@ -21,10 +21,13 @@ function App() {
   useEffect(() => {
     const validateToken = async () => {
       try {
-        const response = await fetch("http://localhost:8081/user", {
-          method: "GET",
-          credentials: "include", // Ensures the request includes the cookie
-        });
+        const response = await fetch(
+          "https://vegilicious-backend.vercel.app/api/user",
+          {
+            method: "GET",
+            credentials: "include", // Ensures the request includes the cookie
+          }
+        );
 
         if (!response.ok) {
           throw new Error("Not logged in");

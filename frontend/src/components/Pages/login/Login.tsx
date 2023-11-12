@@ -17,20 +17,23 @@ const LoginForm: React.FC = () => {
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [loginFailedMessage, setLoginFailedMessage] = useState('')
+  const [loginFailedMessage, setLoginFailedMessage] = useState("");
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:8081/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-        credentials: "include",
-      });
+      const response = await fetch(
+        "https://vegilicious-backend.vercel.app/api/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+          credentials: "include",
+        }
+      );
 
       if (response.ok) {
         // Assuming the login is successful, relocate the user to the home page
@@ -41,8 +44,7 @@ const LoginForm: React.FC = () => {
         // Handle login failure, such as displaying an error message to the user
         console.log("Login failed");
 
-        setLoginFailedMessage("Login failed - please try again")
-       
+        setLoginFailedMessage("Login failed - please try again");
       }
     } catch (error) {
       console.error("An error occurred:", error);
@@ -81,17 +83,13 @@ const LoginForm: React.FC = () => {
             <button type="submit">Login</button>
           </div>
 
+          <p>
+            Don't have an account? <a href="/preSignup">Sign up here</a>
+          </p>
 
-        <p>
-          Don't have an account? <a href="/preSignup">Sign up here</a>
-        </p>
-
-        <div>{loginFailedMessage}</div>
-      </form>
-      
-
+          <div>{loginFailedMessage}</div>
+        </form>
       </div>
-
     </>
   );
 };

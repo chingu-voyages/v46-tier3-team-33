@@ -71,13 +71,16 @@ const SignUp = (props: SignUpProps) => {
     e.preventDefault();
     try {
       // API call
-      const response = await fetch("http://localhost:8081/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password, farmer: props.isFarmer }),
-      });
+      const response = await fetch(
+        "https://vegilicious-backend.vercel.app/api/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password, farmer: props.isFarmer }),
+        }
+      );
       if (response.ok) {
         // Assuming the signup is successful, relocate the user to the home page
         navigate("/");
@@ -97,7 +100,7 @@ const SignUp = (props: SignUpProps) => {
           <h1>Sign Up</h1>
           <div>
             <label htmlFor="email">Email</label>
-            <br/>
+            <br />
             <input
               id="email"
               type="email"
@@ -110,7 +113,7 @@ const SignUp = (props: SignUpProps) => {
 
           <div>
             <label htmlFor="password">Password</label>
-            <br/>
+            <br />
             <input
               id="password"
               type="password"
@@ -122,7 +125,7 @@ const SignUp = (props: SignUpProps) => {
 
           <div>
             <label htmlFor="repeatpassword">Repeat Password</label>
-            <br/>
+            <br />
             <input
               id="repeatpassword"
               type="password"
