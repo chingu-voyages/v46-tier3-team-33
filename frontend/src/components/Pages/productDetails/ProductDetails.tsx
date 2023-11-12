@@ -13,40 +13,33 @@ const FarmersProductsDisplay = () => {
   }, [currentUser]);
   console.log("Current user info: ", currentUser)
 
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          `http://localhost:8081/product?searchType=${currentUser}`,
-          {
-            method: "GET",
-            credentials: "include",
-            
-          }
-        );
-
-        if (response.ok) {
-          const data = await response.json();
-          console.log("Response data", data)
-          const filtered = data.filter((item: any) =>
-            item.userId.currentUser=currentUser
-            );
-            setFilteredData(filtered);
-          //setFilteredData(data)
-          console.log("Response filtered data", filtered)
-         
-          if (data.length === 0) {
-            setMessage("No results found");}
-          
-        } else {
-          setMessage("Please login to search");
-          console.error("API request failed with status:", response.status);
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:8081/products?userID=${currentUser.userID}`,
+        {
+          method: "GET",
+          credentials: "include",
         }
-      } catch (error: any) {
-        console.error("API request error:", error.message);
-        setMessage("Server Error - Please come back later");
+      );
+  
+      if (response.ok) {
+        const data = await response.json();
+        //const filtered = data.filter((item: { userID: any; }) => item.userID === currentUser.userID);
+        setFilteredData(data);
+  
+        if (data.length === 0) {
+          setMessage("No results found");
+        }
+      } else {
+        setMessage("Please login to search");
+        console.error("API request failed with status:", response.status);
       }
-    };
-
+    } catch (error) {
+      // console.error("API request error:", error.message);
+      setMessage("Server Error - Please come back later");
+    }
+  };
   
 
     return (
