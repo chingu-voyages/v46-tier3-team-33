@@ -47,3 +47,11 @@
     padding: 1rem 2rem 2rem 2rem;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .form-container {
+    max-width: 15rem;
+    margin: 2rem auto;
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+  }
+}
