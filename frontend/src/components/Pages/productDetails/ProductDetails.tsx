@@ -11,7 +11,8 @@ const FarmersProductsDisplay = () => {
   useEffect(() => {
     fetchData();
   }, [currentUser]);
-  console.log("Current user info: ", currentUser.currentUser)
+  //Need to deconstruct currentUser twice to get userID as a string to send to the backend
+  //console.log("Current user info: ", currentUser.currentUser.userID)
 
   const fetchData = async () => {
     try {
@@ -26,7 +27,6 @@ const FarmersProductsDisplay = () => {
   
       if (response.ok) {
         const data = await response.json();
-        //const filtered = data.filter((item: { userID: any; }) => item.userID === currentUser.userID);
         setFilteredData(data);
   
         if (data.length === 0) {
