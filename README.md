@@ -10,13 +10,13 @@ Technology has meant that people can now access food online in a variety of apps
 We worked hard to come up with a project idea during our first sprint and finally we decided on the idea of this app.  The project was coded in React and Typescript and we used Node.js for the backend.
  
 
-### Component tree
-The component tree was put together using ideas and comments from all team members and is shown below.
-![Component tree](./userdesign/component_tree.png)
+### User Interface
+The user interface changed a bit from our original wireframes.
+![User login ](./userdesign/user_login.png)
 
-### Wireframes
-Wireframes for frontend design are below
-![Wireframes](./userdesign/wireframe.png)
+![User sign up](./userdesign/user_signup.png)
+
+![Search Results](./userdesign/search_results.png)
 
 
 ### Collaboration
