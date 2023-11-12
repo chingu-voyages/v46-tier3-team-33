@@ -62,23 +62,22 @@ Now you are ready to run the project locally.  In a terminal type
 
 - type
  ``` sh
- cd frontend```  
+ `cd frontend` 
  then 
  
- ```npm install```
+ `npm install`
   once you are in the front end directory
 
-```npm run dev
-```
+`npm run dev`
 - just click on the URL shown to run the frontend.
 
 For the backend first install tslint
 ```sh
 
-```npm install tslint```
+`npm install tslint`
 
-```npm start
-```
+`npm start`
+
 - this will run the backend
 
 
