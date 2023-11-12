@@ -14,3 +14,10 @@ body {
     padding: 0.5em;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .logo {
+    height: 30px;
+    padding: 0.25rem;
+  }
+}
