@@ -1,24 +1,27 @@
 .container {
-    padding:20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 .about-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .about-image {
- 
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: auto;
-    width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  width: 50%;
+}
+
+@mdia screen and (max-width: 1024px) {
+  .about-image {
+    width: 70%;
   }
-  
+}
