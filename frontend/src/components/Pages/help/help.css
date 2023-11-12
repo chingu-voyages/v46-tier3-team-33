@@ -25,3 +25,9 @@
     width: 70%;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .help-image {
+    width: 90%;
+  }
+}
