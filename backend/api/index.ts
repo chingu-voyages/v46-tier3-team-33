@@ -25,13 +25,13 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: ["https://vegilicious-frontend.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: "https://vegilicious-frontend.vercel.app",
+//     methods: "POST,GET",
+//     credentials: true,
+//   })
+// );
 
 // declare a route with a response
 app.get("/api", (req, res) => {
@@ -60,3 +60,5 @@ app.delete("/api/product/:id", jwtVerification, productDeleteController);
 app.listen(8081, () => {
   console.log("Server is Running");
 });
+
+module.exports = app;
