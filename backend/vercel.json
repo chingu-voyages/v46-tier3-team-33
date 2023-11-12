@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/login",
+      "dest": "/api/controllers/loginController.ts"
+    },
+    {
+      "src": "/api/logout",
+      "dest": "/api/controllers/logoutController.ts"
+    },
+    {
+      "src": "/api/signup",
+      "dest": "/api/controllers/signupController.ts"
+    },
+    {
+      "src": "/api/product",
+      "dest": "/api/controllers/productCreateController.ts"
+    },
+    {
+      "src": "/api/product/:id",
+      "dest": "/api/controllers/productCreateController.ts"
+    }
+  ]
+}

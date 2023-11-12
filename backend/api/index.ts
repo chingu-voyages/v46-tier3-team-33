@@ -27,39 +27,36 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: process.env.FRONTEND_HOST || "http://localhost:5173", // Allow only this origin
-    credentials: true, // Allow cookies
+    origin: [""],
+    methods: ["POST", "GET"],
+    credentials: true,
   })
 );
 
 // declare a route with a response
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   res.send("Server running");
 });
 
-app.get("/user", jwtVerification, getUserContextController);
+app.get("/api/user", jwtVerification, getUserContextController);
 
-app.post("/signup", emailCheck, passwordCheck, signup);
+app.post("/api/signup", emailCheck, passwordCheck, signup);
 
-app.post("/login", loginController);
+app.post("/api/login", loginController);
 
-app.post("/logout", logoutController);
+app.post("/api/logout", logoutController);
 
 app.post(
-  "/product",
+  "/api/product",
   jwtVerification,
   upload.single("picture"),
   productCreateController
 );
 
-app.get("/product", jwtVerification, productListController);
+app.get("/api/product", jwtVerification, productListController);
 
-app.delete("/product/:id", jwtVerification, productDeleteController);
+app.delete("/api/product/:id", jwtVerification, productDeleteController);
 
-connect().then(() => {
-  // start the server
-  const PORT = process.env.BACK_PORT || 8081;
-  app.listen(PORT, () => {
-    console.log(`server running : http://localhost:${PORT}`);
-  });
+app.listen(8081, () => {
+  console.log("Server is Running");
 });
