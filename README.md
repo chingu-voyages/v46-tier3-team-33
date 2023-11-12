@@ -113,7 +113,7 @@ To develop the Vegilicious app we made use of the following stack of technologie
 
 ### Backend design
 #### The Database Design
-- The database was designed to allow CRUD functionality to be available to registered users, when signed in.
+- The database was designed to allow CRUD functionality to be available to registered users, when signed in.  When signed out users can only see list of produce but they cannot contact a farmer for details of the produce.
 - We used MongoDb for our non relational database.  Items in the database were:
     name,
     price,
