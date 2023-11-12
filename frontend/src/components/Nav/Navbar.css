@@ -40,4 +40,9 @@ ul.home-container {
     width: 100%;
     justify-content: space-around;
   }
+  .navbar {
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
