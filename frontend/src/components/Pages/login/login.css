@@ -19,3 +19,11 @@
     padding: 0.5rem;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .login-container {
+    max-width: 15rem;
+    margin: 2rem auto;
+    padding: 0.5rem;
+  }
+}
