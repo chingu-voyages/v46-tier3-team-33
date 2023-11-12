@@ -141,7 +141,7 @@ product|get|name:string|search for product
 
 
 ### Dependencies including deployment
-- The app was deployed to [Vercel](https://vercel.com/) 
+- The front end for the app was deployed to [Vercel](https://vercel.com/) 
 
 
 ### Testing
