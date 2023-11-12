@@ -5,12 +5,17 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   gap: 1em;
-
 }
 
-
-.button-container{
+.button-container {
   display: flex;
   justify-content: center;
 }
 
+@media screen and (max-width: 1024px) {
+  .login-container {
+    max-width: 20rem;
+    margin: 3rem auto;
+    padding: 0.5rem;
+  }
+}
