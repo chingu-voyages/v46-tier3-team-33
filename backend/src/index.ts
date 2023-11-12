@@ -19,10 +19,7 @@ import cors from "cors"; // Import the cors middleware
 import upload from "./multerSetup";
 import multer from "multer";
 import productDeleteController from "./controllers/productDeleteController";
-<<<<<<< HEAD
 import currentUserProduct from "./controllers/currentUserProduct";
-=======
->>>>>>> 996db34 ( add delete function in the backend)
 
 dotenv.config();
 
@@ -58,13 +55,10 @@ app.post(
 
 app.get("/product", jwtVerification, productListController);
 
-<<<<<<< HEAD
 // Define a route for fetching products specific to the current user
 app.get("/product", currentUserProduct);
 
 
-=======
->>>>>>> 996db34 ( add delete function in the backend)
 app.delete("/product/:id", jwtVerification, productDeleteController);
 
 connect().then(() => {
