@@ -103,7 +103,7 @@ export default function ProductUploadForm() {
           className="upload-form-input"
           type="text"
           name="name"
-          placeholder="Your Name"
+          placeholder="Your Product"
           onChange={handleInputChange}
           value={formValues.name}
         />
