@@ -17,3 +17,12 @@
     gap: 2rem;
   }
 }
+
+@media screen and (max-width: 768px) {
+  #preSignup-container {
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+}
