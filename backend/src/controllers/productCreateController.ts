@@ -34,7 +34,7 @@ const productCreateController = async (
       stock,
       postcode,
       availabilityTime,
-      userId: res.locals.user,
+      userId: res.locals.user.userID,
     });
     res.status(200).json({ message: "Product created successfully" });
   } catch (error) {
