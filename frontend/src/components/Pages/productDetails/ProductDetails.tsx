@@ -18,7 +18,7 @@ const FarmersProductsDisplay = () => {
     try {
 
       const response = await fetch(
-        `http://localhost:8081/products?userId=${currentUser.currentUser.userID}`,
+        `http://localhost:8081/product?userId=${currentUser.currentUser.userID}`,
         {
           method: "GET",
           credentials: "include",
@@ -46,6 +46,7 @@ const FarmersProductsDisplay = () => {
     return (
       <>
        <div className="results-message">{message}</div>
+       <h1>Your products</h1>
 
       <div className="filtered-data">
           <ul>
