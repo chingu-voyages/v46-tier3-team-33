@@ -37,6 +37,7 @@ const signup = async (req: Request, res: Response) => {
     await user.save();
     res.status(200).send(user.toJSON());
   } catch (error) {
+    console.log(error)
     res.status(500).send({ error: "Server error" });
   }
 };
