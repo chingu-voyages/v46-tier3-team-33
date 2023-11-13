@@ -1,6 +1,6 @@
-import SearchResultCard from "../../Search/searchResultCard";
 import UserContext from "../../../utils/UserContext";
 import { useContext, useEffect, useState } from "react";
+import ProductDetailsCard from "./ProductDetailCard";
 
 const FarmersProductsDisplay = () => {
   const currentUser = useContext(UserContext);
@@ -48,14 +48,13 @@ const FarmersProductsDisplay = () => {
        <div className="results-message">{message}</div>
        <h1>Your products</h1>
 
-      <div className="filtered-data">
-          <ul>
+      <div >
+          <ul >
             {filteredData.map((item: any) => (
-              <SearchResultCard key={item._id} item={item} />
+              <ProductDetailsCard key={item._id} item={item} />
             ))}
           </ul>
         </div>
-      
       
       </>
     );
