@@ -7,8 +7,6 @@ import mongoose from "mongoose";
     try {
       const currentUserId = req.query.userId;
 
-      console.log("Backend current user", currentUserId)
-
       // Validate currentUser
       if (!currentUserId) {
         return res.status(401).json({ message: "Unauthorized" });
