@@ -1,3 +1,4 @@
+import DeleteButton from "./deleteProduct";
 import "./productDetailsCard.css";
 
 // Define the Item type
@@ -45,7 +46,7 @@ const ProductDetailsCard: React.FC<{ item: Item }> = ({ item }) => {
         <strong>Contact Email:</strong> {item.userId?.email}
       </div>
       <div className="edit-buttons">
-      <button className="delete-item">Delete item</button>
+      <DeleteButton key = "_id" ></DeleteButton>
       <button className="update-item">Update item</button>
       
       </div>
