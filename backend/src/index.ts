@@ -58,7 +58,7 @@ app.get("/product", jwtVerification, productListController);
 // Define a route for fetching products specific to the current user
 app.get("/products", currentUserProduct);
 
-app.delete("/product/:id", jwtVerification, productDeleteController);
+app.delete("/product/:productId", jwtVerification, productDeleteController);
 
 connect().then(() => {
   // start the server

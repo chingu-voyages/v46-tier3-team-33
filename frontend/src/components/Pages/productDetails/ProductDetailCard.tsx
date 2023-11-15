@@ -19,6 +19,7 @@ type Item = {
 const ProductDetailsCard: React.FC<{ item: Item }> = ({ item }) => {
   //set image url for render
   const imageUrl = `public/uploads/${item.image.fileName}`;
+  console.log("Item id: ", item._id)
 
   return (
     <div className="search-result-card">
@@ -43,11 +44,6 @@ const ProductDetailsCard: React.FC<{ item: Item }> = ({ item }) => {
         <strong>Availability time:</strong> {item.availabilityTime}
         <br />
         <strong>Contact Email:</strong> {item.userId?.email}
-      </div>
-      <div className="edit-buttons">
-      <button className="delete-item">Delete item</button>
-      <button className="update-item">Update item</button>
-      
       </div>
     </div>
   );
