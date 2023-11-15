@@ -1,4 +1,3 @@
-//import DeleteButton from "./deleteProduct";
 import "./productDetailsCard.css";
 
 // Define the Item type
@@ -45,11 +44,6 @@ const ProductDetailsCard: React.FC<{ item: Item }> = ({ item }) => {
         <strong>Availability time:</strong> {item.availabilityTime}
         <br />
         <strong>Contact Email:</strong> {item.userId?.email}
-      </div>
-      <div className="edit-buttons">
-      {/* <DeleteButton id={item._id.toString()} ></DeleteButton> */}
-      <button className="update-item">Update item</button>
-      
       </div>
     </div>
   );
