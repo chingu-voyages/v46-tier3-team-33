@@ -13,7 +13,7 @@ const FarmersProductsDisplay = () => {
   }, [currentUser]);
 
   const handleDeleteCallback = async () => {
-    console.log("onDelete callback called");
+    //console.log("onDelete callback called");
     await fetchData(); // Refresh the list of products after deletion
   };
 
