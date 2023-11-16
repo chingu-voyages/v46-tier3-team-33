@@ -25,3 +25,6 @@ yarn-error.log*
 #pics
 pics
 test.html
+.vercel/
+.env
+.vercel

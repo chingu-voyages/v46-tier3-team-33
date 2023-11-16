@@ -2,7 +2,9 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 
 dotenv.config();
-const mongoDbUrl = process.env.MONGODB_URL || "mongodb://0.0.0.0/vegilicious";
+const mongoDbUrl =
+  process.env.MONGODB_URL ||
+  "mongodb+srv://robimaliqi:password7@cluster0.igyzwa5.mongodb.net/?retryWrites=true&w=majority";
 
 const connect = async () => {
   try {
