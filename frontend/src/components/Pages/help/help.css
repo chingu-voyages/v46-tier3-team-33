@@ -1,23 +1,34 @@
 .container {
-    padding:20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 .help-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .help-image {
-    display: block;
-    margin-top:2rem;
-    margin-left: auto;
-    margin-right: auto;
-    height: auto;
-    width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  width: 50%;
+}
+
+@media screen and (max-width: 1024px) {
+  .help-image {
+    width: 70%;
   }
+}
+
+@media screen and (max-width: 768px) {
+  .help-image {
+    width: 90%;
+  }
+}
+
