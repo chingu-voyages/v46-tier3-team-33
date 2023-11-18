@@ -1,5 +1,6 @@
+import ContactFarmerForm from "../Pages/contact/ContactFarmerForm";
 import "./searchResults.css";
-import React from "react";
+import React, { useState } from "react";
 
 
 // Define the Item type
@@ -18,8 +19,13 @@ type Item = {
 };
 
 
-// Use the Item type to type the item parameter
+
 const SearchResultCard: React.FC<{ item: Item }> = ({ item }) => {
+  const [showContactFarmerForm, setShowContactFarmerForm] = useState(false);
+
+  const handleContactClick = () => {
+    setShowContactFarmerForm(true);
+  };
   //set image url for render
   const imageUrl = `public/uploads/${item.image.fileName}`;
 
@@ -45,7 +51,13 @@ const SearchResultCard: React.FC<{ item: Item }> = ({ item }) => {
         <br />
         <strong>Availability time:</strong> {item.availabilityTime}
         <br />
-        <strong>Contact Email:</strong> {item.userId?.email}
+        <button onClick={handleContactClick}>Contact</button>
+        {showContactFarmerForm && (
+          <ContactFarmerForm
+            defaultEmail={item.userId?.email}
+            onClose={() => setShowContactFarmerForm(false)}
+          />
+          )}
       </div>     
     </div>
   );
