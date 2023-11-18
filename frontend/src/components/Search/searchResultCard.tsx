@@ -1,4 +1,6 @@
 import "./searchResults.css";
+import React from "react";
+
 
 // Define the Item type
 type Item = {
@@ -14,6 +16,7 @@ type Item = {
   availabilityTime: string;
   userId: { email: string; _id: string };
 };
+
 
 // Use the Item type to type the item parameter
 const SearchResultCard: React.FC<{ item: Item }> = ({ item }) => {
@@ -43,7 +46,7 @@ const SearchResultCard: React.FC<{ item: Item }> = ({ item }) => {
         <strong>Availability time:</strong> {item.availabilityTime}
         <br />
         <strong>Contact Email:</strong> {item.userId?.email}
-      </div>
+      </div>     
     </div>
   );
 };
