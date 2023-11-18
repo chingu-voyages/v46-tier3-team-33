@@ -1,0 +1,25 @@
+.container {
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.about-image {
+ 
+    display: block;
+    margin-top:2rem;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: 50%;
+  }
+  

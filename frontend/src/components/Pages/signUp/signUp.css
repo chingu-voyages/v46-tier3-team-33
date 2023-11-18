@@ -1,0 +1,52 @@
+h1 {
+  text-align: center;
+}
+label {
+  margin-right: 0.5rem;
+}
+input {
+  width: 93%;
+}
+
+p {
+  padding-bottom: 0.5rem;
+}
+.signup-container {
+  max-width: 25rem;
+  margin: 5rem auto;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  gap: 1em;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* .password-strength {
+  margin: 10px 0;
+} */
+
+/* .password-progress {
+  height: 8px;
+  border-radius: 4px;
+  margin-top: 5px;
+} */
+
+.strength-text {
+  font-weight: bold;
+}
+
+.weak {
+  color: red;
+}
+
+.medium {
+  color: orange;
+}
+
+.strong {
+  color: green;
+}
