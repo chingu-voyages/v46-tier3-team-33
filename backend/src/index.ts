@@ -27,7 +27,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: process.env.FRONTEND_HOST || "http://localhost:5173", // Allow only this origin
+    origin:
+      process.env.FRONTEND_HOST || "http://vegilicious-frontend.vercel.app", // Allow only this origin
     credentials: true, // Allow cookies
   })
 );
