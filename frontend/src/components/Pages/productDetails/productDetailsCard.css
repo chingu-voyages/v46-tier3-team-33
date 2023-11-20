@@ -25,6 +25,7 @@ width: 8rem; /* Adjust the width as needed */
 height:11rem;
 object-fit: cover;
 }
+
 .content {
 flex: 1;
 text-justify: left;
@@ -35,10 +36,5 @@ text-justify: left;
     justify-content: space-around;
     margin: 2em;
     padding: 1em;
-}
-.delete-item {
-    margin: 1em;
-}
-.update-item {
-    margin: 1em;
+    max-width: 20rem;
 }
