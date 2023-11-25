@@ -1,14 +1,13 @@
-# Vegilicious (testing)
+# Vegilicious
 
 ![Vegilicious home screen](./userdesign/vegelicious_screen.png)
 
-An app for farmers to post pictures and descriptions of their produce and for users to notify farmers of their intention to buy these.
-Users can then arrange to buy and collect produce and leave reviews on the produce they have bought. Reviews and produce can be seen by all users.
+An app for farmers to post pictures and descriptions of their produce and for users to contact farmers of their intention to buy products.
 
 ## Goal
 
 Technology has meant that people can now access food online in a variety of apps. There is also a need for small local producers to have a space where they can showcase the produce they have so that people can purchase it.  
-We worked hard to come up with a project idea during our first sprint and finally we decided on the idea of this app. The project was coded in React and Typescript and we used Node.js for the backend.
+We worked hard to come up with a project idea during our first sprint and finally we decided on the idea of this app.
 
 ### User Interface
 
@@ -21,21 +20,7 @@ The user interface changed a bit from our original wireframes.
 
 ### Collaboration
 
-The app was designed and worked on by 7 team members. Tasks were divided into front end and back end. Valeria was the product owner and held meetings at least 3 times a week as well as doing some backend coding. Three members of the team, Valeria, Justin and Robi were engaged working the backend with Robi working on deployment. Four members of the team Jena, Shanis, Debbie and Becky worked on frontend tasks. Valeria created a Jira board where we could all enter and assign tasks to work on. People chose to work on whatever tasks they felt most comfortable with and they were also able to work on learning new technologies to extend their skills if they chose. Debbie needed to learn react and typescript as these were new to her having previously coded in Python using Flask and Django. Becky set up an agile stand up sheet in google docs where people could add accomplishments on a daily basis; this helped with sprint planning. Our main meeting was on a Friday afternoon where we talked about what had been accomplished in each sprint and planned for the next one, using the agile methodology to plan and manage our work.
-
-## Team Documents
-
-We used other time documents to help us plan and design the app, most of these were provided by Chingu and are listed below.
-
-- [Team Project Ideas](./docs/team_project_ideas.md)
-- [Team Decision Log](./docs/team_decision_log.md)
-
-Meeting Agenda templates
-
-- Meeting - Voyage Kickoff
-- Meeting - App Vision & Feature Planning
-- Meeting - Sprint Retrospective, Review, and Planning
-- Meeting - Sprint Open Topic Session
+The app was designed and worked on by 7 team members. Tasks were divided into front end and back end. Valeria was the product owner and held meetings at least 3 times a week as well as doing some backend coding. Three members of the team, Valeria, Justin and Robi were engaged in working the backend with Robi working on deployment. Four members of the team Jena, Shanis, Debbie and Becky worked on frontend tasks. Valeria created a Jira board where we could all enter and assign tasks to work on. People chose to work on whatever tasks they felt most comfortable with and they were also able to work on learning new technologies to extend their skills if they chose. Debbie needed to learn react and typescript as these were new to her having previously coded in Python using Flask and Django. Becky set up an agile stand up sheet in google docs where people could add accomplishments on a daily basis; this helped with sprint planning. Our main meeting was on Friday afternoon where we talked about what had been accomplished in each sprint and planned for the next one, using the agile methodology to plan and manage our work.
 
 ## Running the project locally
 
@@ -88,17 +73,25 @@ You may amend these variable basing on your setting.
 
 5. You are ready to run the project locally.
 
-### Installation
+### Running the project locally
 
-In the frontend directory, please type:
+To start:
+
+1. In the frontend directory, please type:
 
 `npm run dev`
 
-In the backend directory, please type:
+2. In the backend directory, please type:
 
 `npm start`
 
-- this will run the backend
+3. Open the browser and go to the local host:
+
+`http://localhost:5173/`
+
+To stop:
+
+You can use 'ctrl+c' in the terminal.
 
 ## Tech
 
@@ -161,10 +154,6 @@ To develop the Vegilicious app we made use of the following stack of technologie
 ### Dependencies including deployment
 
 - The front end for the app was deployed to [Vercel](https://vercel.com/)
-
-### Testing
-
-- testing was attempted at the start for the project using [Jest](https://jestjs.io/) but we didn't use it extensively in the project.
 
 ### Future improvements
 
