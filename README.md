@@ -39,29 +39,31 @@ Meeting Agenda templates
 
 ## Running the project locally
 
-To start the project locally type
+To start the project locally type, please install the following software:
 
-The following list of things are required to use the software:
+### Prerequisites
 
 - npm
 
   ```sh
   npm install npm@latest -g
-
   ```
 
-- Clone the repo
+- MongoDB
 
-  ```sh
-  git clone https://github.com/chingu-voyages/v46-tier3-team-33
-  ```
+### Installation
 
-- Create .env at the root of repo
-- Enter database url in .env mongodb+srv://xxxxxxx:xxxxxxx@clusterx.xxxxxx.mo
+1. Clone the repo
 
-- Install NPM packages
+```sh
+git clone https://github.com/chingu-voyages/v46-tier3-team-33
+```
 
-Now you are ready to run the project locally. In a terminal type
+2. Install NPM packages
+
+Please install npm packages both in the frontend and backend folder seperately.
+
+For example (frontend):
 
 - type
 
@@ -69,15 +71,30 @@ Now you are ready to run the project locally. In a terminal type
 then
 
 `npm install`
-once you are in the front end directory
+
+3. Create .env both in the frontend and backend folder
+
+4. Set up the following .env variable in the backend folder:
+
+backend:
+BACK_HOST=localhost
+BACK_PORT=8081
+MONGODB_URL = "mongodb://0.0.0.0/vegilicious"
+JWT_SECRET= ""
+NODE_ENV= "development"
+FRONTEND_HOST="http://localhost:5173"
+
+You may amend these variable basing on your setting.
+
+5. You are ready to run the project locally.
+
+### Installation
+
+In the frontend directory, please type:
 
 `npm run dev`
 
-- just click on the URL shown to run the frontend.
-
-For the backend first install tslint
-
-`npm install tslint`
+In the backend directory, please type:
 
 `npm start`
 
