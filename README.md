@@ -11,7 +11,6 @@ We worked hard to come up with a project idea during our first sprint and finall
 
 ### User Interface
 
-The user interface changed a bit from our original wireframes.
 ![User login ](./userdesign/user_login.png)
 
 ![User sign up](./userdesign/user_signup.png)
@@ -28,66 +27,78 @@ To start the project locally type, please install the following software:
 
 ### Prerequisites
 
-- npm
+- **npm**
 
-  ```sh
-  npm install npm@latest -g
-  ```
+  - Install the latest version of npm globally:
+    ```sh
+    npm install npm@latest -g
+    ```
 
-- MongoDB
+- **MongoDB**
+  - Ensure MongoDB is installed and running on your machine.
 
 ### Installation
 
-1. Clone the repo
+1. **Clone the Repository**
 
-```sh
-git clone https://github.com/chingu-voyages/v46-tier3-team-33
-```
+   - Use the following command to clone the repo:
+     ```sh
+     git clone https://github.com/chingu-voyages/v46-tier3-team-33
+     ```
 
-2. Install NPM packages
+2. **Install NPM Packages**
 
-Please install npm packages both in the frontend and backend folder seperately.
+   - Install npm packages in both the frontend and backend folders:
+     ```sh
+     cd frontend
+     npm install
+     cd ../backend
+     npm install
+     ```
 
-`cd frontend`
-`npm install`
-`cd ../backend`
-`npm install`
+3. **Create .env Files**
 
-3. Create .env both in the frontend and backend folder
+   - Create `.env` files in both the frontend and backend folders.
 
-4. Set up the following .env variable in the backend folder:
+4. **Set Up Environment Variables in Backend**
+   - In the backend `.env` file, set the following variables:
+     ```
+     BACK_HOST=localhost
+     BACK_PORT=8081
+     MONGODB_URL="mongodb://0.0.0.0/vegilicious"
+     JWT_SECRET=""
+     NODE_ENV="development"
+     FRONTEND_HOST="http://localhost:5173"
+     ```
+   - Adjust these variables based on your setting.
 
-backend:
-BACK_HOST=localhost
-BACK_PORT=8081
-MONGODB_URL = "mongodb://0.0.0.0/vegilicious"
-JWT_SECRET= ""
-NODE_ENV= "development"
-FRONTEND_HOST="http://localhost:5173"
+### Running the Project Locally
 
-You may amend these variable basing on your setting.
+To start the project:
 
-5. You are ready to run the project locally.
+1. **Frontend**
 
-### Running the project locally
+   - In the frontend directory, run:
+     ```sh
+     npm run dev
+     ```
 
-To start:
+2. **Backend**
 
-1. In the frontend directory, please type:
+   - In the backend directory, run:
+     ```sh
+     npm start
+     ```
 
-`npm run dev`
+3. **Access the App**
+   - Open your browser and go to:
+     ```
+     http://localhost:5173/
+     ```
 
-2. In the backend directory, please type:
+To stop the project:
 
-`npm start`
-
-3. Open the browser and go to the local host:
-
-`http://localhost:5173/`
-
-To stop:
-
-You can use 'ctrl+c' in the terminal.
+- Use `Ctrl + C` in the terminal.
 
 ## Tech Stack
 
@@ -143,11 +154,10 @@ To develop the Vegilicious app we made use of the following stack of technologie
 
 #### We would like to give credit to the following individuals, organizations, and resources that have contributed to the project or provided inspiration:
 
-- we used Unsplash for many of the photos on the app. In particular:
-- Root vegetable picture
-  Photo by Nathan Dumlao on Unsplash
+- We used Unsplash for many of the photos on the app. In particular:
 
-- Question mark picture
-  Photo by Simone Secci on Unsplash
+  - Root vegetable picture: Photo by Nathan Dumlao on Unsplash
+
+  - Question mark picture: Photo by Simone Secci on Unsplash
 
 - A very big thank you to [Chingu](https://www.chingu.io/) for all the help and support, documentation and very useful articles during this project.
