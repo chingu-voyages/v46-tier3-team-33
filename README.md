@@ -1,170 +1,163 @@
 # Vegilicious
+
 ![Vegilicious home screen](./userdesign/vegelicious_screen.png)
 
-An app for farmers to post pictures and descriptions of their produce and for users to notify farmers of their intention to buy these.
-Users can then arrange to buy and collect produce and leave reviews on the produce they have bought.  Reviews and produce can be seen by all users.
+An app for farmers to post pictures and descriptions of their produce and for users to contact farmers of their intention to buy products.
 
+## Goal and Key Features
 
-## Goal
-Technology has meant that people can now access food online in a variety of apps.  There is also a need for small local producers to have a space where they can showcase the produce they have so that people can purchase it.  
-We worked hard to come up with a project idea during our first sprint and finally we decided on the idea of this app.  The project was coded in React and Typescript and we used Node.js for the backend.
- 
+Technology has meant that people can now access food online in a variety of apps. There is also a need for small local producers to have a space where they can showcase the produce they have so that people can purchase it. Farmers and clients are both required to registered an account and login for verification.
+We worked hard to come up with a project idea during our first sprint and finally we decided on the idea of this app.
 
 ### User Interface
-The user interface changed a bit from our original wireframes.
+
 ![User login ](./userdesign/user_login.png)
 
 ![User sign up](./userdesign/user_signup.png)
 
 ![Search Results](./userdesign/search_results.png)
 
+### Collaborations
 
-### Collaboration
+The app was designed and worked on by 7 team members. Tasks were divided into front end and back end. Valeria was the product owner and held meetings at least 3 times a week as well as doing some backend coding. Three members of the team, Valeria, Justin and Robi were engaged in working the backend with Robi working on deployment. Four members of the team Jena, Shanis, Debbie and Becky worked on frontend tasks. Valeria created a Jira board where we could all enter and assign tasks to work on. People chose to work on whatever tasks they felt most comfortable with and they were also able to work on learning new technologies to extend their skills if they chose. Debbie needed to learn react and typescript as these were new to her having previously coded in Python using Flask and Django. Becky set up an agile stand up sheet in google docs where people could add accomplishments on a daily basis; this helped with sprint planning. Our main meeting was on Friday afternoon where we talked about what had been accomplished in each sprint and planned for the next one, using the agile methodology to plan and manage our work.
 
-The app was designed and worked on by 7 team members.  Tasks were divided into front end and back end.  Valeria was the product owner and held meetings at least 3 times a week as well as doing some backend coding.  Three members of the team, Valeria, Justin and Robi were engaged working the backend with Robi working on deployment.  Four members of the team Jena, Shanis, Debbie and Becky worked on frontend tasks.  Valeria created a Jira board where we could all enter and assign tasks to work on.  People chose to work on whatever tasks they felt most comfortable with and they were also able to work on learning new technologies to extend their skills if they chose.  Debbie needed to learn react and typescript as these were new to her having previously coded in Python using Flask and Django.  Becky set up an agile stand up sheet in google docs where people could add accomplishments on a daily basis; this helped with sprint planning.  Our main meeting was on a Friday afternoon where we talked about what had been accomplished in each sprint and planned for the next one, using the agile methodology to plan and manage our work.
+## Installation and Setup Locally
 
-## Team Documents
+To start the project locally type, please install the following software:
 
-We used other time documents to help us plan and design the app, most of these were provided by Chingu and are listed below.
+### Prerequisites
 
-- [Team Project Ideas](./docs/team_project_ideas.md)
-- [Team Decision Log](./docs/team_decision_log.md)
+- **npm**
 
-Meeting Agenda templates 
+  - Install the latest version of npm globally:
+    ```sh
+    npm install npm@latest -g
+    ```
 
-- Meeting - Voyage Kickoff 
-- Meeting - App Vision & Feature Planning 
-- Meeting - Sprint Retrospective, Review, and Planning
-- Meeting - Sprint Open Topic Session 
+- **MongoDB**
+  - Ensure MongoDB is installed and running on your machine.
 
-## Running the project locally
-To start the project locally type
+### Installation
 
+1. **Clone the Repository**
 
-The following list of things are required to use the software:
+   - Use the following command to clone the repo:
+     ```sh
+     git clone https://github.com/chingu-voyages/v46-tier3-team-33
+     ```
 
-- npm
-  ```sh
-  npm install npm@latest -g
+2. **Install NPM Packages**
 
-- Clone the repo
-   ```sh
-   git clone https://github.com/chingu-voyages/v46-tier3-team-33
-   ```
+   - Install npm packages in both the frontend and backend folders:
+     ```sh
+     cd frontend
+     npm install
+     cd ../backend
+     npm install
+     ```
 
-- Create .env at the root of repo
-- Enter database url in .env  mongodb+srv://xxxxxxx:xxxxxxx@clusterx.xxxxxx.mo
+3. **Create .env Files**
 
+   - Create `.env` files in both the frontend and backend folders.
 
-- Install NPM packages
+4. **Set Up Environment Variables in Backend**
+   - In the backend `.env` file, set the following variables:
+     ```
+     BACK_HOST=localhost
+     BACK_PORT=8081
+     MONGODB_URL="mongodb://0.0.0.0/vegilicious"
+     JWT_SECRET=""
+     NODE_ENV="development"
+     FRONTEND_HOST="http://localhost:5173"
+     ```
+   - Adjust these variables based on your setting.
 
-Now you are ready to run the project locally.  In a terminal type
+### Running the Project Locally
 
-- type
- 
- `cd frontend` 
- then 
- 
- `npm install`
-  once you are in the front end directory
+To start the project:
 
-`npm run dev`
-- just click on the URL shown to run the frontend.
+1. **Frontend**
 
-For the backend first install tslint
+   - In the frontend directory, run:
+     ```sh
+     npm run dev
+     ```
 
+2. **Backend**
 
-`npm install tslint`
+   - In the backend directory, run:
+     ```sh
+     npm start
+     ```
 
-`npm start`
+3. **Access the App**
+   - Open your browser and go to:
+     ```
+     http://localhost:5173/
+     ```
 
-- this will run the backend
+To stop the project:
 
+- Use `Ctrl + C` in the terminal.
 
-## Tech
-In the tech section, we provide information about the technology stack, dependencies, and any technical details related to the project.
-
-
-### Tech Stack
+## Tech Stack
 
 To develop the Vegilicious app we made use of the following stack of technologies:
 
-- Front-End
- - [HTML3](https://www.w3schools.com/html/)
- - [CSS5](https://www.w3schools.com/css/default.asp)
- - [React](https://www.w3schools.com/react/default.asp)
- - [Typescript](https://www.w3schools.com/typescript/typescript_intro.php)
+- **Frontend**:
 
-- Back-End
- - [nodejs](https://www.w3schools.com/nodejs/nodejs_intro.asp)
- - [expressjs](https://expressjs.com/)
+  - [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+  - [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
+  - [React](https://reactjs.org/)
+  - [TypeScript](https://www.typescriptlang.org/)
 
- ### Frontend design
-- Home page
-- About page
-- Contact page
-- Help page
-- Login and Signup page
-- Logout page
-- Search page
-- Results page
+- **Backend**:
 
-### Backend design
-#### The Database Design
-- The database was designed to allow CRUD functionality to be available to registered users, when signed in.  When signed out users can only see list of produce but they cannot contact a farmer for details of the produce.
-- We used MongoDb for our non relational database.  Items in the database were:
-    name,
-    price,
-    img,
-    unit,
-    expired_date,
-    description,
-    stock,
-    farmer
-  
+  - [Node.js](https://nodejs.org/)
+  - [Express.js](https://expressjs.com/)
+  - [TypeScript](https://www.typescriptlang.org/)
 
-- The database was set up with full CRUD functionality in mind.
+- **Database**:
+  - [MongoDB](https://www.mongodb.com/)
 
-**path**|**method**|data requested (json) |**function**
-:-----:|:-----:|:-----:|:-----:
-signup|post |email:string, password:string|register an account
-login|post |email:string, password:string|login
-logout|post |email:string, password:string|logout
-profile|put|any data changed|edit profile
-delete|delete|none|delete account
-product|get|display products on main page|display products
-product|put|data id assigned to product|add product
-product|delete|data id|delete product
-product|get|name:string|search for product
+## Frontend and Backend Design
 
+### Frontend
 
-### Dependencies including deployment
-- The front end for the app was deployed to [Vercel](https://vercel.com/) 
+- Includes pages for:
+  - Home
+  - About
+  - Contact
+  - Help
+  - Login/Signup
+  - Logout
+  - Search
+  - Results
 
+### Backend
 
-### Testing
-- testing was attempted at the start for the project using [Jest](https://jestjs.io/) but we didn't use it extensively in the project.
+- Implements RESTful API principles for efficient data handling.
+- Includes CRUD (Create, Read, Update, Delete) operations.
 
-### Future improvements
-- users get an email from a farmer when a new product is available , a user has previously registered interest in a new product.
-- users are able to post reviews of products they have purchased from farmers.
-- products are put into categories making it easier for a user to search.
-- a forum for users and farmers to exchange comments and ideas on fruits and veggies.
+## Deployment
 
+- Hosted on [Vercel](https://vercel.com/).
+
+## Future Enhancements
+
+- **Email Notifications**: Notify users about new products based on their interests.
+- **User Reviews**: Allow users to post reviews of purchased products.
+- **Product Categorization**: Enable streamlined search by categorizing products.
+- **Community Forum**: Facilitate interactions between users and farmers.
 
 ## Credits
-#### We would like to give credit to the following individuals, organizations, and resources that have contributed to the project or provided inspiration:
-- we used Unsplash for many of the photos on the app.  In particular:
-- Root vegetable picture
-Photo by Nathan Dumlao on Unsplash  
 
-- Question mark picture
-Photo by Simone Secci on Unsplash
+#### We would like to give credit to the following individuals, organizations, and resources that have contributed to the project or provided inspiration:
+
+- We used Unsplash for many of the photos on the app. In particular:
+
+  - Root vegetable picture: Photo by Nathan Dumlao on Unsplash
+
+  - Question mark picture: Photo by Simone Secci on Unsplash
 
 - A very big thank you to [Chingu](https://www.chingu.io/) for all the help and support, documentation and very useful articles during this project.
-
-
-
-
-
-
