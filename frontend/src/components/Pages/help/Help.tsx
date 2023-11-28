@@ -9,9 +9,10 @@ function Help() {
         <div className="text">
 			<h1>Help</h1>
 			
-			<p>If you are a farmer then in order to list the fruit and veggies that you have for sale you will need to create an account before you can do this.</p>
-			<p>If you are looking to purchase fruit and/or veggies from a farmer you will need to set up an account before you can contact a farmer.</p>
-			<p>Unregistered users can see farmers listings but cannot post items to sell and cannot contact farmers about the veggies or fruit they have for sale.</p>
+			<p>If you are a farmer, then in order to list your fruit and veggies for sale, you will need to sign up for a Farmer account and login before you can do this.</p>
+			<p>If you are looking to purchase fruit and/or veggies from a local farmer, you will need to sign up for a Customer account before you can search and contact a farmer.</p>
+			<p>Unregistered users cannot see farmer's listings or post items to sell. You must sign up and login to use this service.</p>
+			<p>Any issues please don't hesitate to contact us for assistance using the contact form.</p>
 		</div>
     </div>
 );
