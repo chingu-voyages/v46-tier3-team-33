@@ -5,7 +5,7 @@
 An app for farmers to post pictures and descriptions of their produce and for users to contact farmers of their intention to buy products.
 
 
-[Video Demo](https://drive.google.com/file/d/15cExBALp2n443A0z5SEHMwUuzUdOWpBK/view?usp=drivesdk)
+[Video Demo](https://drive.google.com/file/d/13i6RQMSTZQbg1_eEgi_l6MLxpZO-H1qU/view?usp=drive_link)
 
 ## Goal and Key Features
 
