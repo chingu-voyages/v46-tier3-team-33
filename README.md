@@ -4,7 +4,11 @@
 
 An app for farmers to post pictures and descriptions of their produce and for users to contact farmers of their intention to buy products.
 
+
+[Video Demo](https://drive.google.com/file/d/15cExBALp2n443A0z5SEHMwUuzUdOWpBK/view?usp=drivesdk)
+
 ## Goal and Key Features
+
 
 Technology has meant that people can now access food online in a variety of apps. There is also a need for small local producers to have a space where they can showcase the produce they have so that people can purchase it. Farmers and clients are both required to registered an account and login for verification.
 We worked hard to come up with a project idea during our first sprint and finally we decided on the idea of this app.
