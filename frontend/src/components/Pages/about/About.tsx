@@ -22,6 +22,7 @@ function About() {
 			<li>Frontend developer - Jena Sivakumar</li>
 			<li>Frontend developer - Shanis Fung</li>
 			<li>Frontend developer - Becky Entwistle</li>
+			<li>Our Voyage Guide - Enoch Osarenren</li>
 			</ul>
 
 			
