@@ -4,6 +4,12 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+    
+}
+
+.text{
+    width:40rem;
+    margin-right: 10rem;
 }
 
 .about-container {
