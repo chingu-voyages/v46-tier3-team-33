@@ -5,6 +5,10 @@
     align-items: center;
     position: relative;
 }
+.text{
+    width:40rem;
+    margin-right: 10rem;
+}
 
 .help-container {
     display: flex;
