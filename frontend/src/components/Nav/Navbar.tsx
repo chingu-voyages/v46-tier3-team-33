@@ -58,12 +58,21 @@ function Navbar() {
                 <li className="link">Hello, {currentUser.email}</li>
                 {/* Check if isFarmer is true before rendering the link */}
                 {currentUser.identity == "farmer" && (
+                
                   <li>
                     <Link to="/Upload" className="link">
                       Upload Products
                     </Link>
                   </li>
                 )}
+                {currentUser.identity == "farmer" && (
+                
+                <li>
+                  <Link to="/FarmerProducts" className="link">
+                    Your Products
+                  </Link>
+                </li>
+              )}
 
                 <li className="link">
                   <LogoutButton />
